@@ -6,7 +6,7 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 10:38:55 by victofer          #+#    #+#              #
-#    Updated: 2023/01/16 11:52:05 by victofer         ###   ########.fr        #
+#    Updated: 2023/01/16 19:13:47 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ NAME		:= push_swap.out
 LIBFT_PATH	:= ./libft/ 
 LIBFT_LIB	:= $(LIBFT_PATH)libft.a
 
-SRC			:=  main.c
+SRC			:=  main.c \
+				leaks.c
 
 OBJECTS		:= $(SRC:.c=.o)
 
