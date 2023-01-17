@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/17 13:12:20 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/17 13:40:05 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,23 @@
 # include <unistd.h>
 # include <limits.h>
 # include "./libft/libft.h"
+# include "./structs.h"
 
-enum e_int
-{
-	INT_LIMIT = 2147483647,
-	INT_LIMIT_NEG = -2147483648
-};
-
-enum e_bool
-{
-	TRUE = 1,
-	FALSE = 0
-};
-
-void	show_leaks(void);
+//	CHECKS BEFORE START
 int		is_sorted(int cant, int *nb);
-int		*fill_array(int cant, char **nb);
-void	ft_error_free(int *nb);
 int		check_bad_input(char *input);
 int		check_int_limit(int cant, char **input);
-void	ft_error(void);
 int		check_duplicated_numbers(int cant, int *numbers);
+int		check_everything(int cant, char **argv, int *numbers);
+
+// INPUT MANAGEMENT
+int		*fill_array(int cant, char **nb);
+
+// ERROR MANAGEEMENT
+void	ft_error_free(int *nb);
+void	ft_error(void);
+
+// SHOW LEAKS (DELETE BEFORE PRESENT)
+void	show_leaks(void);
 
 #endif
