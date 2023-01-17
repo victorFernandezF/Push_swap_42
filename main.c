@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:48:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/17 10:59:14 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/17 13:18:45 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,15 @@ int	*fill_array(int cant, char **nb)
 	numbers = (int *)malloc (cant * sizeof(int));
 	if (!numbers)
 		return (NULL);
-	i = -1;
+	i = 0;
 	j = 1;
-	while (++i < cant)
-		numbers[i] = ft_atoi(nb[j++]);
+	while (i < cant)
+	{
+		if (check_bad_input(nb[j]))
+			ft_error_free(numbers);
+		numbers[i++] = ft_atoi(nb[j]);
+		j++;
+	}
 	return (numbers);
 }
 
@@ -51,8 +56,9 @@ int	main(int argc, char **argv)
 	numbers = fill_array(argc -1, argv);
 	if (is_sorted(argc -1, numbers))
 		ft_printf("Sorted.\n");
+	if (check_duplicated_numbers(argc - 1, numbers))
+		ft_error_free(numbers);
 	free (numbers);
-	//atexit(show_leaks);
+	atexit(show_leaks);
 	return (0);
 }
-
