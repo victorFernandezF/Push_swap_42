@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:48:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/16 19:37:05 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/17 10:59:14 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	main(int argc, char **argv)
 	if (is_sorted(argc -1, numbers))
 		ft_printf("Sorted.\n");
 	free (numbers);
-	atexit(show_leaks);
+	//atexit(show_leaks);
 	return (0);
 }
 
