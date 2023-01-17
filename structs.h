@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:41:13 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/17 13:43:09 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/17 13:52:55 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,13 @@ enum e_bool
 	TRUE = 1,
 	FALSE = 0
 };
+
+// --------- S T R U C T S -------------
+
+typedef struct s_stack
+{
+	int	*numbers;
+	int	cant;	
+}		t_stack;
 
 #endif

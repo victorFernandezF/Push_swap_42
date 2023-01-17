@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:48:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/17 13:31:09 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/17 13:57:12 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,15 @@ int	*fill_array(int cant, char **nb)
 
 int	main(int argc, char **argv)
 {
-	int	*numbers;
+	int		*numbers;
+	t_stack	stack_a;
 
 	atexit(show_leaks);
 	if (argc == 0)
 		return (0);
-	numbers = fill_array(argc -1, argv);
-	check_everything(argc -1, argv, numbers);
+	stack_a.cant = argc - 1;
+	stack_a.numbers = fill_array(stack_a.cant, argv);
+	check_everything(stack_a.cant, argv, stack_a.numbers);
 	free (numbers);
 	return (0);
 }
