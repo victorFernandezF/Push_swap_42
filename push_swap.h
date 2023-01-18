@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/17 13:41:02 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/18 13:32:57 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,16 @@ int		*fill_array(int cant, char **nb);
 // ERROR MANAGEEMENT
 void	ft_error_free(int *nb);
 void	ft_error(void);
+void	free_exit(int *nb);
+
+// ORDERING
+void	start_ordering(t_stack stack);
+t_stack	order_two_elements(t_stack stack);
+
+//	INSTRUCTIONS
+t_stack	sa(t_stack stack);
+t_stack	sb(t_stack stack);
+t_stack	ss(t_stack stack);
 
 // SHOW LEAKS (DELETE BEFORE PRESENT)
 void	show_leaks(void);

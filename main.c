@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:48:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/17 13:57:12 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/18 13:03:49 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,23 @@ int	*fill_array(int cant, char **nb)
 	return (numbers);
 }
 
+void	start_ordering(t_stack stack)
+{
+	if (stack.a_len == 2)
+		stack = order_two_elements(stack);
+}
+
 int	main(int argc, char **argv)
 {
-	int		*numbers;
-	t_stack	stack_a;
+	t_stack	stack;
 
-	atexit(show_leaks);
+	//atexit(show_leaks);
 	if (argc == 0)
 		return (0);
-	stack_a.cant = argc - 1;
-	stack_a.numbers = fill_array(stack_a.cant, argv);
-	check_everything(stack_a.cant, argv, stack_a.numbers);
-	free (numbers);
+	stack.a_len = argc - 1;
+	stack.stack_a = fill_array(stack.a_len, argv);
+	check_everything(stack.a_len, argv, stack.stack_a);
+	start_ordering(stack);
+	free (stack.stack_a);
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 10:38:55 by victofer          #+#    #+#              #
-#    Updated: 2023/01/17 11:59:15 by victofer         ###   ########.fr        #
+#    Updated: 2023/01/18 13:04:34 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,8 @@ LIBFT_LIB	:= $(LIBFT_PATH)libft.a
 SRC			:=  main.c \
 				ckecks.c \
 				errors.c \
+				instructions/instructions_1.c \
+				ordering/ordering_1.c \
 				leaks.c
 
 OBJECTS		:= $(SRC:.c=.o)
