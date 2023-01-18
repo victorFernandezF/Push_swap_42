@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/18 13:32:57 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/18 18:15:26 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include "./structs.h"
 
 //	CHECKS BEFORE START
+t_stack	init_stacks(t_stack stack);
 int		is_sorted(int cant, int *nb);
 int		check_bad_input(char *input);
 int		check_int_limit(int cant, char **input);

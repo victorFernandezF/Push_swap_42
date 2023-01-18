@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:48:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/18 13:03:49 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/18 19:35:57 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,14 @@ void	start_ordering(t_stack stack)
 		stack = order_two_elements(stack);
 }
 
+t_stack	init_stacks(t_stack stack)
+{
+	stack.b_len = 0;
+	stack.a_del = 0;
+	stack.b_del = 0;
+	return (stack);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	stack;
@@ -47,6 +55,7 @@ int	main(int argc, char **argv)
 	if (argc == 0)
 		return (0);
 	stack.a_len = argc - 1;
+	stack = init_stacks(stack);
 	stack.stack_a = fill_array(stack.a_len, argv);
 	check_everything(stack.a_len, argv, stack.stack_a);
 	start_ordering(stack);
