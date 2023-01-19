@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:48:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/19 10:45:51 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/19 11:37:52 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,21 @@ t_stack	init_stacks(t_stack stack)
 int	main(int argc, char **argv)
 {
 	t_stack	stack;
+	int		i;
 
-	//atexit(show_leaks);
+	i = -1;
+	atexit(show_leaks);
 	if (argc == 0)
 		return (0);
 	stack.a_len = argc - 1;
 	stack = init_stacks(stack);
 	stack.a = fill_array(stack.a_len, argv);
 	check_everything(stack.a_len, argv, stack.a);
-	start_ordering(stack);
+	stack = add_one_to_first_and_move_rest_a(stack, 2);
+	while (++i < stack.a_len)
+		printf("%i - ", stack.a[i]);
+	//printf("stack b %i ", stack.b[0]);
+	//start_ordering(stack);
 	free (stack.a);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 12:44:23 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/19 10:49:34 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/19 11:25:06 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,29 +42,6 @@ t_stack	ss(t_stack stack)
 	return (stack);
 }
 
-t_stack	del_first_and_move_rest(t_stack stack, char st)
-{
-	int	*new;
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	if (st == 'a')
-	{
-		new = (int *)malloc((stack.a_len - 1) * sizeof(int));
-		if (!new)
-			ft_error_free(stack.a);
-		while (++i <= stack.a_len)
-			new[j++] = stack.a[i];
-		stack.a_len -= 1;
-		free(stack.a);
-		stack.a = new;
-		free(new);
-	}
-	return (stack);
-}
-
 t_stack	pb(t_stack stack)
 {
 	stack.b = (int *)realloc(stack.b,
@@ -72,7 +49,7 @@ t_stack	pb(t_stack stack)
 	if (!stack.b)
 		ft_error_free(stack.a);
 	stack.b[0] = stack.a[0];
-	del_first_and_move_rest(stack, 'a');
+	//del_first_and_move_rest_a(stack);
 	ft_printf("ss\n");
 	return (stack);
 }
