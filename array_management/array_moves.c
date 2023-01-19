@@ -6,13 +6,13 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 11:04:29 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/19 11:38:43 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/19 12:02:35 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_stack	del_first_move_rest_a(t_stack stack)
+t_stack	del_first_and_move_rest_a(t_stack stack)
 {
 	int	*new;
 	int	i;
@@ -31,7 +31,7 @@ t_stack	del_first_move_rest_a(t_stack stack)
 	return (stack);
 }
 
-t_stack	del_first_move_rest_b(t_stack stack)
+t_stack	del_first_and_move_rest_b(t_stack stack)
 {
 	int	*new;
 	int	i;
@@ -87,5 +87,6 @@ t_stack	add_one_to_first_and_move_rest_b(t_stack stack, int n)
 		new[++j] = stack.b[i];
 	free(stack.b);
 	stack.b = new;
+	free(new);
 	return (stack);
 }

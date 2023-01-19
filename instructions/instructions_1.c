@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 12:44:23 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/19 11:25:06 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/19 12:00:27 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,14 @@ t_stack	ss(t_stack stack)
 
 t_stack	pb(t_stack stack)
 {
-	stack.b = (int *)realloc(stack.b,
-			(stack.b_len + 1) * sizeof(int));
+	int	aux;
+
+	stack.b = ft_calloc(stack.b_len + 1, sizeof(int));
 	if (!stack.b)
 		ft_error_free(stack.a);
-	stack.b[0] = stack.a[0];
-	//del_first_and_move_rest_a(stack);
-	ft_printf("ss\n");
+	aux = stack.a[0];
+	stack = del_first_and_move_rest_a(stack);
+	stack = add_one_to_first_and_move_rest_b(stack, aux);
+
 	return (stack);
 }

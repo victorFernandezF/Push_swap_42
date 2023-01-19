@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:41:13 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/19 10:43:45 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/19 11:58:56 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,21 @@ enum e_bool
 
 // --------- S T R U C T S -------------
 
+typedef struct s_free
+{
+	int	*new;
+	int	*new2;
+}		t_free;
+
 typedef struct s_stack
 {
-	int	*a;
-	int	*b;
-	int	a_len;
-	int	b_len;
-	int	a_del;
-	int	b_del;	
-}		t_stack;
+	int		*a;
+	int		*b;
+	int		a_len;
+	int		b_len;
+	int		a_del;
+	int		b_del;
+	t_free	free;		
+}			t_stack;
 
 #endif
