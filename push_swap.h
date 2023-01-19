@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/19 11:43:54 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/19 12:33:05 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ t_stack	sa(t_stack stack);
 t_stack	sb(t_stack stack);
 t_stack	ss(t_stack stack);
 t_stack	pb(t_stack stack);
+t_stack	pa(t_stack stack);
 
 // SHOW LEAKS (DELETE BEFORE PRESENT)
 void	show_leaks(void);

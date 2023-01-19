@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:48:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/19 11:55:43 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/19 19:02:43 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,26 +47,32 @@ t_stack	init_stacks(t_stack stack)
 	return (stack);
 }
 
-int	main(int argc, char **argv)
+static void	testing(t_stack stack)
 {
-	t_stack	stack;
 	int		i;
 
 	i = -1;
-	atexit(show_leaks);
+	printf("stack_a ");
+	while (++i < stack.a_len)
+		printf("%i ", stack.a[i]);
+	printf("\nstack_b ");
+	i = -1;
+	while (++i < stack.b_len)
+		printf("%i ", stack.b[i]);
+}
+
+int	main(int argc, char **argv)
+{
+	t_stack	stack;
+
+	//atexit(show_leaks);
 	if (argc == 0)
 		return (0);
 	stack.a_len = argc - 1;
 	stack = init_stacks(stack);
 	stack.a = fill_array(stack.a_len, argv);
 	check_everything(stack.a_len, argv, stack.a);
-	//stack = pb(stack);
-	stack = pb(stack);
-	printf("\nstack b %i\nstack_a ", stack.b[0]);
-	while (++i < stack.a_len)
-		printf("%i ", stack.a[i]);
-	//start_ordering(stack);
+	testing(stack);
 	free (stack.a);
-	
 	return (0);
 }
