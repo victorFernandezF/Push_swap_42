@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:48:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/19 19:02:43 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/19 19:22:40 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ int	main(int argc, char **argv)
 	stack = init_stacks(stack);
 	stack.a = fill_array(stack.a_len, argv);
 	check_everything(stack.a_len, argv, stack.a);
+	//stack = ra(stack);
+	stack = ra(stack);
 	testing(stack);
 	free (stack.a);
 	return (0);

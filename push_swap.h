@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/19 12:33:05 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/19 19:18:40 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ t_stack	order_two_elements(t_stack stack);
 t_stack	del_first_and_move_rest_a(t_stack stack);
 t_stack	add_one_to_first_and_move_rest_a(t_stack stack, int n);
 t_stack	add_one_to_first_and_move_rest_b(t_stack stack, int n);
+t_stack	add_one_to_last_and_move_rest_a(t_stack stack, int n);
 t_stack	del_first_and_move_rest_b(t_stack stack);
 
 //	INSTRUCTIONS
@@ -50,6 +51,7 @@ t_stack	sb(t_stack stack);
 t_stack	ss(t_stack stack);
 t_stack	pb(t_stack stack);
 t_stack	pa(t_stack stack);
+t_stack	ra(t_stack stack);
 
 // SHOW LEAKS (DELETE BEFORE PRESENT)
 void	show_leaks(void);
