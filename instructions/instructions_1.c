@@ -6,13 +6,16 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 12:44:23 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/20 11:42:17 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/20 12:31:28 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-// swap two top element of the stack a
+/*
+** Swap the two top elements from  
+** stack 'a' (2 1 4 -> 1 2 4)
+*/
 t_stack	sa(t_stack stack)
 {
 	int	aux;
@@ -24,7 +27,10 @@ t_stack	sa(t_stack stack)
 	return (stack);
 }
 
-// swap two top element of the stack b
+/*
+** Swap the two top elements from  
+** stack 'b' (2 1 4 -> 1 2 4)
+*/
 t_stack	sb(t_stack stack)
 {
 	int	aux;
@@ -46,8 +52,8 @@ t_stack	ss(t_stack stack)
 }
 
 /*
-** Get the top element from a and put t on
-** top position of b
+** Get the top element from 'a' and put it
+** at the top of 'b' (A -> 2 1 4 | B -> 5) -> (A - 1 4 | B - 2 5)
 */
 t_stack	pb(t_stack stack)
 {
@@ -63,8 +69,8 @@ t_stack	pb(t_stack stack)
 }
 
 /*
-** Get the top element from b and put t on
-** top position of a
+** Get the top element from 'b' and put it
+** at the top of 'a' (A -> 2 1 4 | B -> 5) -> (A - 5 2 1 4 | B -)
 */
 t_stack	pa(t_stack stack)
 {

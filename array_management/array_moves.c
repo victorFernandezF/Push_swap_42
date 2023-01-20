@@ -6,12 +6,16 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 11:04:29 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/20 11:49:00 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:05:47 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+/*
+** Remove the first element from the stack 'a' and move
+** the rest of them one position to the left.
+*/
 t_stack	del_first_and_move_rest_a(t_stack stack)
 {
 	int	*new;
@@ -31,25 +35,10 @@ t_stack	del_first_and_move_rest_a(t_stack stack)
 	return (stack);
 }
 
-t_stack	del_first_and_move_rest_b(t_stack stack)
-{
-	int	*new;
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	new = (int *)malloc((stack.b_len - 1) * sizeof(int));
-	if (!new)
-		ft_error_free(stack.b);
-	while (++i <= stack.b_len)
-		new[j++] = stack.b[i];
-	stack.b_len -= 1;
-	free(stack.b);
-	stack.b = new;
-	return (stack);
-}
-
+/*
+** Add the given element to first position of stack 'a'
+** and move the rest of them one position to the right.
+*/
 t_stack	add_one_to_first_and_move_rest_a(t_stack stack, int n)
 {
 	int	*new;
@@ -68,25 +57,31 @@ t_stack	add_one_to_first_and_move_rest_a(t_stack stack, int n)
 	return (stack);
 }
 
-t_stack	add_one_to_first_and_move_rest_b(t_stack stack, int n)
+/*
+** Remove the last element from the stack 'a'
+*/
+t_stack	del_last_and_move_rest_a(t_stack stack)
 {
 	int	*new;
 	int	i;
 	int	j;
 
+	i = -1;
 	j = 0;
-	new = ft_calloc(stack.b_len + 1, sizeof(int));
-	i = 1;
-	new[0] = n;
-	stack.b_len += 1;
-	while (i < stack.b_len)
-		new[i++] = stack.b[j++];
-	free(stack.b);
-	stack.b = new;
-	//free(new);
+	new = (int *)malloc((stack.a_len - 1) * sizeof(int));
+	if (!new)
+		ft_error_free(stack.a);
+	stack.a_len -= 1;
+	while (++i <= stack.a_len)
+		new[j++] = stack.a[i];
+	free(stack.a);
+	stack.a = new;
 	return (stack);
 }
 
+/*
+** Add the given element to last position of stack 'a'
+*/
 t_stack	add_one_to_last_and_move_rest_a(t_stack stack, int n)
 {
 	int	*new;

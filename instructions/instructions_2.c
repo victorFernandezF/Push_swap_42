@@ -6,12 +6,16 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 19:12:46 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/20 12:13:52 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/20 12:26:33 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+/*
+** Move the top element from 'a' and put it
+** at last position of a (2 1 4 -> 1 4 2)
+*/
 t_stack	ra(t_stack stack)
 {
 	int	aux;
@@ -25,6 +29,10 @@ t_stack	ra(t_stack stack)
 	return (stack);
 }
 
+/*
+** Move the top element from 'b' and put it
+** at last position of a (2 1 4 -> 1 4 2)
+*/
 t_stack	rb(t_stack stack)
 {
 	int	aux;
@@ -38,6 +46,7 @@ t_stack	rb(t_stack stack)
 	return (stack);
 }
 
+// ra + rb
 t_stack	rr(t_stack stack)
 {
 	stack = ra(stack);
