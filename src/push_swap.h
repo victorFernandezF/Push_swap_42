@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/20 13:31:07 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:35:55 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include "./libft/libft.h"
+# include "../libft/libft.h"
 # include "./structs.h"
 
 //	CHECKS BEFORE START

@@ -6,11 +6,11 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:41:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/20 13:29:23 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:34:54 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../src/push_swap.h"
 
 // Shows 'Error' message and call free function
 void	ft_error_free(t_stack stack)

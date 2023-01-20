@@ -6,11 +6,11 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 12:12:54 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/20 12:32:50 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:35:11 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../src/push_swap.h"
 
 /*
 ** Move the last element from 'a' and put it

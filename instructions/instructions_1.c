@@ -6,11 +6,11 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 12:44:23 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/20 12:31:28 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:35:03 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../src/push_swap.h"
 
 /*
 ** Swap the two top elements from  

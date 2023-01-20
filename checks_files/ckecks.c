@@ -6,11 +6,11 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:48:56 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/20 13:29:14 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:34:46 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../src/push_swap.h"
 
 // Checks if any value from args isn't numeric.
 int	check_bad_input(char *input)

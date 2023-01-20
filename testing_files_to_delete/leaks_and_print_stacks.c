@@ -6,11 +6,11 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 19:12:09 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/20 13:31:13 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:35:34 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../src/push_swap.h"
 
 void	show_leaks(void)
 {
