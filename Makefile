@@ -6,7 +6,7 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 10:38:55 by victofer          #+#    #+#              #
-#    Updated: 2023/01/20 11:22:32 by victofer         ###   ########.fr        #
+#    Updated: 2023/01/20 12:14:54 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRC			:=  main.c \
 				array_management/array_moves_2.c \
 				instructions/instructions_1.c \
 				instructions/instructions_2.c \
+				instructions/instructions_3.c \
 				ordering/ordering_1.c \
 				leaks.c
 
