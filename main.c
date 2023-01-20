@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:48:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/20 11:26:46 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/20 11:50:47 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static void	testing(t_stack stack)
 	int		i;
 
 	i = -1;
-	printf("stack_a ");
+	printf("\nstack_a ");
 	while (++i < stack.a_len)
 		printf("%i ", stack.a[i]);
 	printf("\nstack_b ");
@@ -73,12 +73,11 @@ int	main(int argc, char **argv)
 	stack.a = fill_array(stack.a_len, argv);
 	check_everything(stack.a_len, argv, stack.a);
 	stack = pb(stack);
-	stack = pb(stack);
-	stack = rb(stack);
-	testing(stack);
-	stack = rr(stack);
-	printf("\n -------------\n");
+	stack = ra(stack);
+	stack = pa(stack);
 	testing(stack);
 	free (stack.a);
+	if (stack.b)
+		free(stack.b);
 	return (0);
 }
