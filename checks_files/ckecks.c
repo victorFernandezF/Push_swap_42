@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:48:56 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/20 13:34:46 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/20 18:10:05 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,6 @@ int	check_everything(int cant, char **argv, int *numbers)
 	if (check_duplicated_numbers(cant, numbers))
 		ft_error_free_array(numbers);
 	if (is_sorted(cant, numbers))
-	{
-		ft_printf("Sorted\n");
 		free_exit(numbers);
-	}	
 	return (0);
 }
