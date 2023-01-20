@@ -6,12 +6,13 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:48:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/20 12:16:42 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:32:04 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
+// Fill the array with the numbers given by user.
 int	*fill_array(int cant, char **nb)
 {
 	int	i;
@@ -26,19 +27,14 @@ int	*fill_array(int cant, char **nb)
 	while (i < cant)
 	{
 		if (check_bad_input(nb[j]))
-			ft_error_free(numbers);
+			ft_error_free_array(numbers);
 		numbers[i++] = ft_atoi(nb[j]);
 		j++;
 	}
 	return (numbers);
 }
 
-void	start_ordering(t_stack stack)
-{
-	if (stack.a_len == 2)
-		stack = order_two_elements(stack);
-}
-
+// initialize the stacks values to 0.
 t_stack	init_stacks(t_stack stack)
 {
 	stack.b_len = 0;
@@ -47,20 +43,14 @@ t_stack	init_stacks(t_stack stack)
 	return (stack);
 }
 
-static void	testing(t_stack stack)
- {
-	int		i;
-
-	i = -1;
-	printf("\nstack_a ");
-	while (++i < stack.a_len)
-		printf("%i ", stack.a[i]);
-	printf("\nstack_b ");
-	i = -1;
-	while (++i < stack.b_len)
-		printf("%i ", stack.b[i]);
+// Function that evaluate how to aproach the ordering.
+void	start_ordering(t_stack stack)
+{
+	if (stack.a_len == 2)
+		stack = order_two_elements(stack);
 }
 
+// Main function.
 int	main(int argc, char **argv)
 {
 	t_stack	stack;
@@ -72,14 +62,8 @@ int	main(int argc, char **argv)
 	stack = init_stacks(stack);
 	stack.a = fill_array(stack.a_len, argv);
 	check_everything(stack.a_len, argv, stack.a);
-	stack = pb(stack);
-	stack = pb(stack);
-	stack = rrr(stack);
-	stack = pa(stack);
-	stack = pa(stack);
-	testing(stack);
-	free (stack.a);
-	if (stack.b)
-		free(stack.b);
+	start_ordering(stack);
+	//test_print_stacks(stack);
+	free_stacks(stack);
 	return (0);
 }

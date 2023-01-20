@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/20 12:06:45 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:31:07 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ int		check_everything(int cant, char **argv, int *numbers);
 int		*fill_array(int cant, char **nb);
 
 // ERROR MANAGEEMENT
-void	ft_error_free(int *nb);
+void	ft_error_free(t_stack stack);
+void	ft_error_free_array(int *nb);
+void	free_stacks(t_stack stack);
 void	ft_error(void);
 void	free_exit(int *nb);
 
@@ -63,5 +65,6 @@ t_stack	rrr(t_stack stack);
 
 // SHOW LEAKS (DELETE BEFORE PRESENT)
 void	show_leaks(void);
+void	test_print_stacks(t_stack stack);
 
 #endif
