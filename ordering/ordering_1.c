@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:02:32 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/20 19:15:09 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/20 19:34:10 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,14 @@ t_stack	order_three_elements(t_stack stack)
 	}
 	if (order_three_aux(stack.a[0], stack.a[1], stack.a[2]) == 5)
 		stack = ra(stack);
+	return (stack);
+}
+
+t_stack	order_five_elements(t_stack stack)
+{
+	stack = pb(stack);
+	//stack = order_three_elements(stack);
+	//stack = pa(stack);
+	//stack = pa(stack);
 	return (stack);
 }

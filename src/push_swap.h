@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/20 13:40:34 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/20 19:29:52 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	free_exit(int *nb);
 void	start_ordering(t_stack stack);
 t_stack	order_two_elements(t_stack stack);
 t_stack	order_three_elements(t_stack stack);
+t_stack	order_five_elements(t_stack stack);
 
 // ARRAY_MANAGEMENT
 t_stack	del_first_and_move_rest_a(t_stack stack);
