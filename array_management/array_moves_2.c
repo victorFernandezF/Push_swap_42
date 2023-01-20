@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 11:04:29 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/20 11:27:57 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/20 12:05:16 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,43 @@ t_stack	rr(t_stack stack)
 	stack = ra(stack);
 	stack = rb(stack);
 	ft_printf("ss\n");
+	return (stack);
+}
+
+t_stack	del_last_and_move_rest_a(t_stack stack)
+{
+	int	*new;
+	int	i;
+	int	j;
+
+	i = -1;
+	j = 0;
+	new = (int *)malloc((stack.a_len - 1) * sizeof(int));
+	if (!new)
+		ft_error_free(stack.a);
+	stack.a_len -= 1;
+	while (++i <= stack.a_len)
+		new[j++] = stack.a[i];
+	free(stack.a);
+	stack.a = new;
+	return (stack);
+}
+
+t_stack	del_last_and_move_rest_b(t_stack stack)
+{
+	int	*new;
+	int	i;
+	int	j;
+
+	i = -1;
+	j = 0;
+	new = (int *)malloc((stack.b_len - 1) * sizeof(int));
+	if (!new)
+		ft_error_free(stack.b);
+	stack.b_len -= 1;
+	while (++i <= stack.b_len)
+		new[j++] = stack.b[i];
+	free(stack.b);
+	stack.b = new;
 	return (stack);
 }
