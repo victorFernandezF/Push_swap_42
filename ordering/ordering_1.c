@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:02:32 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/23 12:55:09 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/23 19:08:10 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_stack	order_two_elements(t_stack stack)
 	return (stack);
 }
 
-static int	order_three_aux(int a, int b, int c)
+int	order_three_aux(int a, int b, int c)
 {
 	if ((a < b) && (b > c) && (c < a))
 		return (1);
@@ -60,41 +60,25 @@ t_stack	order_five_elements(t_stack stack)
 {
 	int	i;
 
-	i = 0;
+	i = -1;
 	stack = pb(stack);
 	stack = pb(stack);
 	stack = order_three_elements(stack);
-	while (i < 2)
+	while (++i < 2)
 	{
-		test_print_stacks(stack);
-		if (stack.b[0] > stack.a[2])
-		{
-			printf("o");
-			stack = rra(stack);
-			stack = pa(stack);
-			stack = ra(stack);
-			stack = ra(stack);
-			test_print_stacks(stack);
-		}
-		if (stack.b[0] > stack.a[0] && stack.b[0] < stack.a[1])
-		{
-			stack = ra(stack);
-			stack = pa(stack);
-			stack = rra(stack);
-		}
-		if (stack.b[0] > stack.a[0] && stack.b[0] < stack.a[stack.a_len - 1])
-		{
-			stack = rra(stack);
-			stack = pa(stack);
-			stack = ra(stack);
-			stack = ra(stack);
-		}
-		else if (stack.b[0] > stack.a[stack.a_len - 1])
+		if (order_five_aux(stack.b[0], stack) == 1)
 		{
 			stack = pa(stack);
 			stack = ra(stack);
 		}
-		i++;
+		else if (order_five_aux(stack.b[0], stack) == 2)
+			stack = ra_pa_rra(stack);
+		else if (order_five_aux(stack.b[0], stack) == 3)
+			stack = rra_pa_ra_ra(stack);
+		else if (order_five_aux(stack.b[0], stack) == 4)
+			stack = rra_pa_ra(stack);
+		else if (order_five_aux(stack.b[0], stack) == 5)
+			stack = pa(stack);
 	}
 	return (stack);
 }

@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/23 11:03:50 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/23 19:08:00 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,11 @@ t_stack	start_ordering(t_stack stack);
 t_stack	order_two_elements(t_stack stack);
 t_stack	order_three_elements(t_stack stack);
 t_stack	order_five_elements(t_stack stack);
+int		order_five_aux(int n, t_stack stack);
+int		order_three_aux(int a, int b, int c);
+t_stack	rra_pa_ra_ra(t_stack stack);
+t_stack	rra_pa_ra(t_stack stack);
+t_stack	ra_pa_rra(t_stack stack);
 
 // ARRAY_MANAGEMENT
 t_stack	del_first_and_move_rest_a(t_stack stack);
