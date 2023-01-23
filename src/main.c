@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:48:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/20 19:36:29 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/23 11:42:29 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ t_stack	init_stacks(t_stack stack)
 }
 
 // Function that evaluate how to aproach the ordering.
-void	start_ordering(t_stack stack)
+t_stack	start_ordering(t_stack stack)
 {
 	if (stack.a_len == 2)
 		stack = order_two_elements(stack);
@@ -52,6 +52,7 @@ void	start_ordering(t_stack stack)
 		stack = order_three_elements(stack);
 	if (stack.a_len == 5)
 		stack = order_five_elements(stack);
+	return (stack);
 }
 
 // Main function.
@@ -66,8 +67,8 @@ int	main(int argc, char **argv)
 	stack = init_stacks(stack);
 	stack.a = fill_array(stack.a_len, argv);
 	check_everything(stack.a_len, argv, stack.a);
-	start_ordering(stack);
-	test_print_stacks(stack);
+	stack = start_ordering(stack);
+	//test_print_stacks(stack);
 	free_stacks(stack);
 	return (0);
 }

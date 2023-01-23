@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:02:32 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/20 19:34:10 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/23 12:55:09 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 t_stack	order_two_elements(t_stack stack)
 {
-	stack = sa(stack);
+	if (stack.a[0] > stack.a[1])
+		stack = sa(stack);
 	return (stack);
 }
 
@@ -57,9 +58,43 @@ t_stack	order_three_elements(t_stack stack)
 
 t_stack	order_five_elements(t_stack stack)
 {
+	int	i;
+
+	i = 0;
 	stack = pb(stack);
-	//stack = order_three_elements(stack);
-	//stack = pa(stack);
-	//stack = pa(stack);
+	stack = pb(stack);
+	stack = order_three_elements(stack);
+	while (i < 2)
+	{
+		test_print_stacks(stack);
+		if (stack.b[0] > stack.a[2])
+		{
+			printf("o");
+			stack = rra(stack);
+			stack = pa(stack);
+			stack = ra(stack);
+			stack = ra(stack);
+			test_print_stacks(stack);
+		}
+		if (stack.b[0] > stack.a[0] && stack.b[0] < stack.a[1])
+		{
+			stack = ra(stack);
+			stack = pa(stack);
+			stack = rra(stack);
+		}
+		if (stack.b[0] > stack.a[0] && stack.b[0] < stack.a[stack.a_len - 1])
+		{
+			stack = rra(stack);
+			stack = pa(stack);
+			stack = ra(stack);
+			stack = ra(stack);
+		}
+		else if (stack.b[0] > stack.a[stack.a_len - 1])
+		{
+			stack = pa(stack);
+			stack = ra(stack);
+		}
+		i++;
+	}
 	return (stack);
 }
