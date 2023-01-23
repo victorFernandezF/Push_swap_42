@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:02:32 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/23 19:08:10 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/23 19:26:27 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,6 @@ t_stack	order_two_elements(t_stack stack)
 	if (stack.a[0] > stack.a[1])
 		stack = sa(stack);
 	return (stack);
-}
-
-int	order_three_aux(int a, int b, int c)
-{
-	if ((a < b) && (b > c) && (c < a))
-		return (1);
-	if ((a > b) && (b > c) && (c < a))
-		return (2);
-	if ((a > b) && (b < c) && (c > a))
-		return (3);
-	if ((a < b) && (b > c) && (c > a))
-		return (4);
-	if ((a > b) && (b < c) && (c < a))
-		return (5);
-	return (FALSE);
 }
 
 t_stack	order_three_elements(t_stack stack)
@@ -53,6 +38,32 @@ t_stack	order_three_elements(t_stack stack)
 	}
 	if (order_three_aux(stack.a[0], stack.a[1], stack.a[2]) == 5)
 		stack = ra(stack);
+	return (stack);
+}
+
+t_stack	order_four_elements(t_stack stack)
+{
+	int	b;
+
+	stack = pb(stack);
+	stack = order_three_elements(stack);
+	test_print_stacks(stack);
+	b = stack.b[0];
+	if (b < stack.a[0])
+		stack = pa(stack);
+	if (b > stack.a[2])
+	{
+		stack = pa(stack);
+		stack = ra(stack);
+	}
+	if (b > stack.a[0] && b < stack.a[1])
+	{
+		stack = ra(stack);
+		stack = pa(stack);
+		stack = rra(stack);
+	}
+	if (b > stack.a[1] && b < stack.a[2])
+		stack = rra_pa_ra_ra(stack);
 	return (stack);
 }
 

@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:48:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/23 19:04:12 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/23 19:18:06 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ t_stack	start_ordering(t_stack stack)
 		stack = order_two_elements(stack);
 	if (stack.a_len == 3)
 		stack = order_three_elements(stack);
+	if (stack.a_len == 4)
+		stack = order_four_elements(stack);
 	if (stack.a_len == 5)
 		stack = order_five_elements(stack);
 	return (stack);

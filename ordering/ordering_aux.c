@@ -6,11 +6,26 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 18:32:01 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/23 19:07:50 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/23 19:17:04 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/push_swap.h"
+
+int	order_three_aux(int a, int b, int c)
+{
+	if ((a < b) && (b > c) && (c < a))
+		return (1);
+	if ((a > b) && (b > c) && (c < a))
+		return (2);
+	if ((a > b) && (b < c) && (c > a))
+		return (3);
+	if ((a < b) && (b > c) && (c > a))
+		return (4);
+	if ((a > b) && (b < c) && (c < a))
+		return (5);
+	return (FALSE);
+}
 
 int	order_five_aux(int n, t_stack stack)
 {
