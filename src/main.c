@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:48:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/24 10:48:23 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/24 11:33:37 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,7 @@ int	*fill_array(int cant, char **nb)
 t_stack	init_stacks(t_stack stack)
 {
 	stack.b_len = 0;
-	stack.a_del = 0;
-	stack.b_del = 0;
+	stack.moves = 0;
 	return (stack);
 }
 
@@ -54,8 +53,8 @@ t_stack	start_sorting(t_stack stack)
 		stack = sort_four_elements(stack);
 	if (stack.a_len == 5)
 		stack = sort_five_elements(stack);
-	if (stack.a_len > 5 && stack.a_len <= 100)
-		stack = complex_sort(stack);
+	//if (stack.a_len > 5 && stack.a_len <= 100)
+		//stack = complex_sort(stack);
 	return (stack);
 }
 
@@ -72,7 +71,8 @@ int	main(int argc, char **argv)
 	stack.a = fill_array(stack.a_len, argv);
 	check_everything(stack.a_len, argv, stack.a);
 	stack = start_sorting(stack);
-	test_print_stacks(stack);
+	//test_print_stacks(stack);
+	ft_printf(REDY"\nMoves: %i\n"WHITE, stack.moves);
 	free_stacks(stack);
 	return (0);
 }
