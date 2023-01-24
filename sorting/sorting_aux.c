@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ordering_aux.c                                     :+:      :+:    :+:   */
+/*   sorting_aux.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "../src/push_swap.h"
 
-int	order_three_aux(int a, int b, int c)
+int	sort_three_aux(int a, int b, int c)
 {
 	if ((a < b) && (b > c) && (c < a))
 		return (1);
@@ -27,7 +27,7 @@ int	order_three_aux(int a, int b, int c)
 	return (FALSE);
 }
 
-int	order_five_aux(int n, t_stack stack)
+int	sort_five_aux(int n, t_stack stack)
 {
 	if (n > stack.a[stack.a_len - 1])
 		return (1);

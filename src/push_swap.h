@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/23 19:18:36 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/24 10:51:23 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,15 @@ void	free_stacks(t_stack stack);
 void	ft_error(void);
 void	free_exit(int *nb);
 
-// ORDERING
-t_stack	start_ordering(t_stack stack);
-t_stack	order_two_elements(t_stack stack);
-t_stack	order_three_elements(t_stack stack);
-t_stack	order_five_elements(t_stack stack);
-t_stack	order_four_elements(t_stack stack);
-
-int		order_five_aux(int n, t_stack stack);
-int		order_three_aux(int a, int b, int c);
+// SORTING
+t_stack	start_sorting(t_stack stack);
+t_stack	sort_two_elements(t_stack stack);
+t_stack	sort_three_elements(t_stack stack);
+t_stack	sort_five_elements(t_stack stack);
+t_stack	sort_four_elements(t_stack stack);
+int		sort_five_aux(int n, t_stack stack);
+int		sort_three_aux(int a, int b, int c);
+t_stack	complex_sort(t_stack stack);
 t_stack	rra_pa_ra_ra(t_stack stack);
 t_stack	rra_pa_ra(t_stack stack);
 t_stack	ra_pa_rra(t_stack stack);

@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:48:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/23 19:18:06 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/24 10:48:23 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,19 @@ t_stack	init_stacks(t_stack stack)
 	return (stack);
 }
 
-// Function that evaluate how to aproach the ordering.
-t_stack	start_ordering(t_stack stack)
+// Function that evaluate how to aproach the sorting.
+t_stack	start_sorting(t_stack stack)
 {
 	if (stack.a_len == 2)
-		stack = order_two_elements(stack);
+		stack = sort_two_elements(stack);
 	if (stack.a_len == 3)
-		stack = order_three_elements(stack);
+		stack = sort_three_elements(stack);
 	if (stack.a_len == 4)
-		stack = order_four_elements(stack);
+		stack = sort_four_elements(stack);
 	if (stack.a_len == 5)
-		stack = order_five_elements(stack);
+		stack = sort_five_elements(stack);
+	if (stack.a_len > 5 && stack.a_len <= 100)
+		stack = complex_sort(stack);
 	return (stack);
 }
 
@@ -69,7 +71,7 @@ int	main(int argc, char **argv)
 	stack = init_stacks(stack);
 	stack.a = fill_array(stack.a_len, argv);
 	check_everything(stack.a_len, argv, stack.a);
-	stack = start_ordering(stack);
+	stack = start_sorting(stack);
 	test_print_stacks(stack);
 	free_stacks(stack);
 	return (0);
