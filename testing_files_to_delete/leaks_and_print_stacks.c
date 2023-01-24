@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 19:12:09 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/20 13:45:49 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/24 11:20:27 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	show_leaks(void)
 void	test_print_stacks(t_stack stack)
 {
 	int		i;
-	printf("\n---- TESTING PRINT ----");
+
+	printf(BG_YELLOW"\n 🔴---- TESTING PRINT ---- 🔴");
 	i = -1;
 	printf("\n    stack_a ");
 	while (++i < stack.a_len)
@@ -30,4 +31,5 @@ void	test_print_stacks(t_stack stack)
 	i = -1;
 	while (++i < stack.b_len)
 		printf("%i ", stack.b[i]);
+	printf("\n"BG_WHITE);
 }

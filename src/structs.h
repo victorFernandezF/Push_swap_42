@@ -6,13 +6,39 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:41:13 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/19 11:58:56 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/24 11:25:31 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
 # include "./push_swap.h"
+
+// ---------- C O L O R S --------------
+
+# define RED  "\x1B[31m"
+# define GREEN  "\x1B[32m"
+# define YELLOW  "\x1B[33m"
+# define BG_YELLOW  "\x1b[103m"
+# define BLUE  "\x1B[34m"
+# define WHITE  "\x1B[37m"
+# define BG_WHITE  "\x1b[47m"
+# define MAG  "\x1B[35m"
+
+// ---- I N S T R U C T I O N S --------
+
+# define PA  "pa"
+# define PB  "pb"
+# define SA  "sa"
+# define SB  "sb"
+# define SS  "ss"
+# define RA  "ra"
+# define RB  "rb"
+# define RR  "rr"
+# define RRA  "rra"
+# define RRB  "rrb"
+# define RRR  "rrr"
+
 
 // ----------- E N U M S ---------------
 	// Enum with int limits
@@ -43,8 +69,7 @@ typedef struct s_stack
 	int		*b;
 	int		a_len;
 	int		b_len;
-	int		a_del;
-	int		b_del;
+	int		moves;
 	t_free	free;		
 }			t_stack;
 

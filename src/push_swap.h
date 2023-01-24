@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/24 10:51:23 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/24 10:56:15 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ t_stack	add_one_to_first_and_move_rest_b(t_stack stack, int n);
 t_stack	add_one_to_last_and_move_rest_b(t_stack stack, int n);
 
 //	INSTRUCTIONS
+t_stack	do_operation(char *op, t_stack stack);
 t_stack	sa(t_stack stack);
 t_stack	sb(t_stack stack);
 t_stack	ss(t_stack stack);

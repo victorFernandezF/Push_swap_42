@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 19:12:46 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/20 13:35:07 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/24 11:13:27 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_stack	ra(t_stack stack)
 	aux = stack.a[0];
 	stack = del_first_and_move_rest_a(stack);
 	stack = add_one_to_last_and_move_rest_a(stack, aux);
-	ft_printf("ra\n");
+	ft_printf(BLUE"ra\n"WHITE);
 	return (stack);
 }
 
@@ -42,7 +42,7 @@ t_stack	rb(t_stack stack)
 	aux = stack.b[0];
 	stack = del_first_and_move_rest_b(stack);
 	stack = add_one_to_last_and_move_rest_b(stack, aux);
-	ft_printf("rb\n");
+	ft_printf(BLUE"rb\n"WHITE);
 	return (stack);
 }
 
@@ -51,6 +51,6 @@ t_stack	rr(t_stack stack)
 {
 	stack = ra(stack);
 	stack = rb(stack);
-	ft_printf("ss\n");
+	ft_printf(BLUE"rr\n"WHITE);
 	return (stack);
 }
