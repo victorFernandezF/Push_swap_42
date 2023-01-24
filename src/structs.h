@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:41:13 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/24 11:31:11 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/24 12:05:47 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # define BG_WHITE  "\x1b[47m"
 # define MAG  "\x1B[35m"
 # define REDY  "\x1b[91m"
+# define BG_BLACK "\x1b[40m"
 
 // ---- I N S T R U C T I O N S --------
 

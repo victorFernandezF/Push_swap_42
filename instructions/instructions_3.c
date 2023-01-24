@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 12:12:54 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/24 11:28:38 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/24 12:25:05 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ t_stack	do_operation(char *op, t_stack stack)
 		stack = ss(stack);
 	if (ft_strncmp(op, "pa", 2) == 0)
 		stack = pa(stack);
-	if (ft_strncmp(op, "sp", 2) == 0)
+	if (ft_strncmp(op, "pb", 2) == 0)
 		stack = pb(stack);
 	if (ft_strncmp(op, "ra", 2) == 0)
 		stack = ra(stack);

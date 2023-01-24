@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 19:12:09 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/24 11:32:54 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/24 12:26:11 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ void	test_print_stacks(t_stack stack)
 	i = -1;
 	while (++i < stack.b_len)
 		printf("%i ", stack.b[i]);
-	ft_printf(REDY"\n    Moves: %i\n"WHITE BG_WHITE, stack.moves);
+	printf("\n"BG_BLACK);
+	//ft_printf(REDY"\n    Moves: %i\n"WHITE BG_BLACK, stack.moves);
 }
