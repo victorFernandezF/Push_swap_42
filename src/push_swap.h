@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/27 13:47:28 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/27 13:56:05 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		check_duplicated_numbers(int cant, int *numbers);
 int		check_everything(int cant, char **argv, int *numbers);
 
 // INPUT MANAGEMENT
-int *fill_array(int cant, char **nbrs);
+int		*fill_array(int cant, char **nbrs);
 
 // ERROR MANAGEEMENT
 void	ft_error_free(t_stack stack);
@@ -37,6 +37,7 @@ void	ft_error_free_array(int *nb);
 void	free_stacks(t_stack stack);
 void	ft_error(void);
 void	free_exit(int *nb);
+void	free_nbrs(char **nbrs);
 
 // SORTING
 t_stack	start_sorting(t_stack stack);

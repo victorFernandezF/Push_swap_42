@@ -12,6 +12,22 @@
 
 #include "../src/push_swap.h"
 
+// Function that evaluate how to aproach the sorting.
+t_stack	start_sorting(t_stack stack)
+{
+	if (stack.a_len == 2)
+		stack = sort_two_elements(stack);
+	if (stack.a_len == 3)
+		stack = sort_three_elements(stack);
+	if (stack.a_len == 4)
+		stack = sort_four_elements(stack);
+	if (stack.a_len == 5)
+		stack = sort_five_elements(stack);
+	if (stack.a_len > 5 && stack.a_len <= 100)
+		stack = complex_sort(stack);
+	return (stack);
+}
+
 t_stack	sort_two_elements(t_stack stack)
 {
 	if (stack.a[0] > stack.a[1])

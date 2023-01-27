@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:48:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/27 13:49:01 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/27 14:04:56 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,24 +37,9 @@ int	*fill_array(int cant, char **nbrs)
 // initialize the stacks values to 0.
 static void	init_stack(t_stack *stack)
 {
+	stack->a_len = 0;
 	stack->b_len = 0;
 	stack->moves = 0;
-}
-
-// Function that evaluate how to aproach the sorting.
-t_stack	start_sorting(t_stack stack)
-{
-	if (stack.a_len == 2)
-		stack = sort_two_elements(stack);
-	if (stack.a_len == 3)
-		stack = sort_three_elements(stack);
-	if (stack.a_len == 4)
-		stack = sort_four_elements(stack);
-	if (stack.a_len == 5)
-		stack = sort_five_elements(stack);
-	if (stack.a_len > 5 && stack.a_len <= 100)
-		stack = complex_sort(stack);
-	return (stack);
 }
 
 int	get_stack_a_len(char **nbrs)
@@ -104,14 +89,12 @@ int	main(int argc, char **argv)
 	nbrs = args_handler(argc - 1, argv);
 	stack.a_len = get_stack_a_len(nbrs);
 	stack.a = fill_array(stack.a_len, nbrs);
-	while (nbrs[++i])
-		free(nbrs[i]);
-	free(nbrs);
+	free_nbrs(nbrs);
 	//check_everything(stack.a_len, argv, stack.a);
-	//stack = start_sorting(stack); */
-	test_print_stacks(stack);
+	//stack = start_sorting(stack);
+	//test_print_stacks(stack);
 	//ft_printf(REDY"\nMoves: %i\n"WHITE, stack.moves);
-	//free_stacks(stack);
+	free(stack.a);
 	//atexit(show_leaks);
 	return (0);
 }
