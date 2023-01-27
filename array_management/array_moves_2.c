@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 11:04:29 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/20 13:34:29 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/27 19:22:14 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ t_stack	add_one_to_first_and_move_rest_b(t_stack stack, int n)
 	stack.b_len += 1;
 	while (i < stack.b_len)
 		new[i++] = stack.b[j++];
-	free(stack.b);
+	if (stack.b)
+		free(stack.b);
 	stack.b = new;
 	return (stack);
 }
