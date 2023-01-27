@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:41:13 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/24 12:05:47 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/27 12:14:41 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ typedef struct s_stack
 {
 	int		*a;
 	int		*b;
+	char	*tmp;
 	int		a_len;
 	int		b_len;
 	int		moves;

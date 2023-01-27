@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:41:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/20 13:34:54 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/27 12:26:14 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,11 @@ void	ft_error_free_array(int *nb)
 
 void	free_stacks(t_stack stack)
 {
-	if (stack.a)
+/* 	if (stack.a)
 		free(stack.a);
 	if (stack.b)
-		free(stack.b);
+		free(stack.b); */
+	free(stack.tmp);
 }
 
 // Free array and exit
