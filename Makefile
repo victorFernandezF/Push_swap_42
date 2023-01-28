@@ -28,6 +28,7 @@ SRC			:=  src/main.c \
 				sorting/sorting_1.c \
 				sorting/sorting_2.c \
 				sorting/sorting_aux.c \
+				sorting/sorting_aux_2.c \
 				testing_files_to_delete/leaks_and_print_stacks.c
 
 OBJECTS		:= $(SRC:.c=.o)

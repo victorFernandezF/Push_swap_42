@@ -51,6 +51,8 @@ t_stack	complex_sort(t_stack stack);
 t_stack	rra_pa_ra_ra(t_stack stack);
 t_stack	rra_pa_ra(t_stack stack);
 t_stack	ra_pa_rra(t_stack stack);
+t_stack   rra_rra_pa_ra_ra(t_stack stack);
+
 
 // ARRAY_MANAGEMENT
 t_stack	del_first_and_move_rest_a(t_stack stack);

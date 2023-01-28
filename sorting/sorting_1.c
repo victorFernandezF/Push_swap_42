@@ -104,6 +104,8 @@ t_stack	sort_five_elements(t_stack stack)
 		else if (sort_five_aux(stack.b[0], stack) == 4)
 			stack = rra_pa_ra(stack);
 		else if (sort_five_aux(stack.b[0], stack) == 5)
+			stack = rra_rra_pa_ra_ra(stack);
+		else if (sort_five_aux(stack.b[0], stack) == 6)
 			stack = pa(stack);
 	}
 	return (stack);
