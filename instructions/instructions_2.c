@@ -26,7 +26,7 @@ t_stack	ra(t_stack stack)
 	stack = del_first_and_move_rest_a(stack);
 	stack = add_one_to_last_and_move_rest_a(stack, aux);
 	stack.moves += 1;
-	ft_printf(BLUE"ra\n"WHITE);
+	ft_printf("ra\n");
 	return (stack);
 }
 
@@ -44,7 +44,7 @@ t_stack	rb(t_stack stack)
 	stack = del_first_and_move_rest_b(stack);
 	stack = add_one_to_last_and_move_rest_b(stack, aux);
 	stack.moves += 1;
-	ft_printf(BLUE"rb\n"WHITE);
+	ft_printf("rb\n");
 	return (stack);
 }
 
@@ -54,6 +54,6 @@ t_stack	rr(t_stack stack)
 	stack = ra(stack);
 	stack = rb(stack);
 	stack.moves += 1;
-	ft_printf(BLUE"rr\n"WHITE);
+	ft_printf("rr\n");
 	return (stack);
 }

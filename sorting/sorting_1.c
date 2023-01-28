@@ -23,8 +23,8 @@ t_stack	start_sorting(t_stack stack)
 		stack = sort_four_elements(stack);
 	if (stack.a_len == 5)
 		stack = sort_five_elements(stack);
-	if (stack.a_len > 5 && stack.a_len <= 100)
-		stack = complex_sort(stack);
+	//if (stack.a_len > 5 && stack.a_len <= 100)
+		//stack = complex_sort(stack);
 	return (stack);
 }
 
@@ -48,9 +48,9 @@ t_stack	sort_three_elements(t_stack stack)
 		stack = sa(stack);
 	if (sort_three_aux(stack.a[0], stack.a[1], stack.a[2]) == 4)
 	{
-		stack = pb(stack);
+		stack = ra(stack);
 		stack = sa(stack);
-		stack = pa(stack);
+		stack = rra(stack);
 	}
 	if (sort_three_aux(stack.a[0], stack.a[1], stack.a[2]) == 5)
 		stack = ra(stack);

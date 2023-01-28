@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include <signal.h>
+# include <stdint.h>
 
 /*BONUS*/
 typedef struct s_list

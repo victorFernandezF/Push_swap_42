@@ -14,9 +14,6 @@
 
 void	ft_put_oct(unsigned int num)
 {
-	int	i;
-
-	i = 0;
 	if (num >= 8)
 	{
 		ft_put_oct(num / 8);

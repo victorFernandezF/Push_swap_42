@@ -14,9 +14,6 @@
 
 void	ft_put_bin(unsigned int num)
 {
-	int	i;
-
-	i = 0;
 	if (num >= 2)
 	{
 		ft_put_bin(num / 2);

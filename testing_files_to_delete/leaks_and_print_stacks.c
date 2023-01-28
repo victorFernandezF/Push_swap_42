@@ -22,7 +22,7 @@ void	test_print_stacks(t_stack stack)
 {
 	int		i;
 
-	ft_printf(BG_YELLOW"\n 🔴---- TESTING PRINT ---- 🔴");
+	ft_printf("\n 🔴---- TESTING PRINT ---- 🔴");
 	i = -1;
 	ft_printf("\n    Stack_a ");
 	while (++i < stack.a_len)

@@ -81,9 +81,7 @@ int	main(int argc, char **argv)
 {
 	t_stack	stack;
 	char	**nbrs;
-	int		i;
 
-	i = -1;
 	if (argc == 0)
 		return (0);
 	init_stack(&stack);
@@ -93,7 +91,7 @@ int	main(int argc, char **argv)
 	free_nbrs(nbrs);
 	check_everything(stack.a_len, argv, stack.a);
 	stack = start_sorting(stack);
-	test_print_stacks(stack);
+	//test_print_stacks(stack);
 	//ft_printf(REDY"\nMoves: %i\n"WHITE, stack.moves);
 	free_stacks(stack);
 	//atexit(show_leaks);

@@ -24,7 +24,7 @@ t_stack	sa(t_stack stack)
 	stack.a[0] = stack.a[1];
 	stack.a[1] = aux;
 	stack.moves += 1;
-	ft_printf(GREEN"sa\n"WHITE);
+	ft_printf("sa\n");
 	return (stack);
 }
 
@@ -40,7 +40,7 @@ t_stack	sb(t_stack stack)
 	stack.b[0] = stack.b[1];
 	stack.b[1] = aux;
 	stack.moves += 1;
-	ft_printf(GREEN"sb\n"WHITE);
+	ft_printf("sb\n");
 	return (stack);
 }
 
@@ -50,7 +50,7 @@ t_stack	ss(t_stack stack)
 	stack = sa(stack);
 	stack = sb(stack);
 	stack.moves += 1;
-	ft_printf(GREEN"ss\n"WHITE);
+	ft_printf("ss\n");
 	return (stack);
 }
 
@@ -68,7 +68,7 @@ t_stack	pb(t_stack stack)
 	stack = add_one_to_first_and_move_rest_b(stack, aux);
 	stack = del_first_and_move_rest_a(stack);
 	stack.moves += 1;
-	ft_printf(YELLOW"pb\n"WHITE);
+	ft_printf("pb\n");
 	return (stack);
 }
 
@@ -86,6 +86,6 @@ t_stack	pa(t_stack stack)
 	stack = add_one_to_first_and_move_rest_a(stack, aux);
 	stack = del_first_and_move_rest_b(stack);
 	stack.moves += 1;
-	ft_printf(YELLOW"pa\n"WHITE);
+	ft_printf("pa\n");
 	return (stack);
 }

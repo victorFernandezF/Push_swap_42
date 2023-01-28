@@ -25,21 +25,19 @@ int	get_max_position(t_stack stack)
 			return (i);
 	return (0);
 }
-
+/* aa
 t_stack	complex_sort(t_stack stack)
 {
 	int	max;
-	int	i;
 	int	j;
 
 	while (stack.a_len)
 	{
 		max = get_max_position(stack);
-		i = stack.a_len - max;
 		j = -1;
 		printf("\n max %i\n", max);
-		/* if (max == stack.a_len - 1)
-			stack = rra(stack); */
+		 if (max == stack.a_len - 1)
+			stack = rra(stack); 
 		if (max == 0)
 			stack = do_operation(PB, stack);
 		else if (max <= stack.a_len / 2)
@@ -51,4 +49,4 @@ t_stack	complex_sort(t_stack stack)
 		test_print_stacks(stack);
 	}
 	return (stack);
-}
+} */

@@ -74,7 +74,9 @@ int	ft_print_hexa(unsigned int num, char format)
 		return (ret);
 	}
 	else
+	{
 		ft_print_hexadecimal(num, format);
 		ret += ft_hexa_len(num);
+	}
 	return (ret);
 }
