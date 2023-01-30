@@ -41,28 +41,3 @@ int	sort_five_aux(int n, t_stack stack)
 		return (1);
 	return (0);
 }
-
-t_stack	rra_pa_ra_ra(t_stack stack)
-{
-	stack = rra(stack);
-	stack = pa(stack);
-	stack = ra(stack);
-	stack = ra(stack);
-	return (stack);
-}
-
-t_stack	rra_pa_ra(t_stack stack)
-{
-	stack = rra(stack);
-	stack = pa(stack);
-	stack = ra(stack);
-	return (stack);
-}
-
-t_stack	ra_pa_rra(t_stack stack)
-{
-	stack = ra(stack);
-	stack = pa(stack);
-	stack = rra(stack);
-	return (stack);
-}

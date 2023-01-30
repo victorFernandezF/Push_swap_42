@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 19:12:09 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/30 10:37:46 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/30 17:42:24 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	test_print_stacks(t_stack stack)
 {
 	int		i;
 
-	ft_printf("\n 🔴---- TESTING PRINT ---- 🔴");
+	ft_printf("\n 🔴 ---- TESTING PRINT ---- 🔴");
 	i = -1;
 	ft_printf("\n    Stack_a ");
 	while (++i < stack.a_len)

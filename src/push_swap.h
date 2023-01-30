@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/30 12:36:06 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/30 19:16:27 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,6 @@ t_stack	sort_four_elements(t_stack stack);
 int		sort_three_aux(int a, int b, int c);
 int		sort_five_aux(int n, t_stack stack);
 t_stack	complex_sort(t_stack stack);
-t_stack	rra_pa_ra_ra(t_stack stack);
-t_stack	rra_pa_ra(t_stack stack);
-t_stack	ra_pa_rra(t_stack stack);
-t_stack	rra_rra_pa_ra_ra(t_stack stack);
 
 // ARRAY MOVES (file: array_management/array_moves_1.c ...)
 t_stack	del_first_and_move_rest_a(t_stack stack);
@@ -72,6 +68,7 @@ t_stack	add_one_to_first_and_move_rest_b(t_stack stack, int n);
 t_stack	add_one_to_last_and_move_rest_b(t_stack stack, int n);
 
 //	INSTRUCTIONS (file: instructions/intructions_1.c ...)
+t_stack	pack_of_instructions(char *pack, t_stack stack);
 t_stack	do_operation(char *op, t_stack stack);
 t_stack	sa(t_stack stack);
 t_stack	sb(t_stack stack);

@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 12:12:54 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/24 12:25:05 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/30 19:17:16 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,29 +58,47 @@ t_stack	rrr(t_stack stack)
 	return (stack);
 }
 
+t_stack	pack_of_instructions(char *pack, t_stack stack)
+{
+	char	**inst;
+	int		i;
+
+	i = 0;
+	inst = ft_split(pack, '_');
+	while (inst[i])
+	{
+		stack = do_operation(inst[i], stack);
+		free(inst[i]);
+		i++;
+	}
+	i = 0;
+	free(inst);
+	return (stack);
+}
+
 t_stack	do_operation(char *op, t_stack stack)
 {
-	if (ft_strncmp(op, "sa", 2) == 0)
+	if (ft_strncmp(op, "sa", 4) == 0)
 		stack = sa(stack);
-	if (ft_strncmp(op, "sb", 2) == 0)
+	else if (ft_strncmp(op, "sb", 4) == 0)
 		stack = sb(stack);
-	if (ft_strncmp(op, "ss", 2) == 0)
+	else if (ft_strncmp(op, "ss", 4) == 0)
 		stack = ss(stack);
-	if (ft_strncmp(op, "pa", 2) == 0)
+	else if (ft_strncmp(op, "pa", 4) == 0)
 		stack = pa(stack);
-	if (ft_strncmp(op, "pb", 2) == 0)
+	else if (ft_strncmp(op, "pb", 4) == 0)
 		stack = pb(stack);
-	if (ft_strncmp(op, "ra", 2) == 0)
+	else if (ft_strncmp(op, "ra", 4) == 0)
 		stack = ra(stack);
-	if (ft_strncmp(op, "rb", 2) == 0)
+	else if (ft_strncmp(op, "rb", 4) == 0)
 		stack = rb(stack);
-	if (ft_strncmp(op, "rr", 2) == 0)
+	else if (ft_strncmp(op, "rr", 4) == 0)
 		stack = rr(stack);
-	if (ft_strncmp(op, "rra", 3) == 0)
+	else if (ft_strncmp(op, "rra", 4) == 0)
 		stack = rra(stack);
-	if (ft_strncmp(op, "rrb", 3) == 0)
+	else if (ft_strncmp(op, "rrb", 4) == 0)
 		stack = rrb(stack);
-	if (ft_strncmp(op, "rrr", 3) == 0)
+	else if (ft_strncmp(op, "rrr", 4) == 0)
 		stack = rrr(stack);
 	return (stack);
 }
