@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/30 12:29:28 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/30 12:36:06 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	**args_handler(int argc, char **argv);
 //	CHECKS BEFORE START (file:checks_files/checks.c)
 int		is_sorted(int cant, int *nb);
 int		check_bad_input(char *input);
-int		check_int_limit(int cant, char **input);
+int		check_int_limit(int cant, int *numbers);
 int		check_duplicated_numbers(int cant, int *numbers);
 int		check_everything(int cant, char **argv, int *numbers);
 
