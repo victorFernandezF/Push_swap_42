@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 11:04:29 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/27 19:16:39 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/30 11:58:30 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_stack	del_first_and_move_rest_a(t_stack stack)
 	new = (int *)malloc((stack.a_len - 1) * sizeof(int));
 	if (!new)
 		ft_error_free(stack);
-	while (++i <= stack.a_len)
+	while (++i < stack.a_len)
 		new[j++] = stack.a[i];
 	stack.a_len -= 1;
 	free(stack.a);
@@ -73,7 +73,7 @@ t_stack	del_last_and_move_rest_a(t_stack stack)
 	if (!new)
 		ft_error_free(stack);
 	stack.a_len -= 1;
-	while (++i <= stack.a_len)
+	while (++i < stack.a_len)
 		new[j++] = stack.a[i];
 	free(stack.a);
 	stack.a = new;

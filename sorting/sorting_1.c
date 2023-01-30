@@ -84,29 +84,27 @@ t_stack	sort_four_elements(t_stack stack)
 
 t_stack	sort_five_elements(t_stack stack)
 {
-	int	i;
-
-	i = -1;
 	stack = pb(stack);
-	stack = pb(stack);
-	stack = sort_three_elements(stack);
-	while (++i < 2)
+	stack = sort_four_elements(stack);
+	if (sort_five_aux(stack.b[0], stack) == 1)
+		stack = pa(stack);
+	if (sort_five_aux(stack.b[0], stack) == 2)
 	{
-		if (sort_five_aux(stack.b[0], stack) == 1)
-		{
-			stack = pa(stack);
-			stack = ra(stack);
-		}
-		else if (sort_five_aux(stack.b[0], stack) == 2)
-			stack = ra_pa_rra(stack);
-		else if (sort_five_aux(stack.b[0], stack) == 3)
-			stack = rra_pa_ra_ra(stack);
-		else if (sort_five_aux(stack.b[0], stack) == 4)
-			stack = rra_pa_ra(stack);
-		else if (sort_five_aux(stack.b[0], stack) == 5)
-			stack = rra_rra_pa_ra_ra(stack);
-		else if (sort_five_aux(stack.b[0], stack) == 6)
-			stack = pa(stack);
+		stack = ra(stack);
+		stack = pa(stack);
+		stack = rra(stack);
+	}
+	if (sort_five_aux(stack.b[0], stack) == 3)
+	{
+		stack = rra_rra_pa_ra_ra(stack);
+		stack = ra(stack);
+	}
+	if (sort_five_aux(stack.b[0], stack) == 4)
+		stack = rra_pa_ra_ra(stack);
+	if (sort_five_aux(stack.b[0], stack) == 5)
+	{
+		stack = pa(stack);
+		stack = ra(stack);
 	}
 	return (stack);
 }
