@@ -6,7 +6,7 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 10:38:55 by victofer          #+#    #+#              #
-#    Updated: 2023/01/30 12:01:05 by victofer         ###   ########.fr        #
+#    Updated: 2023/01/30 12:25:05 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ LIBFT_PATH	:= ./libft/
 LIBFT_LIB	:= $(LIBFT_PATH)libft.a
 
 SRC			:=  src/main.c \
+				src/init_stack_data.c \
+				input_handler/args_handler.c \
 				checks_files/ckecks.c \
 				error_management/errors.c \
 				array_management/array_moves_1.c \
