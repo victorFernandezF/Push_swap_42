@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/30 19:16:27 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/31 18:34:41 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,6 @@ t_stack	rrr(t_stack stack);
 // SHOW LEAKS (DELETE BEFORE PRESENT)
 void	show_leaks(void);
 void	test_print_stacks(t_stack stack);
+int		get_min_pos(t_stack stack);
 
 #endif

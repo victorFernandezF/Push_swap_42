@@ -52,19 +52,19 @@ t_stack	sort_three_elements(t_stack stack)
 
 t_stack	sort_four_elements(t_stack stack)
 {
-	int	b;
+	int	min;
 
-	stack = pb(stack);
+	min = get_min_pos(stack);
+	if (min == 3)
+		stack = pack_of_instructions("rra_pb", stack);
+	else if (min == 2)
+		stack = pack_of_instructions("rra_rra_pb", stack);
+	else if (min == 1)
+		stack = pack_of_instructions("ra_pb", stack);
+	else if (min == 0)
+		stack = pack_of_instructions("pb", stack);
 	stack = sort_three_elements(stack);
-	b = stack.b[0];
-	if (b < stack.a[0])
-		stack = pa(stack);
-	if (b > stack.a[2])
-		stack = pack_of_instructions("pa_ra", stack);
-	if (b > stack.a[0] && b < stack.a[1])
-		stack = pack_of_instructions("ra_pa_rra", stack);
-	if (b > stack.a[1] && b < stack.a[2])
-		stack = pack_of_instructions("rra_pa_ra_ra", stack);
+	stack = pa(stack);
 	return (stack);
 }
 

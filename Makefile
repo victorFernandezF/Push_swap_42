@@ -6,7 +6,7 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 10:38:55 by victofer          #+#    #+#              #
-#    Updated: 2023/01/30 12:32:49 by victofer         ###   ########.fr        #
+#    Updated: 2023/01/31 18:16:16 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,11 +50,11 @@ test:  $(NAME)
 
 nice_text:
 	@echo "$(Y)"
-	@echo "PPPPPP  UU   UU  SSSSS  HH   HH          SSSSS  WW      WW   AAA   PPPPPP "
-	@echo "PP   PP UU   UU SS      HH   HH         SS      WW      WW  AAAAA  PP   PP "
-	@echo "PPPPPP  UU   UU  SSSSS  HHHHHHH          SSSSS  WW   W  WW AA   AA PPPPPP  "
-	@echo "PP      UU   UU      SS HH   HH              SS  WW WWW WW AAAAAAA PP      "
-	@echo "PP       UUUUU   SSSSS  HH   HH _______  SSSSS    WW   WW  AA   AA PP "
+	@echo "PPPPPP  UU   UU  SSSSS  HH   HH          SSSSS  WW     WW   AAA   PPPPPP "
+	@echo "PP   PP UU   UU SS      HH   HH         SS      WW     WW  AAAAA  PP   PP "
+	@echo "PPPPPP  UU   UU  SSSSS  HHHHHHH          SSSSS  WW  W  WW AA   AA PPPPPP  "
+	@echo "PP      UU   UU      SS HH   HH              SS WW WWW WW AAAAAAA PP      "
+	@echo "PP       UUUUU   SSSSS  HH   HH _______  SSSSS   WW   WW  AA   AA PP "
 
 
 
