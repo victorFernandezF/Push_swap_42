@@ -30,12 +30,26 @@ int	sort_three_aux(int a, int b, int c)
 int	get_min_pos(t_stack stack)
 {
 	int	i;
-	int	min_array;
+	int	min_stack;
 
-	min_array = min(stack.a, stack.a_len - 1);
+	min_stack = min(stack.a, stack.a_len - 1);
 	i = -1;
 	while (++i < stack.a_len)
-		if (stack.a[i] == min_array)
+		if (stack.a[i] == min_stack)
+			return (i);
+	return (0);
+}
+
+int	get_max_pos(t_stack stack)
+{
+	int	i;
+	int	max_stack;
+
+	i = -1;
+	max_stack = max(stack.a, stack.a_len);
+	printf("max_val %i",max_stack);
+	while (++i < stack.a_len)
+		if (stack.a[i] == max_stack)
 			return (i);
 	return (0);
 }
