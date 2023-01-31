@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/31 18:34:41 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/31 18:58:49 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ t_stack	sort_three_elements(t_stack stack);
 t_stack	sort_five_elements(t_stack stack);
 t_stack	sort_four_elements(t_stack stack);
 int		sort_three_aux(int a, int b, int c);
-int		sort_five_aux(int n, t_stack stack);
+int		get_min_pos(t_stack stack);
 t_stack	complex_sort(t_stack stack);
 
 // ARRAY MOVES (file: array_management/array_moves_1.c ...)
@@ -85,6 +85,5 @@ t_stack	rrr(t_stack stack);
 // SHOW LEAKS (DELETE BEFORE PRESENT)
 void	show_leaks(void);
 void	test_print_stacks(t_stack stack);
-int		get_min_pos(t_stack stack);
 
 #endif

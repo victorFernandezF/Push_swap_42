@@ -70,17 +70,20 @@ t_stack	sort_four_elements(t_stack stack)
 
 t_stack	sort_five_elements(t_stack stack)
 {
-	stack = pb(stack);
+	int	min;
+
+	min = get_min_pos(stack);
+	if (min == 4)
+		stack = pack_of_instructions("rra_pb", stack);
+	if (min == 3)
+		stack = pack_of_instructions("rra_rra_pb", stack);
+	else if (min == 2)
+		stack = pack_of_instructions("ra_ra_pb", stack);
+	else if (min == 1)
+		stack = pack_of_instructions("ra_pb", stack);
+	else if (min == 0)
+		stack = pack_of_instructions("pb", stack);
 	stack = sort_four_elements(stack);
-	if (sort_five_aux(stack.b[0], stack) == 1)
-		stack = pa(stack);
-	if (sort_five_aux(stack.b[0], stack) == 2)
-		stack = pack_of_instructions("ra_pa_rra", stack);
-	if (sort_five_aux(stack.b[0], stack) == 3)
-		stack = pack_of_instructions("rra_rra_pa_ra_ra_ra", stack);
-	if (sort_five_aux(stack.b[0], stack) == 4)
-		stack = pack_of_instructions("rra_pa_ra_ra", stack);
-	if (sort_five_aux(stack.b[0], stack) == 5)
-		stack = pack_of_instructions("pa_ra", stack);
+	stack = pa(stack);
 	return (stack);
 }

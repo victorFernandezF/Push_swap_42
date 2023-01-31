@@ -27,17 +27,15 @@ int	sort_three_aux(int a, int b, int c)
 	return (FALSE);
 }
 
-int	sort_five_aux(int n, t_stack stack)
-{	
-	if (n > stack.a[0] && n < stack.a[1])
-		return (2);
-	if (n > stack.a[1] && n < stack.a[2])
-		return (3);
-	if (n > stack.a[2] && n < stack.a[3])
-		return (4);
-	if (n > stack.a[3])
-		return (5);
-	if (n < stack.a[0])
-		return (1);
+int	get_min_pos(t_stack stack)
+{
+	int	i;
+	int	min_array;
+
+	min_array = min(stack.a, stack.a_len - 1);
+	i = -1;
+	while (++i < stack.a_len)
+		if (stack.a[i] == min_array)
+			return (i);
 	return (0);
 }
