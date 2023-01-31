@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:41:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/27 13:54:32 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/31 12:46:12 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 // Shows 'Error' message and call free function
 void	ft_error_free(t_stack stack)
 {
-	ft_printf("Error\n");
+	ft_putstr_fd("Error\n", 2);
 	free_stacks(stack);
 	exit(-1);
 }
 
 void	ft_error_free_array(int *nb)
 {
-	ft_printf("Error\n");
+	ft_putstr_fd("Error\n", 2);
 	free(nb);
 	exit(-1);
 }
@@ -55,6 +55,6 @@ void	free_exit(int *nb)
 // Shows error message and exit.
 void	ft_error(void)
 {
-	ft_printf("Error\n");
+	ft_putstr_fd("Error\n", 2);
 	exit(-1);
 }

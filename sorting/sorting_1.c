@@ -56,7 +56,6 @@ t_stack	sort_four_elements(t_stack stack)
 
 	stack = pb(stack);
 	stack = sort_three_elements(stack);
-	test_print_stacks(stack);
 	b = stack.b[0];
 	if (b < stack.a[0])
 		stack = pa(stack);
