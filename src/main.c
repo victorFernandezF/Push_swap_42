@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:48:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/31 18:27:51 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/31 19:19:39 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char **argv)
 	free_nbrs(nbrs);
 	check_everything(stack.a_len, argv, stack.a);
 	stack = start_sorting(stack);
-	test_print_stacks(stack);
+	//test_print_stacks(stack);
 	free_stacks(stack);
 	//atexit(show_leaks);
 	return (0);

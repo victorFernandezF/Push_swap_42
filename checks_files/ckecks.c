@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:48:56 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/30 12:55:10 by victofer         ###   ########.fr       */
+/*   Updated: 2023/01/31 19:18:48 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	check_bad_input(char *input)
 
 	i = -1;
 	while (input[++i])
-		if (ft_isalpha(input[i]))
+		if (!ft_isdigit(input[i]) && input[i] != '-')
 			return (TRUE);
 	return (FALSE);
 }
@@ -87,6 +87,6 @@ int	check_everything(int cant, char **argv, int *numbers)
 	if (check_duplicated_numbers(cant, numbers))
 		ft_error_free_array(numbers);
 	if (is_sorted(cant, numbers))
-		free_exit(numbers);
+		ft_error_free_array(numbers);//free_exit(numbers);
 	return (0);
 }
