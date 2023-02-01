@@ -6,7 +6,7 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 10:38:55 by victofer          #+#    #+#              #
-#    Updated: 2023/01/31 18:59:27 by victofer         ###   ########.fr        #
+#    Updated: 2023/02/01 10:53:45 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,14 +67,14 @@ makelibs:
 	@echo ""
 	@echo "$(Y)0------ COMPILING LIBS -------0$(E)"
 	@make -C $(LIBFT_PATH) all
-	@echo "$(Y)|       $(G)Libft compiled 😀     $(Y)|"
+	@echo "$(Y)|       $(G)Libft compiled        $(Y)|"
 	@echo "$(Y)0-----------------------------0 $(E)"
 	@echo "$(E)"
 
 $(NAME): $(OBJECTS)
 	@$(CC) $(CFLAGS) $(OBJECTS) $(MLX_LIB) libft/libft.a -o push_swap 
 	@echo "   $(Y)0-----------------------0"
-	@echo "   $(Y)|$(G)  push_swap Created 😁$(Y) |"
+	@echo "   $(Y)|$(G)  push_swap Created   $(Y) |"
 	@echo "   $(Y)0-----------------------0"
 	@echo "$(E)"
 
@@ -83,7 +83,7 @@ clean:
 	@rm -rf $(OBJECTS)
 	@echo ""
 	@echo "$(Y)0------------------------0"
-	@echo "$(Y)|$(M)  Everything cleaned 👍$(Y) |"
+	@echo "$(Y)|$(M)  Everything cleaned   $(Y) |"
 	@echo "$(Y)0------------------------0"
 	@echo "$(E)"
 

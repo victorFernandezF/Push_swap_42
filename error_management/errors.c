@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:41:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/31 12:46:12 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/01 10:54:11 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	free_nbrs(char **nbrs)
 void	free_stacks(t_stack stack)
 {
 	if (stack.a)
-		free (stack.a);
+		free(stack.a);
 	if (stack.b)
 		free(stack.b);
 }
