@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/01 12:04:01 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/01 13:00:15 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ t_stack	sort_four_elements(t_stack stack);
 t_stack	medium_sort(t_stack stack);
 int		sort_three_aux(int a, int b, int c);
 int		get_min_pos(t_stack stack);
+t_stack	smart_rotate(int min, t_stack stack);
 int		get_max_pos(t_stack stack);
 t_stack	complex_sort(t_stack stack);
 
