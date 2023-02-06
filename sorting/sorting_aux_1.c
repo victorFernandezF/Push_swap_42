@@ -12,6 +12,7 @@
 
 #include "../src/push_swap.h"
 
+// Auxiliar function with the conditions to sort 3
 int	sort_three_aux(int a, int b, int c)
 {
 	if ((a < b) && (b > c) && (c < a))
@@ -27,6 +28,7 @@ int	sort_three_aux(int a, int b, int c)
 	return (FALSE);
 }
 
+// Return the array postition of the min number of the array.
 int	get_min_pos(t_stack stack)
 {
 	int	i;
@@ -40,6 +42,7 @@ int	get_min_pos(t_stack stack)
 	return (0);
 }
 
+// Return the array postition of the max number of the array.
 int	get_max_pos(t_stack stack)
 {
 	int	i;
@@ -47,7 +50,6 @@ int	get_max_pos(t_stack stack)
 
 	i = -1;
 	max_stack = max(stack.a, stack.a_len);
-	printf("max_val %i",max_stack);
 	while (++i < stack.a_len)
 		if (stack.a[i] == max_stack)
 			return (i);

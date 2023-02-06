@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 11:04:29 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/30 11:59:34 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/06 12:12:25 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_stack	del_first_and_move_rest_b(t_stack stack)
 	new = (int *)malloc((stack.b_len - 1) * sizeof(int));
 	if (!new)
 		ft_error_free(stack);
-	while (++i <= stack.b_len)
+	while (++i < stack.b_len)
 		new[j++] = stack.b[i];
 	stack.b_len -= 1;
 	free(stack.b);

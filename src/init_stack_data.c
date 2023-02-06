@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 12:11:28 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/30 12:21:49 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/06 11:20:00 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	init_stack(t_stack *stack)
 {
 	stack->b = (int *)malloc(1 * sizeof(int));
 	stack->a_len = 0;
+	stack->pb_count = 0;
 	stack->b_len = 0;
 	stack->moves = 0;
 }

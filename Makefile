@@ -6,7 +6,7 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 10:38:55 by victofer          #+#    #+#              #
-#    Updated: 2023/02/01 10:53:45 by victofer         ###   ########.fr        #
+#    Updated: 2023/02/06 10:59:06 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,9 +54,6 @@ nice_text:
 	@echo "PPPPPP  UU   UU  SSSSS  HHHHHHH          SSSSS  WW  W  WW AA   AA PPPPPP  "
 	@echo "PP      UU   UU      SS HH   HH              SS WW WWW WW AAAAAAA PP      "
 	@echo "PP       UUUUU   SSSSS  HH   HH _______  SSSSS   WW   WW  AA   AA PP "
-
-
-
 	
 	@echo "$(E)"
 

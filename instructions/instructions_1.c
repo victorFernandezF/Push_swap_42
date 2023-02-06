@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 12:44:23 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/30 18:22:53 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/06 11:37:22 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ t_stack	pb(t_stack stack)
 	stack = add_one_to_first_and_move_rest_b(stack, aux);
 	stack = del_first_and_move_rest_a(stack);
 	stack.moves += 1;
+	stack.pb_count += 1;
 	ft_printf("pb\n");
 	return (stack);
 }

@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:41:13 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/30 12:55:21 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/06 11:19:44 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@
 # define RRB  "rrb"
 # define RRR  "rrr"
 
-
 // ----------- E N U M S ---------------
 	// enum with TRUE and FALSE (boolean)
 enum e_bool
@@ -66,6 +65,7 @@ typedef struct s_stack
 	int		a_len;
 	int		b_len;
 	int		moves;
+	int		pb_count;
 	t_free	free;		
 }			t_stack;
 
