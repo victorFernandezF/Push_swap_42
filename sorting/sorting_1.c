@@ -12,7 +12,10 @@
 
 #include "../src/push_swap.h"
 
-// Function that evaluate how to aproach the sorting.
+/*
+* Evaluates the number of elements and
+* call the functions for each case.
+*/
 t_stack	start_sorting(t_stack stack)
 {
 	if (stack.a_len == 2)
@@ -30,6 +33,7 @@ t_stack	start_sorting(t_stack stack)
 	return (stack);
 }
 
+// Sorts two elements.
 t_stack	sort_two_elements(t_stack stack)
 {
 	if (stack.a[0] > stack.a[1])
@@ -37,6 +41,7 @@ t_stack	sort_two_elements(t_stack stack)
 	return (stack);
 }
 
+// Sorts three elements
 t_stack	sort_three_elements(t_stack stack)
 {
 	if (sort_three_aux(stack.a[0], stack.a[1], stack.a[2]) == 1)
@@ -52,6 +57,7 @@ t_stack	sort_three_elements(t_stack stack)
 	return (stack);
 }
 
+// Sorts four elements
 t_stack	sort_four_elements(t_stack stack)
 {
 	int	min;
@@ -70,6 +76,7 @@ t_stack	sort_four_elements(t_stack stack)
 	return (stack);
 }
 
+// Sorts five elements
 t_stack	sort_five_elements(t_stack stack)
 {
 	int	min;

@@ -6,12 +6,13 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 10:52:10 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/06 12:47:21 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/06 13:36:07 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/push_swap.h"
 
+// Calculates the easier way to bring min element to the top
 t_stack	smart_rotate(int min, t_stack stack)
 {
 	int	moves;
@@ -34,6 +35,7 @@ t_stack	smart_rotate(int min, t_stack stack)
 	return (stack);
 }
 
+// Sorts elements between 5 and 100 (both not included)
 t_stack	medium_sort(t_stack stack)
 {
 	int	i;
@@ -59,6 +61,7 @@ t_stack	medium_sort(t_stack stack)
 	return (stack);
 }
 
+// Sorts 100 elements (NOT WORKING YET)
 t_stack	sort_100_elements(t_stack stack)
 {
 	ft_printf("NO");

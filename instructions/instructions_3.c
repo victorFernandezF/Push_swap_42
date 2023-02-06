@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 12:12:54 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/30 19:17:16 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/06 13:39:06 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ t_stack	rrr(t_stack stack)
 	return (stack);
 }
 
+// Splits the string with the instructions and execute them.
 t_stack	pack_of_instructions(char *pack, t_stack stack)
 {
 	char	**inst;
@@ -76,6 +77,7 @@ t_stack	pack_of_instructions(char *pack, t_stack stack)
 	return (stack);
 }
 
+// Evaluates the instruction received and execute it.
 t_stack	do_operation(char *op, t_stack stack)
 {
 	if (ft_strncmp(op, "sa", 4) == 0)

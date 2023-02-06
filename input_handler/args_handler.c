@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 12:09:54 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/06 12:59:55 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/06 13:30:15 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	*fill_array(int cant, char **nbrs)
 	return (numbers);
 }
 
+// Returns an array of ints whith the numbers given by user.
 char	**args_handler(int argc, char **argv)
 {
 	int		i;

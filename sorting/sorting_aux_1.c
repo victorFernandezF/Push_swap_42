@@ -28,7 +28,7 @@ int	sort_three_aux(int a, int b, int c)
 	return (FALSE);
 }
 
-// Return the array postition of the min number of the array.
+// Returns the array postition of the min number of the array.
 int	get_min_pos(t_stack stack)
 {
 	int	i;
@@ -42,7 +42,7 @@ int	get_min_pos(t_stack stack)
 	return (0);
 }
 
-// Return the array postition of the max number of the array.
+// Returns the array postition of the max number of the array.
 int	get_max_pos(t_stack stack)
 {
 	int	i;

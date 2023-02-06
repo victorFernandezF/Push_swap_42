@@ -6,13 +6,13 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:41:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/06 13:17:10 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/06 13:24:59 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/push_swap.h"
 
-// Shows 'Error' message and call free function
+// Prints 'Error' and call free_stack function
 void	ft_error_free(t_stack stack)
 {
 	ft_putstr_fd("Error\n", 2);
@@ -20,6 +20,7 @@ void	ft_error_free(t_stack stack)
 	exit(-1);
 }
 
+// Prints 'Error' and free array of ints
 void	ft_error_free_array(int *nb)
 {
 	ft_putstr_fd("Error\n", 2);
@@ -27,6 +28,9 @@ void	ft_error_free_array(int *nb)
 	exit(-1);
 }
 
+/*
+* Frees every elements from array of arrays and free the array itself 
+*/
 void	free_nbrs(char **nbrs)
 {
 	int	i;
@@ -37,6 +41,7 @@ void	free_nbrs(char **nbrs)
 	free(nbrs);
 }
 
+// If stack a or stack b are not empty, frees them
 void	free_stacks(t_stack stack)
 {
 	if (stack.a)
@@ -45,7 +50,7 @@ void	free_stacks(t_stack stack)
 		free(stack.b);
 }
 
-// Shows error message and exit.
+// Print 'Error' and exit.
 void	ft_error(void)
 {
 	ft_putstr_fd("Error\n", 2);

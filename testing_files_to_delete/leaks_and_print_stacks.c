@@ -6,12 +6,13 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 19:12:09 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/30 17:42:24 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/06 13:39:44 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/push_swap.h"
 
+// Show leakys (need to be deleted)
 void	show_leaks(void)
 {
 	system("leaks -q push_swap");

@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:48:56 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/06 12:58:58 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/06 13:30:56 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	check_duplicated_numbers(int cant, int *numbers)
 	return (FALSE);
 }
 
-// Checks if user inputs the numbers already sorted.
+// Checks if user gave the numbers already sorted.
 int	is_sorted(int cant, int *nb)
 {
 	int	i;
