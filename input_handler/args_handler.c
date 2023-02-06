@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 12:09:54 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/30 12:24:12 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/06 12:59:55 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	*fill_array(int cant, char **nbrs)
 			ft_error_free_array(numbers);
 		numbers[i] = ft_atoi(nbrs[i]);
 		i++;
+		j++;
 	}
 	return (numbers);
 }

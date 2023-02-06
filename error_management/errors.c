@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:41:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/01 10:54:11 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/06 13:17:10 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,6 @@ void	free_stacks(t_stack stack)
 		free(stack.a);
 	if (stack.b)
 		free(stack.b);
-}
-
-// Free array and exit
-void	free_exit(int *nb)
-{
-	free(nb);
-	exit(0);
 }
 
 // Shows error message and exit.
