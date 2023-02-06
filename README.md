@@ -22,6 +22,13 @@
 ![Result](https://img.shields.io/badge/RESULT-IN_PROGRESS-inactive)
 <!-- ![result](https://img.shields.io/badge/RESULTADO-125%25-green) -->
 
+#### NUMERO DE INTRUCCIONES NECESARIAS PARA ORDENAR (AHORA MISMO)
+- 3 numbers -> max 3  instructions.
+- 5 numbers -> max 10 instructions.
+- 100 numbers ->  1500 instructions.
+- 500 numbers -> 32000 instructions.
+
+
 #### CLONAR REPOSITORIO
 ~~~~~
 git clone https://github.com/victorFernandezF/Push_swap_42.git
