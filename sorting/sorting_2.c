@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 10:52:10 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/06 13:36:07 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/06 19:33:13 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,81 @@ t_stack	medium_sort(t_stack stack)
 	return (stack);
 }
 
+int	get_first(t_stack stack)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (++i < stack.a_len)
+	{
+		j = 0;
+		while (j < 20)
+		{
+			if (stack.a[i] == j)
+			{		
+				return (i);
+			}
+			j++;
+		}
+	}
+	return (-1);
+}
+
+int	get_last(t_stack stack)
+{
+	int	i;
+	int	j;
+
+	i = stack.a_len;
+	while (i--)
+	{
+		j = 0;
+		while (j < 20)
+		{
+			if (stack.a[i] == j)
+			{		
+				return (i);
+			}
+			j++;
+		}
+	}
+	return (-1);
+}
+
+t_stack	calculate_move(t_stack stack, int first, int last)
+{
+	int	mid;
+	int	i;
+
+	i = -1;
+	if (first == 0)
+	{
+		stack = pb(stack);
+		return (stack);
+	}
+	if (first == stack.a_len)
+	{
+		stack = rra(stack);
+		stack = pb(stack);
+		return (stack);
+	}
+	mid = stack.a_len / 2;
+	if (mid - first > stack.a_len - mid)
+		while (++i < mid - first)
+			stack = ra(stack);
+	else
+		while (++i < stack.a_len - last)
+			stack = rra(stack);
+	return (stack);
+}
+
 // Sorts 100 elements (NOT WORKING YET)
 t_stack	sort_100_elements(t_stack stack)
 {
-	ft_printf("NO");
+	stack = chunck(stack, 0, 19);
+/* 	stack = chunck(stack, 20, 49);
+	stack = chunck(stack, 50, 79);
+	stack = chunck(stack, 80, 99); */
 	return (stack);
 }

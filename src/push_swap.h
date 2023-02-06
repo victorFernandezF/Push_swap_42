@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/06 13:37:05 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/06 19:29:54 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,11 @@ t_stack	rrr(t_stack stack);
 
 void	show_leaks(void);
 void	test_print_stacks(t_stack stack);
+int		get_first(t_stack stack);
+int		get_last(t_stack stack);
+t_stack	calculate_move(t_stack stack, int first, int last);
+t_stack	chunck(t_stack stack, int i, int len);
+
+
 
 #endif
