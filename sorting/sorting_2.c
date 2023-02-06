@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 10:52:10 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/06 12:13:48 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/06 12:23:06 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ t_stack	medium_sort(t_stack stack)
 	int	limit;
 	int	min;
 
- 	limit = stack.a_len - 5;
+	limit = stack.a_len - 5;
 	i = 0;
 	while (i < limit)
 	{
@@ -49,13 +49,12 @@ t_stack	medium_sort(t_stack stack)
 		stack = pb(stack);
 		i++;
 	}
-	//printf("\n *** pbs -> %i\n", limit);
 	stack = sort_five_elements(stack);
 	i = 0;
-	 while (i < limit)
-	 {
+	while (i < limit)
+	{
 		stack = pa(stack);
 		i++;
-	 }
+	}
 	return (stack);
 }
