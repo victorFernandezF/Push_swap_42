@@ -23,8 +23,10 @@ t_stack	start_sorting(t_stack stack)
 		stack = sort_four_elements(stack);
 	if (stack.a_len == 5)
 		stack = sort_five_elements(stack);
-	if (stack.a_len > 5 && stack.a_len <= 100)
+	if (stack.a_len > 5 && stack.a_len < 100)
 		stack = medium_sort(stack);
+	if (stack.a_len == 100)
+		stack = sort_100_elements(stack);
 	return (stack);
 }
 

@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 10:52:10 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/06 12:23:06 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/06 12:47:21 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,11 @@ t_stack	medium_sort(t_stack stack)
 		stack = pa(stack);
 		i++;
 	}
+	return (stack);
+}
+
+t_stack	sort_100_elements(t_stack stack)
+{
+	ft_printf("NO");
 	return (stack);
 }
