@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 10:52:10 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/06 19:33:13 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/07 12:45:20 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ t_stack	medium_sort(t_stack stack)
 	return (stack);
 }
 
-int	get_first(t_stack stack)
+int	get_first(t_stack stack, int f, int l)
 {
 	int	i;
 	int	j;
@@ -69,8 +69,8 @@ int	get_first(t_stack stack)
 	i = -1;
 	while (++i < stack.a_len)
 	{
-		j = 0;
-		while (j < 20)
+		j = f;
+		while (j <= l)
 		{
 			if (stack.a[i] == j)
 			{		
@@ -82,7 +82,7 @@ int	get_first(t_stack stack)
 	return (-1);
 }
 
-int	get_last(t_stack stack)
+int	get_last(t_stack stack, int f, int l)
 {
 	int	i;
 	int	j;
@@ -90,8 +90,8 @@ int	get_last(t_stack stack)
 	i = stack.a_len;
 	while (i--)
 	{
-		j = 0;
-		while (j < 20)
+		j = f;
+		while (j <= l)
 		{
 			if (stack.a[i] == j)
 			{		
@@ -107,17 +107,18 @@ t_stack	calculate_move(t_stack stack, int first, int last)
 {
 	int	mid;
 	int	i;
+	printf("\nfirst %i last %i\n", stack.a[first], stack.a[last]);
+	printf("first_p %i last_p %i\n", first, last);
+	test_print_stacks(stack);
 
 	i = -1;
 	if (first == 0)
 	{
-		stack = pb(stack);
 		return (stack);
 	}
-	if (first == stack.a_len)
+	if (last == stack.a_len)
 	{
 		stack = rra(stack);
-		stack = pb(stack);
 		return (stack);
 	}
 	mid = stack.a_len / 2;
@@ -133,9 +134,22 @@ t_stack	calculate_move(t_stack stack, int first, int last)
 // Sorts 100 elements (NOT WORKING YET)
 t_stack	sort_100_elements(t_stack stack)
 {
-	stack = chunck(stack, 0, 19);
-/* 	stack = chunck(stack, 20, 49);
-	stack = chunck(stack, 50, 79);
-	stack = chunck(stack, 80, 99); */
+	int	i;
+
+	i = -1;
+	//test_print_stacks(stack);
+	stack = chunck(stack, 1, 20);
+	stack = sort_stack_b(stack);
+	stack = chunck(stack, 20, 40);
+	stack = sort_stack_b(stack);
+	stack = chunck(stack, 40, 50);
+	stack = sort_stack_b(stack);
+/*	stack = chunck(stack, 60, 80);
+	stack = sort_stack_b(stack);
+	stack = chunck(stack, 80, 101);
+	stack = sort_stack_b(stack);*/
+	/* while (i++ < 99)
+		stack = pa(stack); */
+
 	return (stack);
 }

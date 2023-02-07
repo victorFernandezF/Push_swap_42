@@ -6,7 +6,7 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 10:38:55 by victofer          #+#    #+#              #
-#    Updated: 2023/02/06 19:31:21 by victofer         ###   ########.fr        #
+#    Updated: 2023/02/07 10:39:08 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRC			:=  src/main.c \
 				instructions/instructions_3.c \
 				sorting/sorting_1.c \
 				sorting/sorting_2.c \
+				sorting/sort_stack_b.c \
 				sorting/sorting_aux_1.c \
 				testing_files_to_delete/leaks_and_print_stacks.c \
 				sorting/chunks_1.c

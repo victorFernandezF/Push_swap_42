@@ -55,3 +55,4 @@ int	get_max_pos(t_stack stack)
 			return (i);
 	return (0);
 }
+

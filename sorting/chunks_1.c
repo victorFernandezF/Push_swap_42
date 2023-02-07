@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:26:45 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/06 19:32:54 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/07 12:40:34 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,17 @@ t_stack	chunck(t_stack stack, int i, int len)
 {
 	int	first;
 	int	last;
+	int	ini;
 
-	while (i++ < len)
+	ini = i;
+	i = 0;
+	while (i < 20)
 	{
-		first = get_first(stack);
-		last = get_last(stack);
-		test_print_stacks(stack);
+		first = get_first(stack, ini, len);
+		last = get_last(stack, ini, len);
 		stack = calculate_move(stack, first, last);
 		stack = pb(stack);
-		test_print_stacks(stack);
+		i++;
 	}
 	return (stack);
 }
