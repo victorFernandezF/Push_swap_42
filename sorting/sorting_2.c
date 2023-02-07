@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 10:52:10 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/07 19:16:51 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/07 19:25:37 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,31 +101,6 @@ int	get_last(t_stack stack, int f, int l)
 		}
 	}
 	return (-1);
-}
-
-t_stack	calculate_move(t_stack stack, int first, int last)
-{
-	int	mid;
-	int	i;
-
-	mid = stack.a_len / 2;
-	i = -1;
-	if (first == 0)
-	{
-		return (stack);
-	}
-	if (last == stack.a_len)
-	{
-		stack = rra(stack);
-		return (stack);
-	}
-	if (first < stack.a_len - last)
-		while (++i < first)
-			stack = ra(stack);
-	else
-		while (++i < stack.a_len - last)
-			stack = rra(stack);
-	return (stack);
 }
 
 // Sorts 100 elements (NOT WORKING YET)
