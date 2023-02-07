@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 10:52:10 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/07 12:45:20 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/07 19:16:51 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,10 +107,8 @@ t_stack	calculate_move(t_stack stack, int first, int last)
 {
 	int	mid;
 	int	i;
-	printf("\nfirst %i last %i\n", stack.a[first], stack.a[last]);
-	printf("first_p %i last_p %i\n", first, last);
-	test_print_stacks(stack);
 
+	mid = stack.a_len / 2;
 	i = -1;
 	if (first == 0)
 	{
@@ -121,9 +119,8 @@ t_stack	calculate_move(t_stack stack, int first, int last)
 		stack = rra(stack);
 		return (stack);
 	}
-	mid = stack.a_len / 2;
-	if (mid - first > stack.a_len - mid)
-		while (++i < mid - first)
+	if (first < stack.a_len - last)
+		while (++i < first)
 			stack = ra(stack);
 	else
 		while (++i < stack.a_len - last)
@@ -136,20 +133,25 @@ t_stack	sort_100_elements(t_stack stack)
 {
 	int	i;
 
-	i = -1;
-	//test_print_stacks(stack);
-	stack = chunck(stack, 1, 20);
+	i = 0;
+	stack = chunck(stack, 0, 20);
 	stack = sort_stack_b(stack);
+	stack.chunk_len = 20;
 	stack = chunck(stack, 20, 40);
 	stack = sort_stack_b(stack);
-	stack = chunck(stack, 40, 50);
+	stack.chunk_len = 20;
+	stack = chunck(stack, 40, 60);
 	stack = sort_stack_b(stack);
-/*	stack = chunck(stack, 60, 80);
+	stack.chunk_len = 20;
+	stack = chunck(stack, 60, 80);
 	stack = sort_stack_b(stack);
-	stack = chunck(stack, 80, 101);
-	stack = sort_stack_b(stack);*/
-	/* while (i++ < 99)
-		stack = pa(stack); */
-
+	stack.chunk_len = 20;
+	stack = chunck(stack, 80, 98);
+	stack = sort_stack_b(stack);
+	while (i < 100)
+	{
+		stack = pa(stack);
+		i++;
+	}
 	return (stack);
 }
