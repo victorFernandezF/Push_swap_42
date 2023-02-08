@@ -2,7 +2,7 @@
 # :1234:  PUSH_SWAP [:es:]
 
 #### Resumen 
-> Este proyecto involucra ordenar datos en un stack, con un conjunto limitado de instrucciones en el número más pequeño de movimientos. Para hacerlo posible, tendrás que manipular varios algoritmos de ordenación y elegir la solución más apropiada para un ordenamiento óptimo. 
+> Este proyecto involucra ordenar datos en un stack, con un conjunto limitado de instrucciones en el número más pequeño de movimientos. Para hacerlo posible, tendrás que manipular varios algoritmos de ordenación y elegir la solución más apropiada para un ordenamiento óptimo.    
 
 
 ### INFO
@@ -25,7 +25,7 @@
 #### NUMERO DE INTRUCCIONES NECESARIAS PARA ORDENAR (AHORA MISMO)
 - 3 numbers -> max 3  instructions.
 - 5 numbers -> max 10 instructions.
-- 100 numbers ->  1500 instructions.
+- 100 numbers ->  942 instructions.
 - 500 numbers -> 32000 instructions.
 
 
