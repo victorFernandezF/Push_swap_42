@@ -42,6 +42,33 @@ int	get_min_pos(t_stack stack)
 	return (0);
 }
 
+// Returns the array postition of the min number of the array.
+int	get_min_pos_aux(t_stack stack)
+{
+	int	i;
+	int	min_stack;
+
+	min_stack = min(stack.aux, stack.aux_len - 1);
+	i = -1;
+	while (++i < stack.aux_len)
+		if (stack.aux[i] == min_stack)
+			return (i);
+	return (0);
+}
+
+int	get_next_min_pos_aux(t_stack stack, int j)
+{
+	int	i;
+	int	min_stack;
+
+	min_stack = min(stack.aux, stack.aux_len - 1);
+	i = -1;
+	while (++i < stack.aux_len)
+		if (stack.aux[i] == min_stack && stack.aux[i] != j)
+			return (i);
+	return (0);
+}
+
 // Returns the array postition of the max number of the array.
 int	get_max_pos(t_stack stack)
 {

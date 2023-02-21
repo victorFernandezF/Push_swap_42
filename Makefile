@@ -6,7 +6,7 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 10:38:55 by victofer          #+#    #+#              #
-#    Updated: 2023/02/07 10:39:08 by victofer         ###   ########.fr        #
+#    Updated: 2023/02/21 11:59:39 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,9 @@ SRC			:=  src/main.c \
 				sorting/sort_stack_b.c \
 				sorting/sorting_aux_1.c \
 				testing_files_to_delete/leaks_and_print_stacks.c \
-				sorting/chunks_1.c
+				sorting/chunks_1.c \
+				instructions/instructions_aux.c \
+				sorting/simplifier.c
 
 OBJECTS		:= $(SRC:.c=.o)
 

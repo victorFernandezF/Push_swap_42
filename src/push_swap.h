@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/07 11:21:49 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/21 12:09:50 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,16 @@ t_stack	smart_rotate_b(int min, t_stack stack);
 t_stack	sort_stack_b(t_stack stack);
 int		get_min_pos_stack_b_pos(t_stack stack, int i);
 int		get_max_pos_stack_b(t_stack stack);
+
+t_stack	init_aux_array(t_stack stack);
+t_stack	simplify(t_stack stack);
+int		get_min_pos_aux(t_stack stack);
+int		get_next_min_pos_aux(t_stack stack, int j);
+t_stack	sort_aux(t_stack stack);
+t_stack	pb_temp(t_stack stack);
+t_stack	ra_temp(t_stack stack);
+t_stack	rra_temp(t_stack stack);
+
 
 
 
