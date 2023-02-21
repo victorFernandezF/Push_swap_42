@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:26:45 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/21 12:10:48 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/21 18:34:51 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,10 @@ t_stack	chunck(t_stack stack, int i, int len)
 	ini = i;
 	i = 0;
 	while (stack.chunk_len != 0)
-	//while (i < 2)
 	{
 		first = get_first(stack, ini, len);
 		last = get_last(stack, ini, len);
-		printf("\n%i %i\n", stack.a[first], stack.a[last]);
+		//printf("\n%i %i\n", stack.a[first], stack.a[last]);
 		stack = calculate_move(stack, first, last);
 		stack = pb(stack);
 		stack = pb_temp(stack);

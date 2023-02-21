@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 09:48:00 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/21 12:29:16 by victofer         ###   ########.fr       */
+/*   Updated: 2023/02/21 18:33:10 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ t_stack	sort_aux(t_stack stack)
 	int		tmp;
 
 	i = 0;
-
 	while (1)
 	{
 		if (is_sorted(stack.aux_len, stack.aux) == 1)
@@ -72,12 +71,12 @@ t_stack	simplify(t_stack stack)
 		j = -1;
 		while (++j < stack.aux_len)
 		{
-			printf("\n %i\n", stack.aux[i]);
-			break ;
+			//printf("\n stack.temp[j] %i  = stack.aux[i]%i\n", stack.temp[j], stack.aux[i]);
 			if (stack.temp[j] == stack.aux[i])
 			{
-				stack.temp[j] = x;
-				x++;
+				//printf(RED"\n stack.tmp[j] %i  = i%i\n"WHITE, stack.temp[j], i);
+				stack.temp[j] = i;
+				break ;
 			}
 		}
 	}
