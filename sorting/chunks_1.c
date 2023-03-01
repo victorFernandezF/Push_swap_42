@@ -6,12 +6,16 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:26:45 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/01 12:52:23 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/01 13:58:59 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/push_swap.h"
 
+/*
+** Calculates which number (first & last) cost less to bring it to
+** the top and make the cheaper move. At the end stack is ready to pb.
+*/
 t_stack	calculate_move(t_stack stack, int first, int last)
 {
 	int	mid;
@@ -37,6 +41,10 @@ t_stack	calculate_move(t_stack stack, int first, int last)
 	return (stack);
 }
 
+/*
+** Takes all numbers included between [i and len] and put them in
+** stack b trying to find the cheapest way.  
+*/
 t_stack	chunck(t_stack stack, int i, int len)
 {
 	int	first;
