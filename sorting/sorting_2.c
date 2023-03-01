@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 10:52:10 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/21 18:57:43 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/01 13:03:46 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,12 @@ int	get_first(t_stack stack, int f, int l)
 	int	j;
 
 	i = -1;
-	while (++i < stack.aux_len)
+	while (++i < stack.a_len)
 	{
 		j = f;
 		while (j <= l)
 		{
-			if (stack.temp[i] == j)
+			if (stack.a[i] == j)
 			{		
 				return (i);
 			}
@@ -87,13 +87,13 @@ int	get_last(t_stack stack, int f, int l)
 	int	i;
 	int	j;
 
-	i = stack.aux_len;
+	i = stack.a_len;
 	while (i--)
 	{
 		j = f;
 		while (j <= l)
 		{
-			if (stack.temp[i] == j)
+			if (stack.a[i] == j)
 			{		
 				return (i);
 			}
@@ -108,15 +108,16 @@ t_stack	sort_100_elements(t_stack stack)
 {
 	int	i;
 
+	i = 0;
 	stack = init_aux_array(stack);
 	stack = sort_aux(stack);
 	stack = simplify(stack);
+	stack.a = stack.temp;
 	i = 0;
-	test_print_stacks(stack);
-	stack = chunck(stack, 0, stack.a_len / 4);
+	stack = chunck(stack, 0, 20);
 	stack = sort_stack_b(stack);
-/*	stack.chunk_len = 20;
-	stack = chunck(stack, 21, 40);
+	stack.chunk_len = 20;
+	stack = chunck(stack, 20, 40);
 	stack = sort_stack_b(stack);
 	stack.chunk_len = 20;
 	stack = chunck(stack, 40, 60);
@@ -127,11 +128,10 @@ t_stack	sort_100_elements(t_stack stack)
 	stack.chunk_len = 20;
 	stack = chunck(stack, 80, 100);
 	stack = sort_stack_b(stack);
-
 	while (i < 100)
 	{
 		stack = pa(stack);
 		i++;
-	} */
+	}
 	return (stack);
 }

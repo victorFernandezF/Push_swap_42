@@ -90,8 +90,7 @@ static t_stack	add_one_to_last_and_move_rest_temp(t_stack stack, int n)
 	return (stack);
 }
 
-
-t_stack	ra_temp(t_stack stack)
+t_stack	ratemp(t_stack stack)
 {
 	int	temp;
 
@@ -107,7 +106,7 @@ t_stack	ra_temp(t_stack stack)
 ** Get the top element from 'a' and put it
 ** at the top of 'b' (A -> 2 1 4 | B -> 5) -> (A - 1 4 | B - 2 5)
 */
-t_stack	pb_temp(t_stack stack)
+t_stack	pbtemp(t_stack stack)
 {
 	int	temp;
 
@@ -118,7 +117,7 @@ t_stack	pb_temp(t_stack stack)
 	return (stack);
 }
 
-t_stack	rra_temp(t_stack stack)
+t_stack	rratemp(t_stack stack)
 {
 	int	temp;
 

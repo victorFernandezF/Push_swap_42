@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 09:48:00 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/21 18:33:10 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/01 12:49:55 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,23 +62,24 @@ t_stack	simplify(t_stack stack)
 	int	x;
 	int	len;
 
-	i = -1;
+	i = 0;
 	x = 1;
 	len = stack.aux_len;
-	while (++i < stack.aux_len)
-	//while (1)
+	while (i < stack.aux_len)
 	{
-		j = -1;
-		while (++j < stack.aux_len)
+		j = 0;
+		while (j < len)
 		{
-			//printf("\n stack.temp[j] %i  = stack.aux[i]%i\n", stack.temp[j], stack.aux[i]);
-			if (stack.temp[j] == stack.aux[i])
+			//printf("is %i == %i\n", stack.aux[i], stack.temp[j]);
+			if (stack.aux[i] == stack.a[j])
 			{
-				//printf(RED"\n stack.tmp[j] %i  = i%i\n"WHITE, stack.temp[j], i);
-				stack.temp[j] = i;
-				break ;
+				//printf(GREEN"YES, so stack.temp[%i] = %i \n"WHITE, j, x);
+				stack.temp[j] = x;
+				x++;
 			}
+			j++;
 		}
+		i++;
 	}
 	return (stack);
 }

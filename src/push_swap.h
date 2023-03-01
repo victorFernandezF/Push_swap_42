@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/21 12:09:50 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/01 12:19:57 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,12 +106,12 @@ int		get_max_pos_stack_b(t_stack stack);
 
 t_stack	init_aux_array(t_stack stack);
 t_stack	simplify(t_stack stack);
-int		get_min_pos_aux(t_stack stack);
+int		get_min_pos_temp(t_stack stack);
 int		get_next_min_pos_aux(t_stack stack, int j);
 t_stack	sort_aux(t_stack stack);
-t_stack	pb_temp(t_stack stack);
-t_stack	ra_temp(t_stack stack);
-t_stack	rra_temp(t_stack stack);
+t_stack	pbtemp(t_stack stack);
+t_stack	ratemp(t_stack stack);
+t_stack	rratemp(t_stack stack);
 
 
 

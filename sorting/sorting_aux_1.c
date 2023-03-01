@@ -43,28 +43,28 @@ int	get_min_pos(t_stack stack)
 }
 
 // Returns the array postition of the min number of the array.
-int	get_min_pos_aux(t_stack stack)
+int	get_min_pos_temp(t_stack stack)
 {
 	int	i;
 	int	min_stack;
 
-	min_stack = min(stack.aux, stack.aux_len - 1);
+	min_stack = min(stack.temp, stack.aux_len - 1);
 	i = -1;
 	while (++i < stack.aux_len)
-		if (stack.aux[i] == min_stack)
+		if (stack.temp[i] == min_stack)
 			return (i);
 	return (0);
 }
 
-int	get_next_min_pos_aux(t_stack stack, int j)
+int	get_next_min_pos_temp(t_stack stack, int j)
 {
 	int	i;
 	int	min_stack;
 
-	min_stack = min(stack.aux, stack.aux_len - 1);
+	min_stack = min(stack.temp, stack.aux_len - 1);
 	i = -1;
 	while (++i < stack.aux_len)
-		if (stack.aux[i] == min_stack && stack.aux[i] != j)
+		if (stack.temp[i] == min_stack && stack.temp[i] != j)
 			return (i);
 	return (0);
 }
