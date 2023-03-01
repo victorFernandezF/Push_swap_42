@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/01 12:19:57 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/01 13:52:35 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,28 +90,28 @@ t_stack	rra(t_stack stack);
 t_stack	rrb(t_stack stack);
 t_stack	rrr(t_stack stack);
 
-// SHOW LEAKS (DELETE BEFORE PRESENT)
+// SIMPLIFY STACK (to acept negatives numbers)
+t_stack	init_aux_array(t_stack stack);
+t_stack	simplify(t_stack stack);
+t_stack	sort_aux(t_stack stack);
 
-void	show_leaks(void);
-void	test_print_stacks(t_stack stack);
+// DIVIDE AND RULE
 int		get_first(t_stack stack, int f, int l);
 int		get_last(t_stack stack, int f, int l);
 t_stack	calculate_move(t_stack stack, int first, int last);
 t_stack	chunck(t_stack stack, int i, int len);
-int		get_min_pos_stack_b(t_stack stack);
-t_stack	smart_rotate_b(int min, t_stack stack);
-t_stack	sort_stack_b(t_stack stack);
-int		get_min_pos_stack_b_pos(t_stack stack, int i);
-int		get_max_pos_stack_b(t_stack stack);
+t_stack	sort_stack_b(t_stack stack, int limit);
 
-t_stack	init_aux_array(t_stack stack);
-t_stack	simplify(t_stack stack);
-int		get_min_pos_temp(t_stack stack);
-int		get_next_min_pos_aux(t_stack stack, int j);
-t_stack	sort_aux(t_stack stack);
-t_stack	pbtemp(t_stack stack);
-t_stack	ratemp(t_stack stack);
-t_stack	rratemp(t_stack stack);
+// SHOW LEAKS (DELETE BEFORE PRESENT)
+void	show_leaks(void);
+void	test_print_stacks(t_stack stack);
+
+
+
+
+
+
+
 
 
 

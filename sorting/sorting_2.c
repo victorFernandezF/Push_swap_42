@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 10:52:10 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/01 13:03:46 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/01 13:46:53 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,19 @@ int	get_last(t_stack stack, int f, int l)
 	return (-1);
 }
 
+t_stack	move_to_stack_a(t_stack stack)
+{
+	int	i;
+
+	i = 0;
+	while (i < 100)
+	{
+		stack = pa(stack);
+		i++;
+	}
+	return (stack);
+}
+
 // Sorts 100 elements (NOT WORKING YET)
 t_stack	sort_100_elements(t_stack stack)
 {
@@ -115,23 +128,19 @@ t_stack	sort_100_elements(t_stack stack)
 	stack.a = stack.temp;
 	i = 0;
 	stack = chunck(stack, 0, 20);
-	stack = sort_stack_b(stack);
+	stack = sort_stack_b(stack, 20);
 	stack.chunk_len = 20;
 	stack = chunck(stack, 20, 40);
-	stack = sort_stack_b(stack);
+	stack = sort_stack_b(stack, 20);
 	stack.chunk_len = 20;
 	stack = chunck(stack, 40, 60);
-	stack = sort_stack_b(stack);
+	stack = sort_stack_b(stack, 20);
 	stack.chunk_len = 20;
 	stack = chunck(stack, 60, 80);
-	stack = sort_stack_b(stack);
+	stack = sort_stack_b(stack, 20);
 	stack.chunk_len = 20;
 	stack = chunck(stack, 80, 100);
-	stack = sort_stack_b(stack);
-	while (i < 100)
-	{
-		stack = pa(stack);
-		i++;
-	}
+	stack = sort_stack_b(stack, 20);
+	stack = move_to_stack_a(stack);
 	return (stack);
 }
