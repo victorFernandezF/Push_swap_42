@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/01 13:52:35 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/01 14:26:06 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,11 +91,13 @@ t_stack	rrb(t_stack stack);
 t_stack	rrr(t_stack stack);
 
 // SIMPLIFY STACK (to acept negatives numbers)
+
 t_stack	init_aux_array(t_stack stack);
 t_stack	simplify(t_stack stack);
 t_stack	sort_aux(t_stack stack);
 
 // DIVIDE AND RULE
+
 int		get_first(t_stack stack, int f, int l);
 int		get_last(t_stack stack, int f, int l);
 t_stack	calculate_move(t_stack stack, int first, int last);

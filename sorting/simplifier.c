@@ -6,12 +6,13 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 09:48:00 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/01 12:49:55 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/01 14:35:33 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/push_swap.h"
 
+// Initialize auxiliar array with the numbers of stack a.
 t_stack	init_aux_array(t_stack stack)
 {
 	int	i;
@@ -32,6 +33,7 @@ t_stack	init_aux_array(t_stack stack)
 	return (stack);
 }
 
+// Sorts the auxiliar stack.
 t_stack	sort_aux(t_stack stack)
 {
 	int		i;
@@ -55,6 +57,11 @@ t_stack	sort_aux(t_stack stack)
 	return (stack);
 }
 
+/*
+	Changes the numbers in stack a by indexes
+	example (-1 2 -5 0 4) becomes (2 4 1 3 5)
+	so now we dont care about negatives numbers
+*/
 t_stack	simplify(t_stack stack)
 {
 	int	i;
@@ -70,10 +77,8 @@ t_stack	simplify(t_stack stack)
 		j = 0;
 		while (j < len)
 		{
-			//printf("is %i == %i\n", stack.aux[i], stack.temp[j]);
 			if (stack.aux[i] == stack.a[j])
 			{
-				//printf(GREEN"YES, so stack.temp[%i] = %i \n"WHITE, j, x);
 				stack.temp[j] = x;
 				x++;
 			}
@@ -81,5 +86,6 @@ t_stack	simplify(t_stack stack)
 		}
 		i++;
 	}
+	//free(stack.temp);
 	return (stack);
 }
