@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:41:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/01 14:36:54 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/01 18:23:32 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ void	free_stacks(t_stack stack)
 		free(stack.a);
 	if (stack.b)
 		free(stack.b);
-	if (stack.aux)
-		free(stack.aux);
- 	if (stack.temp)
-		free(stack.temp);
+	//if (stack.aux)
+	//	free(stack.aux);
+	//if (stack.temp)
+		//free(stack.temp);
 }
 
 // Print 'Error' and exit.

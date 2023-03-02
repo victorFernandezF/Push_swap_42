@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 19:12:09 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/01 12:48:41 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/02 18:50:54 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,16 @@ void	test_print_stacks(t_stack stack)
 	int		more;
 
 	more = 0;
-	limit = 20;
+	limit = 0;
 	ft_printf("\n 🔴 ---- TESTING PRINT ---- 🔴");
 	i = -1;
 	ft_printf(GREEN"\n ▫️ Stack_a "WHITE);
 	// STACK A
 	while (++i < stack.a_len)
 	{
-		if (stack.a[i] <= limit)
+		if (stack.a[i] % 100 == 0)
+			ft_printf(GREEN"%i "WHITE, stack.a[i]);
+		else if (stack.a[i] <= limit)
 			ft_printf(YELLOW"%i "WHITE, stack.a[i]);
 		else
 			ft_printf("%i ", stack.a[i]);
@@ -84,5 +86,10 @@ void	test_print_stacks(t_stack stack)
 		print_rest(stack);
 	printf("\n"BG_BLACK);
 	ft_printf(REDY"\n    Moves: %i\n"WHITE BG_BLACK, stack.moves);
+}
+
+void	test(char *msg)
+{
+	printf("\n%s\n", msg);
 }
 

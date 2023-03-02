@@ -6,7 +6,7 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 10:38:55 by victofer          #+#    #+#              #
-#    Updated: 2023/03/01 14:25:03 by victofer         ###   ########.fr        #
+#    Updated: 2023/03/01 18:55:44 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRC			:=  src/main.c \
 				sorting/sorting_1.c \
 				sorting/sorting_2.c \
 				sorting/sort_100.c \
+				sorting/sort_500.c \
 				sorting/sort_stack_b.c \
 				sorting/sorting_aux_1.c \
 				testing_files_to_delete/leaks_and_print_stacks.c \
@@ -73,6 +74,14 @@ makelibs:
 	@echo "$(Y)0-----------------------------0 $(E)"
 	@echo "$(E)"
 
+leaks:
+	@make -C leaks_checker/ all
+	@$(CC) $(CFLAGS) $(OBJECTS) $(MLX_LIB) libft/libft.a leaks_checker/memory_leaks.a -o push_swap 
+	@echo "   $(Y)0-----------------------0"
+	@echo "   $(Y)|$(G)  push_swap Created   $(Y) |"
+	@echo "   $(Y)0-----------------------0"
+	@echo "$(E)"
+
 $(NAME): $(OBJECTS)
 	@$(CC) $(CFLAGS) $(OBJECTS) $(MLX_LIB) libft/libft.a -o push_swap 
 	@echo "   $(Y)0-----------------------0"
@@ -91,6 +100,7 @@ clean:
 
 fclean: clean
 	@make -C $(LIBFT_PATH) fclean
+	@make -C leaks_checker/ fclean
 	@rm -rf $(NAME)
 	@rm -rf push_swap
 	@rm -rf a.out

@@ -29,7 +29,13 @@ t_stack	start_sorting(t_stack stack)
 	if (stack.a_len > 5 && stack.a_len < 100)
 		stack = medium_sort(stack);
 	if (stack.a_len == 100)
-		stack = sort_100_elements(stack);
+		stack = sort_100_elements(stack, 0);
+	if (stack.a_len == 500)
+	{
+		test("NO QUIERO");
+		exit(-1);
+	}
+		//stack = sort_500_elements(stack);
 	return (stack);
 }
 

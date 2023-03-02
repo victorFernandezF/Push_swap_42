@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:48:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/01 14:32:12 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/01 18:27:18 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ int	main(int argc, char **argv)
 	char	**nbrs;
 	int		print;
 
-	print = 0;
+	print = TRUE;
+//	print = FALSE;
 	if (argc == 1)
 		ft_error();
 	init_stack(&stack);
@@ -40,9 +41,9 @@ int	main(int argc, char **argv)
 	free_nbrs(nbrs);
 	check_everything(stack.a_len, argv, stack.a);
 	stack = start_sorting(stack);
-	if (print)
+	if (print != 0)
 		test_print_stacks(stack);
 	free_stacks(stack);
-	atexit(show_leaks);
+	//atexit(show_leaks);
 	return (0);
 }

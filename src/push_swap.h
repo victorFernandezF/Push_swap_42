@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/01 14:26:06 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/02 18:44:09 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include "../libft/libft.h"
+//# include "../leaks_checker/include/memory_leaks.h"
 # include "./structs.h"
 
 // INIT STACK DATA (file: src/init_stack_data.c)
@@ -57,7 +58,8 @@ t_stack	sort_three_elements(t_stack stack);
 t_stack	sort_five_elements(t_stack stack);
 t_stack	sort_four_elements(t_stack stack);
 t_stack	medium_sort(t_stack stack);
-t_stack	sort_100_elements(t_stack stack);
+t_stack	sort_100_elements(t_stack stack, int n);
+t_stack	sort_500_elements(t_stack stack);
 int		sort_three_aux(int a, int b, int c);
 int		get_min_pos(t_stack stack);
 t_stack	smart_rotate(int min, t_stack stack);
@@ -107,17 +109,8 @@ t_stack	sort_stack_b(t_stack stack, int limit);
 // SHOW LEAKS (DELETE BEFORE PRESENT)
 void	show_leaks(void);
 void	test_print_stacks(t_stack stack);
-
-
-
-
-
-
-
-
-
-
-
+void	test(char *msg);
+t_stack	move_to_stack_a(t_stack stack, int limit);
 
 
 #endif

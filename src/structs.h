@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:41:13 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/01 14:36:13 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/01 19:11:48 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # define YELLOW  "\x1B[33m"
 # define BG_YELLOW  "\x1b[103m"
 # define BLUE  "\x1B[34m"
-# define WHITE  "\x1B[37m"
+# define WHITE  "\033[0m"
 # define BG_WHITE  "\x1b[47m"
 # define MAG  "\x1B[35m"
 # define REDY  "\x1b[91m"
