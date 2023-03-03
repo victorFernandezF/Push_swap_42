@@ -26,7 +26,7 @@ int	get_stack_a_len(char **nbrs)
 // Main function.
 int	main(int argc, char **argv)
 {
-	t_stack	stack;
+	t_stack	*stack;
 	char	**nbrs;
 	int		print;
 
@@ -34,13 +34,14 @@ int	main(int argc, char **argv)
 //	print = FALSE;
 	if (argc == 1)
 		ft_error();
-	init_stack(&stack);
+	stack = (t_stack *)malloc(sizeof(t_stack));
+	init_stack(stack);
 	nbrs = args_handler(argc - 1, argv);
-	stack.a_len = get_stack_a_len(nbrs);
-	stack.a = fill_array(stack.a_len, nbrs);
+	stack->a_len = get_stack_a_len(nbrs);
+	stack->a = fill_array(stack->a_len, nbrs);
 	free_nbrs(nbrs);
-	check_everything(stack.a_len, argv, stack.a);
-	start_sorting(&stack);
+	check_everything(stack->a_len, argv, stack->a);
+	start_sorting(stack);
 	if (print != 0)
 		test_print_stacks(stack);
 	free_stacks(stack);

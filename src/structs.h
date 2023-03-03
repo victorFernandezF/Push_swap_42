@@ -69,7 +69,7 @@ typedef struct s_stack
 	int		chunk_len;
 	int		moves;
 	int		pb_count;
-	t_free	free;		
+	int		free;		
 }			t_stack;
 
 

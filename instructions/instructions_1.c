@@ -62,8 +62,8 @@ void	pb(t_stack *stack)
 	if (!stack->a)
 		return ;
 	aux = stack->a[0];
-	*stack = add_one_to_first_and_move_rest_b(*stack, aux);
-	*stack = del_first_and_move_rest_a(*stack);
+	add_one_to_first_and_move_rest_b(stack, aux);
+	del_first_and_move_rest_a(stack);
 	stack->moves += 1;
 	stack->pb_count += 1;
 	ft_printf("pb\n");
@@ -80,8 +80,8 @@ void	pa(t_stack *stack)
 	if (!stack->b)
 		return ;
 	aux = stack->b[0];
-	*stack = add_one_to_first_and_move_rest_a(*stack, aux);
-	*stack = del_first_and_move_rest_b(*stack);
+	add_one_to_first_and_move_rest_a(stack, aux);
+	del_first_and_move_rest_b(stack);
 	stack->moves += 1;
 	ft_printf("pa\n");
 }

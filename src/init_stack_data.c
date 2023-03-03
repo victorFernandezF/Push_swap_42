@@ -17,6 +17,7 @@ void	init_stack(t_stack *stack)
 {
 	stack->b = (int *)malloc(1 * sizeof(int));
 	stack->temp = (int *)malloc(1 * sizeof(int));
+	stack->aux = (int *)malloc(1 * sizeof(int));
 	stack->a_len = 0;
 	stack->chunk_len = 20;
 	stack->pb_count = 0;

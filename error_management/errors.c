@@ -13,7 +13,7 @@
 #include "../src/push_swap.h"
 
 // Prints 'Error' and call free_stack function
-void	ft_error_free(t_stack stack)
+void	ft_error_free(t_stack *stack)
 {
 	ft_putstr_fd("Error\n", 2);
 	free_stacks(stack);
@@ -29,7 +29,7 @@ void	ft_error_free_array(int *nb)
 }
 
 /*
-* Frees every elements from array of arrays and free the array itself 
+** Frees every elements from array of arrays and free the array itself 
 */
 void	free_nbrs(char **nbrs)
 {
@@ -42,16 +42,16 @@ void	free_nbrs(char **nbrs)
 }
 
 // If stack a or stack b are not empty, frees them
-void	free_stacks(t_stack stack)
+void	free_stacks(t_stack *stack)
 {
-	if (stack.a)
-		free(stack.a);
-	if (stack.b)
-		free(stack.b);
-	//if (stack.aux)
-	//	free(stack.aux);
-	//if (stack.temp)
-		//free(stack.temp);
+	free(stack->a);
+	free(stack->b);
+/* 	if (stack->aux)
+		free(stack->aux);
+	if (stack->temp)
+		free(stack->temp); */
+	free(stack);
+	stack = NULL;
 }
 
 void	free_moves(t_moves *moves)

@@ -44,9 +44,9 @@ int		check_everything(int cant, char **argv, int *numbers);
 
 // ERROR MANAGEEMENT (file: error_management/errors.c)
 
-void	ft_error_free(t_stack stack);
+void	ft_error_free(t_stack *stack);
 void	ft_error_free_array(int *nb);
-void	free_stacks(t_stack stack);
+void	free_stacks(t_stack *stack);
 void	ft_error(void);
 void	free_nbrs(char **nbrs);
 
@@ -67,14 +67,14 @@ int		get_max_pos(t_stack stack);
 
 // ARRAY MOVES (file: array_management/array_moves_1.c ...)
 
-t_stack	del_first_and_move_rest_a(t_stack stack);
-t_stack	del_last_and_move_rest_a(t_stack stack);
-t_stack	add_one_to_first_and_move_rest_a(t_stack stack, int n);
-t_stack	add_one_to_last_and_move_rest_a(t_stack stack, int n);
-t_stack	del_first_and_move_rest_b(t_stack stack);
-t_stack	del_last_and_move_rest_b(t_stack stack);
-t_stack	add_one_to_first_and_move_rest_b(t_stack stack, int n);
-t_stack	add_one_to_last_and_move_rest_b(t_stack stack, int n);
+void	del_first_and_move_rest_a(t_stack *stack);
+void	del_last_and_move_rest_a(t_stack *stack);
+void	add_one_to_first_and_move_rest_a(t_stack *stack, int n);
+void	add_one_to_last_and_move_rest_a(t_stack *stack, int n);
+void	del_first_and_move_rest_b(t_stack *stack);
+void	del_last_and_move_rest_b(t_stack *stack);
+void	add_one_to_first_and_move_rest_b(t_stack *stack, int n);
+void	add_one_to_last_and_move_rest_b(t_stack *stack, int n);
 
 //	INSTRUCTIONS (file: instructions/intructions_1.c ...)
 
@@ -108,7 +108,7 @@ void	sort_stack_b(t_stack *stack, int limit);
 
 // SHOW LEAKS (DELETE BEFORE PRESENT)
 void	show_leaks(void);
-void	test_print_stacks(t_stack stack);
+void	test_print_stacks(t_stack *stack);
 void	test(char *msg);
 void	move_to_stack_a(t_stack *stack, int limit);
 

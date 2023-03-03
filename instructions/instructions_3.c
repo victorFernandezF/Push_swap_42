@@ -23,8 +23,8 @@ void	rra(t_stack *stack)
 	if (!stack->a)
 		return ;
 	aux = stack->a[stack->a_len - 1];
-	*stack = del_last_and_move_rest_a(*stack);
-	*stack = add_one_to_first_and_move_rest_a(*stack, aux);
+	del_last_and_move_rest_a(stack);
+	add_one_to_first_and_move_rest_a(stack, aux);
 	stack->moves += 1;
 	ft_printf("rra\n");
 }
@@ -40,8 +40,8 @@ void	rrb(t_stack *stack)
 	if (!stack->b)
 		return ;
 	aux = stack->b[stack->b_len - 1];
-	*stack = del_last_and_move_rest_b(*stack);
-	*stack = add_one_to_first_and_move_rest_b(*stack, aux);
+	del_last_and_move_rest_b(stack);
+	add_one_to_first_and_move_rest_b(stack, aux);
 	stack->moves += 1;
 	ft_printf("rrb\n");
 }
