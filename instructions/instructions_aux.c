@@ -12,7 +12,7 @@
 
 #include "../src/push_swap.h"
 
-static t_stack	add_one_to_first_and_move_rest_temp(t_stack stack, int n)
+/* static t_stack	add_one_to_first_and_move_rest_temp(t_stack stack, int n)
 {
 	int	*new;
 	int	i;
@@ -67,12 +67,12 @@ static t_stack	del_last_and_move_rest_temp(t_stack stack)
 	free(stack.temp);
 	stack.temp = new;
 	return (stack);
-}
+} */
 
 /*
 ** Add the given element to last position of stack 'a'
 */
-static t_stack	add_one_to_last_and_move_rest_temp(t_stack stack, int n)
+/* static t_stack	add_one_to_last_and_move_rest_temp(t_stack stack, int n)
 {
 	int	*new;
 	int	i;
@@ -100,13 +100,13 @@ t_stack	ratemp(t_stack stack)
 	stack = del_first_and_move_rest_temp(stack);
 	stack = add_one_to_last_and_move_rest_temp(stack, temp);
 	return (stack);
-}
+} */
 
 /*
 ** Get the top element from 'a' and put it
 ** at the top of 'b' (A -> 2 1 4 | B -> 5) -> (A - 1 4 | B - 2 5)
 */
-t_stack	pbtemp(t_stack stack)
+/* t_stack	pbtemp(t_stack stack)
 {
 	int	temp;
 
@@ -129,4 +129,4 @@ t_stack	rratemp(t_stack stack)
 	stack.moves += 1;
 	ft_printf("rra\n");
 	return (stack);
-}
+} */
