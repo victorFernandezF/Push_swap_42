@@ -18,10 +18,10 @@
 */
 void	calculate_move(t_stack *stack, int first, int last)
 {
-	int	mid;
+	//int	mid;
 	int	i;
 
-	mid = stack->a_len / 2;
+	//mid = stack->a_len / 2;
 	i = -1;
 	if (first == 0)
 		return ;

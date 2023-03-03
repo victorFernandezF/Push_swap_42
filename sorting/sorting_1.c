@@ -23,23 +23,22 @@ void	start_sorting(t_stack *stack)
 		sort_two_elements(stack);
 	if (stack->a_len == 3)
 		sort_three_elements(stack);
-	/*if (stack->a_len == 4)
-		stack = sort_four_elements(stack);
+	if (stack->a_len == 4)
+		sort_four_elements(stack);
 	if (stack->a_len == 5)
-		stack = sort_five_elements(stack);
+		sort_five_elements(stack);
 	if (stack->a_len > 5 && stack->a_len < 100)
-		stack = medium_sort(stack);
+		medium_sort(stack);
 	if (stack->a_len == 100)
-		stack = sort_500_elements(&stack);
+		sort_100_elements(stack, 0);
 		//stack = sort_100_elements(stack, 0);
 	if (stack->a_len == 500)
 	{
-		stack = sort_500_elements(&stack);
+		//stack = sort_500_elements(&stack);
 		//test("NO QUIERO");
 		//exit(-1);
 	}
 		//stack = sort_500_elements(stack);
-	return (stack); */
 }
 
 // Sorts two elements.

@@ -72,33 +72,27 @@ void	move_to_stack_a(t_stack *stack, int limit)
 // Sorts 100 elements (<1.100 moves)
 void	sort_100_elements(t_stack *stack, int n)
 {
-	int	i;
-	int	chunk;
-
-	i = 0;
 	*stack = init_aux_array(*stack);
 	*stack = sort_aux(*stack);
 	*stack = simplify(*stack);
 	stack->a = stack->temp;
-	i = 0;
-	chunk = 20;
-	*stack = chunck(*stack, n, n + 20);
-	*stack = sort_stack_b(*stack, 20);
+	chunck(stack, n, n + 20);
+	sort_stack_b(stack, 20);
 	stack->chunk_len = 20;
 	n += 20;
-	*stack = chunck(*stack, n, n + 20);
-	*stack = sort_stack_b(*stack, 20);
+	chunck(stack, n, n + 20);
+	sort_stack_b(stack, 20);
 	stack->chunk_len = 20;
 	n += 20;
-	*stack = chunck(*stack, n, n + 20);
-	*stack = sort_stack_b(*stack, 20);
+	chunck(stack, n, n + 20);
+	sort_stack_b(stack, 20);
 	stack->chunk_len = 20;
 	n += 20;
-	*stack = chunck(*stack, n, n + 20);
-	*stack = sort_stack_b(*stack, 20);
+	chunck(stack, n, n + 20);
+	sort_stack_b(stack, 20);
 	stack->chunk_len = 20;
 	n += 20;
-	*stack = chunck(*stack, n, n + 20);
-	*stack = sort_stack_b(*stack, 20);
+	chunck(stack, n, n + 20);
+	sort_stack_b(stack, 20);
 	move_to_stack_a(stack, 100);
 }
