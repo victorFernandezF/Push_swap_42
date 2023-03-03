@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include"../src/push_swap.h"
-/* 
+
 void	place_smallest_first(t_stack *stack)
 {
 	int	min_index;
@@ -19,12 +19,12 @@ void	place_smallest_first(t_stack *stack)
 	min_index = get_min_pos(*stack);
 	if (min_index <= stack->a_len / 2)
 		while (min_index--)
-			*stack = ra(*stack);
+			ra(stack);
 	else
 	{
 		while ((stack->a_len - min_index) > 0)
 		{
-			*stack = rra(*stack);
+			rra(stack);
 			min_index++;
 		}
 	}		
@@ -115,4 +115,3 @@ int	find_b_rot(int len, int pos, char **b_rot_type)
 		*b_rot_type = ft_strcpy(*b_rot_type, "rb");
 	return (pos);
 }
- */

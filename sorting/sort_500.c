@@ -12,7 +12,7 @@
 
 #include "../src/push_swap.h"
 
-/* t_moves	*calculate_best_way_a_to_b(t_stack *stack)
+t_moves	*calculate_best_way_a_to_b(t_stack *stack)
 {
 	int		i;
 	t_moves	*best_move;
@@ -50,12 +50,12 @@ static void	insert_back_in_a(t_stack *stack)
 		while (num_of_rots > 0)
 		{
 			if (ft_strequ(rot_type, "ra"))
-				*stack = ra(*stack);
+				rra(stack);
 			else
-				*stack = rra(*stack);
+				rra(stack);
 			num_of_rots--;
 		}
-		*stack = pa(*stack);
+		pa(stack);
 	}
 	place_smallest_first(stack);
 	free(rot_type);
@@ -66,17 +66,17 @@ static void	process_moves(t_moves *best_move, t_stack *stack)
 	while (best_move->a_moves)
 	{
 		if (ft_strequ(best_move->a_rot_type, "ra"))
-			*stack = ra(*stack);
+			ra(stack);
 		else
-			*stack = rra(*stack);
+			rra(stack);
 		best_move->a_moves--;
 	}
 	while (best_move->b_moves)
 	{
 		if (ft_strequ(best_move->b_rot_type, "rb"))
-			*stack = rb(*stack);
+			rb(stack);
 		else
-			*stack = rrb(*stack);
+			rrb(stack);
 		best_move->b_moves--;
 	}
 }
@@ -90,16 +90,16 @@ static void	insert_leftover_to_b(t_stack *stack)
 	{
 		index = min(stack->a, stack->a_len);
 		if (index == 0)
-			*stack = pb(*stack);
+			pb(stack);
 		else if (index <= stack->a_len / 2)
-			*stack = ra(*stack);
+			ra(stack);
 		else if (index > stack->a_len / 2)
-			*stack = rra(*stack);
+			rra(stack);
 	}
 }
 
 //Sorts 100 elements (<1.100 moves)
-t_stack	sort_500_elements(t_stack *stack)
+void	sort_500_elements(t_stack *stack)
 {
 	t_moves	*best_move;
 	int		optimus;
@@ -109,7 +109,7 @@ t_stack	sort_500_elements(t_stack *stack)
 	else
 		optimus = 2;
 	while (stack->b_len != 2)
-		*stack = pb(*stack);
+		pb(stack);
 	//test_print_stacks(*stack);
 	while (stack->a_len > optimus)
 	{	
@@ -119,17 +119,16 @@ t_stack	sort_500_elements(t_stack *stack)
 		{
 			
 			if (ft_strequ(best_move->com_rot, "rr"))
-				*stack = rr(*stack);
+				rr(stack);
 			else
-				*stack = rrr(*stack);
+				rrr(stack);
 			best_move->common_moves--;
 		}
 		process_moves(best_move, stack);
-		*stack = pb(*stack);
+		pb(stack);
 		
 		free_moves(best_move);
 	}
 	insert_leftover_to_b(stack);
 	insert_back_in_a(stack);
-	return (*stack);
-} */
+}

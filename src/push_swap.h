@@ -59,7 +59,7 @@ void	sort_five_elements(t_stack *stack);
 void	sort_four_elements(t_stack *stack);
 void	medium_sort(t_stack *stack);
 void	sort_100_elements(t_stack *stack, int n);
-t_stack	sort_500_elements(t_stack *stack);
+void	sort_500_elements(t_stack *stack);
 int		sort_three_aux(int a, int b, int c);
 int		get_min_pos(t_stack stack);
 void	smart_rotate(int min, t_stack *stack);

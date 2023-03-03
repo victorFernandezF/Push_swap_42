@@ -13,8 +13,8 @@
 #include "../src/push_swap.h"
 
 /*
-* Evaluates the number of elements and
-* call the functions for each case.
+	Evaluates the number of elements and
+	call the functions for each case.
 */
 void	start_sorting(t_stack *stack)
 {
@@ -31,14 +31,8 @@ void	start_sorting(t_stack *stack)
 		medium_sort(stack);
 	if (stack->a_len == 100)
 		sort_100_elements(stack, 0);
-		//stack = sort_100_elements(stack, 0);
 	if (stack->a_len == 500)
-	{
-		//stack = sort_500_elements(&stack);
-		//test("NO QUIERO");
-		//exit(-1);
-	}
-		//stack = sort_500_elements(stack);
+		sort_500_elements(stack);
 }
 
 // Sorts two elements.

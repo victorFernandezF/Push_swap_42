@@ -12,7 +12,7 @@
 
 #include"../src/push_swap.h"
 
-/* char	*ft_strcpy(char *dest, char *src)
+char	*ft_strcpy(char *dest, char *src)
 {
 	int				i;
 
@@ -87,4 +87,3 @@ t_moves	*calc_moves_from_a_to_b(t_stack *stack, int pos)
 	moves->total = moves->a_moves + moves->b_moves + moves->common_moves + 1;
 	return (moves);
 }
- */
