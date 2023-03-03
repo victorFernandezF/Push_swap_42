@@ -15,11 +15,6 @@
 // Initializes datas from stack. Used in main
 void	init_stack(t_stack *stack)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 1;
 	stack->b = (int *)malloc(1 * sizeof(int));
 	stack->temp = (int *)malloc(1 * sizeof(int));
 	stack->a_len = 0;
