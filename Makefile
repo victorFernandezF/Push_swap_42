@@ -15,6 +15,7 @@ CFLAGS		:= -Wall -Wextra -Werror
 NAME		:= push_swap.out
 
 LIBFT_PATH	:= ./libft/ 
+LEAKS 		:= ./leaks_checker/
 LIBFT_LIB	:= $(LIBFT_PATH)libft.a
 
 SRC			:=  src/main.c \
@@ -77,7 +78,7 @@ makelibs:
 	@echo "$(E)"
 
 leaks:
-	@make -C leaks_checker/ all
+	@make -C $(LEAKS) all
 	@$(CC) $(CFLAGS) $(OBJECTS) $(MLX_LIB) libft/libft.a leaks_checker/memory_leaks.a -o push_swap 
 	@echo "   $(Y)0-----------------------0"
 	@echo "   $(Y)|$(G)  push_swap Created   $(Y) |"
@@ -102,7 +103,6 @@ clean:
 
 fclean: clean
 	@make -C $(LIBFT_PATH) fclean
-	@make -C leaks_checker/ fclean
 	@rm -rf $(NAME)
 	@rm -rf push_swap
 	@rm -rf a.out
