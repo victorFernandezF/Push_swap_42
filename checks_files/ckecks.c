@@ -25,7 +25,7 @@ int	check_bad_input(char *input)
 }
 
 // Checks if any numbers is bigger than int limit. (NOT WOKING YET)
-int	check_int_limit(int cant, int *numbers)
+/* int	check_int_limit(int cant, int *numbers)
 {
 	int				i;
 	unsigned int	tmp;
@@ -41,7 +41,7 @@ int	check_int_limit(int cant, int *numbers)
 		tmp = 0;
 	}
 	return (FALSE);
-}
+} */
 
 // Checks if any of the numbers is duplicated. 
 int	check_duplicated_numbers(int cant, int *numbers)
@@ -82,8 +82,8 @@ int	is_sorted(int cant, int *nb)
 int	check_everything(int cant, char **argv, int *numbers)
 {
 	(void)argv;
-	if (check_int_limit(cant, numbers))
-		ft_error_free_array(numbers);
+	/* if (check_int_limit(cant, numbers))
+		ft_error_free_array(numbers); */
 	if (check_duplicated_numbers(cant, numbers))
 		ft_error_free_array(numbers);
 	if (is_sorted(cant, numbers))
