@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/02 18:44:09 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/03 14:21:58 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,17 @@ void	free_nbrs(char **nbrs);
 
 // SORTING FUNCTIONS (file: sorting/sorting_1.c ...)
 
-t_stack	start_sorting(t_stack stack);
-t_stack	sort_two_elements(t_stack stack);
-t_stack	sort_three_elements(t_stack stack);
-t_stack	sort_five_elements(t_stack stack);
-t_stack	sort_four_elements(t_stack stack);
-t_stack	medium_sort(t_stack stack);
-t_stack	sort_100_elements(t_stack stack, int n);
-t_stack	sort_500_elements(t_stack stack);
+void	start_sorting(t_stack *stack);
+void	sort_two_elements(t_stack *stack);
+void	sort_three_elements(t_stack *stack);
+void	sort_five_elements(t_stack *stack);
+void	sort_four_elements(t_stack *stack);
+void	medium_sort(t_stack *stack);
+void	sort_100_elements(t_stack *stack, int n);
+t_stack	sort_500_elements(t_stack *stack);
 int		sort_three_aux(int a, int b, int c);
 int		get_min_pos(t_stack stack);
-t_stack	smart_rotate(int min, t_stack stack);
+void	smart_rotate(int min, t_stack *stack);
 int		get_max_pos(t_stack stack);
 
 // ARRAY MOVES (file: array_management/array_moves_1.c ...)
@@ -78,19 +78,19 @@ t_stack	add_one_to_last_and_move_rest_b(t_stack stack, int n);
 
 //	INSTRUCTIONS (file: instructions/intructions_1.c ...)
 
-t_stack	pack_of_instructions(char *pack, t_stack stack);
-t_stack	do_operation(char *op, t_stack stack);
-t_stack	sa(t_stack stack);
-t_stack	sb(t_stack stack);
-t_stack	ss(t_stack stack);
-t_stack	pb(t_stack stack);
-t_stack	pa(t_stack stack);
-t_stack	ra(t_stack stack);
-t_stack	rb(t_stack stack);
-t_stack	rr(t_stack stack);
-t_stack	rra(t_stack stack);
-t_stack	rrb(t_stack stack);
-t_stack	rrr(t_stack stack);
+void	pack_of_instructions(char *pack, t_stack *stack);
+void	do_operation(char *op, t_stack *stack);
+void	sa(t_stack *stack);
+void	sb(t_stack *stack);
+void	ss(t_stack *stack);
+void	pb(t_stack *stack);
+void	pa(t_stack *stack);
+void	ra(t_stack *stack);
+void	rb(t_stack *stack);
+void	rr(t_stack *stack);
+void	rra(t_stack *stack);
+void	rrb(t_stack *stack);
+void	rrr(t_stack *stack);
 
 // SIMPLIFY STACK (to acept negatives numbers)
 
@@ -102,15 +102,31 @@ t_stack	sort_aux(t_stack stack);
 
 int		get_first(t_stack stack, int f, int l);
 int		get_last(t_stack stack, int f, int l);
-t_stack	calculate_move(t_stack stack, int first, int last);
-t_stack	chunck(t_stack stack, int i, int len);
-t_stack	sort_stack_b(t_stack stack, int limit);
+void	calculate_move(t_stack *stack, int first, int last);
+void	chunck(t_stack *stack, int i, int len);
+void	sort_stack_b(t_stack *stack, int limit);
 
 // SHOW LEAKS (DELETE BEFORE PRESENT)
 void	show_leaks(void);
 void	test_print_stacks(t_stack stack);
 void	test(char *msg);
-t_stack	move_to_stack_a(t_stack stack, int limit);
+void	move_to_stack_a(t_stack *stack, int limit);
+
+t_moves	*calculate_best_way_a_to_b(t_stack *stack);
+int		ft_strequ(char const *s1, char const *s2);
+void	free_moves(t_moves *moves);
+char	*ft_strnew(size_t size);
+t_moves	*calc_moves_from_a_to_b(t_stack *stack, int pos);
+int		find_common(t_moves *moves);
+void	place_smallest_first(t_stack *stack);
+int		find_place_in_a(int *stack, int len, int elem, char **rot_type);
+int		find_place_in_b(int *stack, int len, int elem, char **rot_type);
+int		find_a_rot(int len, int pos, char **a_rot_type);
+int		find_b_rot(int len, int pos, char **b_rot_type);
+
+int		ft_strcmp(char const *s1, char const *s2);
+char	*ft_strcpy(char *dest, char *src);
+
 
 
 #endif

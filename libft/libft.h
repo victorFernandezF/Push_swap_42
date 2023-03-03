@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 15:27:10 by victofer          #+#    #+#             */
-/*   Updated: 2022/11/16 19:39:02 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/03 12:06:33 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ int		max(int *tab, unsigned int len); //Returns the max value of an array
 int		min(int *tab, unsigned int len); //Returns the min value of an array
 int		ft_pow(int n, int pow); //pow (pow(2, 3) -> 2 * 2 * 2) you know...
 int		ft_power(int n, int pow); //pow (pow(2, 3) -> 2 * 2 * 2) you know...
+int		ft_strcmp(char const *s1, char const *s2);
 
 //FT_PRINTF AND RELATED FUNCTIONS
 int		ft_printf(char const *input, ...); //Something like prinf

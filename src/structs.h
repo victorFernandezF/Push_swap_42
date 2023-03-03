@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:41:13 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/01 19:11:48 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/03 11:08:55 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,16 @@ typedef struct s_stack
 	t_free	free;		
 }			t_stack;
 
+
+typedef struct s_moves
+{
+	int		elem;
+	int		a_moves;
+	char	*a_rot_type;
+	char	*b_rot_type;
+	char	*com_rot;
+	int		b_moves;
+	int		common_moves;
+	int		total;
+}			t_moves;
 #endif

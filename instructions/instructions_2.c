@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 19:12:46 by victofer          #+#    #+#             */
-/*   Updated: 2023/01/24 11:28:25 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/03 13:53:30 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,44 +16,41 @@
 ** Move the top element from 'a' and put it
 ** at last position of a (2 1 4 -> 1 4 2)
 */
-t_stack	ra(t_stack stack)
+void	ra(t_stack *stack)
 {
 	int	aux;
 
-	if (!stack.a)
-		return (stack);
-	aux = stack.a[0];
-	stack = del_first_and_move_rest_a(stack);
-	stack = add_one_to_last_and_move_rest_a(stack, aux);
-	stack.moves += 1;
+	if (!stack->a)
+		return ;
+	aux = stack->a[0];
+	*stack = del_first_and_move_rest_a(*stack);
+	*stack = add_one_to_last_and_move_rest_a(*stack, aux);
+	stack->moves += 1;
 	ft_printf("ra\n");
-	return (stack);
 }
 
 /*
 ** Move the top element from 'b' and put it
 ** at last position of a (2 1 4 -> 1 4 2)
 */
-t_stack	rb(t_stack stack)
+void	rb(t_stack *stack)
 {
 	int	aux;
 
-	if (!stack.b)
-		return (stack);
-	aux = stack.b[0];
-	stack = del_first_and_move_rest_b(stack);
-	stack = add_one_to_last_and_move_rest_b(stack, aux);
-	stack.moves += 1;
+	if (!stack->b)
+		return ;
+	aux = stack->b[0];
+	*stack = del_first_and_move_rest_b(*stack);
+	*stack = add_one_to_last_and_move_rest_b(*stack, aux);
+	stack->moves += 1;
 	ft_printf("rb\n");
-	return (stack);
 }
 
 // ra + rb
-t_stack	rr(t_stack stack)
+void	rr(t_stack *stack)
 {
-	stack = ra(stack);
-	stack = rb(stack);
-	stack.moves += 1;
+	ra(stack);
+	rb(stack);
+	stack->moves += 1;
 	ft_printf("rr\n");
-	return (stack);
 }
