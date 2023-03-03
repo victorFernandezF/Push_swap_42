@@ -30,9 +30,15 @@ void	start_sorting(t_stack *stack)
 	if (stack->a_len > 5 && stack->a_len < 100)
 		medium_sort(stack);
 	if (stack->a_len == 100)
+	{
+		simplify_numbers(stack);
 		sort_100_elements(stack, 0);
+	}
 	if (stack->a_len == 500)
+	{
+		simplify_numbers(stack);
 		sort_500_elements(stack);
+	}
 }
 
 // Sorts two elements.

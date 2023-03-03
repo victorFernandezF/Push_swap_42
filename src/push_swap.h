@@ -94,9 +94,10 @@ void	rrr(t_stack *stack);
 
 // SIMPLIFY STACK (to acept negatives numbers)
 
-t_stack	init_aux_array(t_stack stack);
-t_stack	simplify(t_stack stack);
-t_stack	sort_aux(t_stack stack);
+void	init_aux_array(t_stack *stack);
+void	simplify(t_stack *stack);
+void	sort_aux(t_stack *stack);
+void	simplify_numbers(t_stack *stack);
 
 // DIVIDE AND RULE
 

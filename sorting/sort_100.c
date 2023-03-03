@@ -56,6 +56,13 @@ int	get_last(t_stack stack, int f, int l)
 	return (-1);
 }
 
+void	simplify_numbers(t_stack *stack)
+{
+	init_aux_array(stack);
+	sort_aux(stack);
+	simplify(stack);
+}
+
 // Move everithing in stack b to stack a.
 void	move_to_stack_a(t_stack *stack, int limit)
 {
@@ -72,9 +79,6 @@ void	move_to_stack_a(t_stack *stack, int limit)
 // Sorts 100 elements (<1.100 moves)
 void	sort_100_elements(t_stack *stack, int n)
 {
-	*stack = init_aux_array(*stack);
-	*stack = sort_aux(*stack);
-	*stack = simplify(*stack);
 	stack->a = stack->temp;
 	chunck(stack, n, n + 20);
 	sort_stack_b(stack, 20);

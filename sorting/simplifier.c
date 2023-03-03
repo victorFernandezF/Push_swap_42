@@ -13,28 +13,27 @@
 #include "../src/push_swap.h"
 
 // Initialize auxiliar array with the numbers of stack a.
-t_stack	init_aux_array(t_stack stack)
+void	init_aux_array(t_stack *stack)
 {
 	int	i;
 
-	stack.aux_len = stack.a_len;
-	stack.aux = (int *)malloc(stack.aux_len * sizeof(int));
-	if (!stack.aux)
+	stack->aux_len = stack->a_len;
+	stack->aux = (int *)malloc(stack->aux_len * sizeof(int));
+	if (!stack->aux)
 		exit(-1);
 	i = -1;
-	while (++i < stack.aux_len)
-		stack.aux[i] = stack.a[i];
-	stack.temp = (int *)malloc(stack.aux_len * sizeof(int));
-	if (!stack.temp)
+	while (++i < stack->aux_len)
+		stack->aux[i] = stack->a[i];
+	stack->temp = (int *)malloc(stack->aux_len * sizeof(int));
+	if (!stack->temp)
 		exit(-1);
 	i = -1;
-	while (++i < stack.aux_len)
-		stack.temp[i] = stack.a[i];
-	return (stack);
+	while (++i < stack->aux_len)
+		stack->temp[i] = stack->a[i];
 }
 
-// Sorts the auxiliar stack.
-t_stack	sort_aux(t_stack stack)
+// Sorts the auxiliar stack->
+void	sort_aux(t_stack *stack)
 {
 	int		i;
 	int		tmp;
@@ -42,19 +41,18 @@ t_stack	sort_aux(t_stack stack)
 	i = 0;
 	while (1)
 	{
-		if (is_sorted(stack.aux_len, stack.aux) == 1)
+		if (is_sorted(stack->aux_len, stack->aux) == 1)
 			break ;
-		if (stack.aux[i] > stack.aux[i + 1])
+		if (stack->aux[i] > stack->aux[i + 1])
 		{
-			tmp = stack.aux[i];
-			stack.aux[i] = stack.aux[i + 1];
-			stack.aux[i + 1] = tmp;
+			tmp = stack->aux[i];
+			stack->aux[i] = stack->aux[i + 1];
+			stack->aux[i + 1] = tmp;
 			i = 0;
 		}
 		else
 			i++;
 	}
-	return (stack);
 }
 
 /*
@@ -62,7 +60,7 @@ t_stack	sort_aux(t_stack stack)
 	example (-1 2 -5 0 4) becomes (2 4 1 3 5)
 	so now we dont care about negatives numbers
 */
-t_stack	simplify(t_stack stack)
+void	simplify(t_stack *stack)
 {
 	int	i;
 	int	j;
@@ -71,21 +69,20 @@ t_stack	simplify(t_stack stack)
 
 	i = 0;
 	x = 1;
-	len = stack.aux_len;
-	while (i < stack.aux_len)
+	len = stack->aux_len;
+	while (i < stack->aux_len)
 	{
 		j = 0;
 		while (j < len)
 		{
-			if (stack.aux[i] == stack.a[j])
+			if (stack->aux[i] == stack->a[j])
 			{
-				stack.temp[j] = x;
+				stack->temp[j] = x;
 				x++;
 			}
 			j++;
 		}
 		i++;
 	}
-	//free(stack.temp);
-	return (stack);
+	//free(stack->temp);
 }
