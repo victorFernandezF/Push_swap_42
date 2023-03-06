@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/03 14:21:58 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/06 11:12:52 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,21 +113,31 @@ void	test_print_stacks(t_stack *stack);
 void	test(char *msg);
 void	move_to_stack_a(t_stack *stack, int limit);
 
-t_moves	*calculate_best_way_a_to_b(t_stack *stack);
+t_moves	*best_way_from_a_to_b(t_stack *stack);
 int		ft_strequ(char const *s1, char const *s2);
 void	free_moves(t_moves *moves);
 char	*ft_strnew(size_t size);
 t_moves	*calc_moves_from_a_to_b(t_stack *stack, int pos);
 int		find_common(t_moves *moves);
 void	place_smallest_first(t_stack *stack);
+
+
+
+
 int		find_place_in_a(int *stack, int len, int elem, char **rot_type);
 int		find_place_in_b(int *stack, int len, int elem, char **rot_type);
-int		find_a_rot(int len, int pos, char **a_rot_type);
-int		find_b_rot(int len, int pos, char **b_rot_type);
+int		find_a_rot_type(int len, int pos, char **a_rot_type);
+int		find_b_rot_type(int len, int pos, char **b_rot_type);
 
 int		ft_strcmp(char const *s1, char const *s2);
 char	*ft_strcpy(char *dest, char *src);
 
+void	global_sort(t_stack *stack);
+int		find_min_index(int *stack, int len);
+int		find_max_index(int *stack, int len);
+int		find_min_elem(int *stack, int stack_len);
+int		find_max_elem(int *stack, int stack_len);
+void	place_smallest_first_a(t_stack *stack);
 
 
 #endif

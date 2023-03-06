@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 11:21:40 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/03 14:23:02 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/06 10:55:51 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	find_place_in_b(int *stack, int len, int elem, char **rot_type)
 			i++;
 		}
 	}
-	return (find_b_rot(len, place, rot_type));
+	return (find_b_rot_type(len, place, rot_type));
 }
 
 int	find_place_in_a(int *stack, int len, int elem, char **rot_type)
@@ -87,11 +87,11 @@ int	find_place_in_a(int *stack, int len, int elem, char **rot_type)
 			i++;
 		}
 	}
-	return (find_a_rot(len, place, rot_type));
+	return (find_a_rot_type(len, place, rot_type));
 }
 
-int	find_a_rot(int len, int pos, char **a_rot_type)
-{
+int	find_a_rot_type(int len, int pos, char **a_rot_type)
+{	
 	if (pos > len / 2)
 	{
 		*a_rot_type = ft_strcpy(*a_rot_type, "rra");
@@ -103,8 +103,8 @@ int	find_a_rot(int len, int pos, char **a_rot_type)
 	return (pos);
 }
 
-int	find_b_rot(int len, int pos, char **b_rot_type)
-{
+int	find_b_rot_type(int len, int pos, char **b_rot_type)
+{	
 	if (pos > len / 2)
 	{
 		*b_rot_type = ft_strcpy(*b_rot_type, "rrb");
@@ -115,3 +115,4 @@ int	find_b_rot(int len, int pos, char **b_rot_type)
 		*b_rot_type = ft_strcpy(*b_rot_type, "rb");
 	return (pos);
 }
+

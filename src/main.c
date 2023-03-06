@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:48:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/03 13:40:26 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/06 11:20:52 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int	main(int argc, char **argv)
 	char	**nbrs;
 	int		print;
 
-	print = TRUE;
-//	print = FALSE;
+//	print = TRUE;
+	print = FALSE;
 	if (argc == 1)
 		ft_error();
 	stack = (t_stack *)malloc(sizeof(t_stack));

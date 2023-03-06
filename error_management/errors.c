@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:41:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/03 11:54:46 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/06 11:07:45 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	free_moves(t_moves *moves)
 {
 	free(moves->a_rot_type);
 	free(moves->b_rot_type);
-	free(moves->com_rot);
+	free(moves->common_rot);
 	free(moves);
 	moves = NULL;
 }

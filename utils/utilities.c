@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 10:56:05 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/03 14:23:25 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/06 10:59:06 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,11 @@ int	find_common(t_moves *moves)
 
 	common = 0;
 	if ((ft_strequ(moves->a_rot_type, "rra")
-			&& (ft_strequ(moves->b_rot_type, "rrb")
-			)) || (ft_strequ(moves->a_rot_type, "ra")
+			&& (ft_strequ(moves->b_rot_type, "rrb")))
+			|| (ft_strequ(moves->a_rot_type, "ra")
 			&& (ft_strequ(moves->b_rot_type, "rb"))))
 	{
-		if (moves->a_moves > moves->b_moves)
-			common = moves->b_moves;
-		else
-			common = moves->a_moves;
+		common = (moves->a_moves > moves->b_moves ? moves->b_moves : moves->a_moves);
 		if (common)
 		{
 			moves->com_rot = ft_strcpy(moves->com_rot, moves->a_rot_type);
@@ -80,8 +77,8 @@ t_moves	*calc_moves_from_a_to_b(t_stack *stack, int pos)
 	moves->b_rot_type = ft_strnew(3);
 	moves->com_rot = ft_strnew(3);
 	moves->elem = stack->a[pos];
-	moves->a_moves = find_a_rot(stack->a_len, pos, &(moves->a_rot_type));
-	moves->a_moves = find_place_in_b(stack->b, stack->b_len,
+	moves->a_moves = find_a_rot_type(stack->a_len, pos, &(moves->a_rot_type));
+	moves->b_moves = find_place_in_b(stack->b, stack->b_len,
 			stack->a[pos], &(moves->b_rot_type));
 	moves->common_moves = find_common(moves);
 	moves->total = moves->a_moves + moves->b_moves + moves->common_moves + 1;

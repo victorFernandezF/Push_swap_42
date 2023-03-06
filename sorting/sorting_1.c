@@ -18,7 +18,6 @@
 */
 void	start_sorting(t_stack *stack)
 {
-
 	if (stack->a_len == 2)
 		sort_two_elements(stack);
 	if (stack->a_len == 3)
@@ -29,23 +28,25 @@ void	start_sorting(t_stack *stack)
 		sort_five_elements(stack);
 	if (stack->a_len > 5 && stack->a_len < 100)
 		medium_sort(stack);
-	if (stack->a_len == 100)
+	else
+		global_sort(stack);
+	/* if (stack->a_len == 100)
 	{
-		simplify_numbers(stack);
-		sort_100_elements(stack, 0);
+		//simplify_numbers(stack);
+		global_sort(stack);
 	}
 	if (stack->a_len == 500)
 	{
-		simplify_numbers(stack);
-		sort_500_elements(stack);
-	}
+		//simplify_numbers(stack);
+		global_sort(stack);
+	} */
 }
 
 // Sorts two elements.
 void	sort_two_elements(t_stack *stack)
 {
 	if (stack->a[0] > stack->a[1])
-		do_operation("sa", stack);
+		sa(stack);
 }
 
 // Sorts three elements

@@ -6,7 +6,7 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/15 10:38:55 by victofer          #+#    #+#              #
-#    Updated: 2023/03/03 14:09:34 by victofer         ###   ########.fr        #
+#    Updated: 2023/03/06 11:14:46 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,12 +32,15 @@ SRC			:=  src/main.c \
 				sorting/sorting_2.c \
 				sorting/sort_100.c \
 				sorting/sort_500.c \
+				sorting/global_sort.c \
+				sorting/best_way_from_a_to_b.c \
+				sorting/rotation_type.c \
+				sorting/sort_helper.c \
 				sorting/sort_stack_b.c \
 				sorting/sorting_aux_1.c \
 				testing_files_to_delete/leaks_and_print_stacks.c \
 				sorting/chunks_1.c \
-				utils/utilities.c \
-				utils/utilities_2.c \
+				utils/utilities_3.c \
 				instructions/instructions_aux.c \
 				sorting/simplifier.c
 

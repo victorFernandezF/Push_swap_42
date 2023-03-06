@@ -6,17 +6,17 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 18:56:04 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/03 14:15:56 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/06 11:04:24 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/push_swap.h"
 
-t_moves	*calculate_best_way_a_to_b(t_stack *stack)
+/* t_moves	*best_way_from_a_to_b(t_stack *stack)
 {
-	int		i;
-	t_moves	*best_move;
-	t_moves	*moves;
+	register int	i;
+	t_moves			*best_move;
+	t_moves			*moves;
 
 	i = 0;
 	while (i < stack->a_len)
@@ -103,21 +103,20 @@ void	sort_500_elements(t_stack *stack)
 {
 	t_moves	*best_move;
 	int		optimus;
+	int		i;
 
+	i = 0;
 	if (stack->a_len > 200)
 		optimus = 50;
 	else
 		optimus = 2;
 	while (stack->b_len != 2)
 		pb(stack);
-	//test_print_stacks(*stack);
 	while (stack->a_len > optimus)
-	{	
-		//test_print_stacks(*stack);
-		best_move = calculate_best_way_a_to_b(stack);
+	{
+		best_move = best_way_from_a_to_b(stack);
 		while (best_move->common_moves)
 		{
-			
 			if (ft_strequ(best_move->com_rot, "rr"))
 				rr(stack);
 			else
@@ -126,9 +125,8 @@ void	sort_500_elements(t_stack *stack)
 		}
 		process_moves(best_move, stack);
 		pb(stack);
-		
 		free_moves(best_move);
 	}
 	insert_leftover_to_b(stack);
 	insert_back_in_a(stack);
-}
+} */
