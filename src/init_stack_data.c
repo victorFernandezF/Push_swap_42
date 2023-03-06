@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 12:11:28 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/01 18:23:16 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/06 19:06:19 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,5 @@ void	init_stack(t_stack *stack)
 	stack->pb_count = 0;
 	stack->b_len = 0;
 	stack->moves = 0;
+	stack->print_instr = 1;
 }

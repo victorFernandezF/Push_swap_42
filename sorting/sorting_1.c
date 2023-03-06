@@ -22,24 +22,8 @@ void	start_sorting(t_stack *stack)
 		sort_two_elements(stack);
 	if (stack->a_len == 3)
 		sort_three_elements(stack);
-	if (stack->a_len == 4)
-		sort_four_elements(stack);
-	if (stack->a_len == 5)
-		sort_five_elements(stack);
-	if (stack->a_len > 5 && stack->a_len < 100)
-		medium_sort(stack);
 	else
 		global_sort(stack);
-	/* if (stack->a_len == 100)
-	{
-		//simplify_numbers(stack);
-		global_sort(stack);
-	}
-	if (stack->a_len == 500)
-	{
-		//simplify_numbers(stack);
-		global_sort(stack);
-	} */
 }
 
 // Sorts two elements.

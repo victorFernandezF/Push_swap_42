@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/21 14:19:46 by iiliuk            #+#    #+#             */
-/*   Updated: 2023/03/06 11:08:17 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/06 13:12:05 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,11 +111,11 @@ void	place_smallest_first_a(t_stack *stack)
 	min_index = find_min_index(stack->a, stack->a_len);
 	if (min_index <= stack->a_len / 2)
 		while (min_index--)
-			ra(stack);
+			apply_ra(stack);
 	else
 		while ((stack->a_len - min_index) > 0)
 		{
-			rra(stack);
+			apply_rra(stack);
 			min_index++;
 		}
 }

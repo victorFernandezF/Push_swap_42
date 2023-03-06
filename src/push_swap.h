@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/06 11:12:52 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/06 19:15:54 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,18 @@ void	rra(t_stack *stack);
 void	rrb(t_stack *stack);
 void	rrr(t_stack *stack);
 
+void	apply_sa(t_stack *stack);
+void	apply_sb(t_stack *stack);
+void	apply_ss(t_stack *stack);
+void	apply_pb(t_stack *stack);
+void	apply_pa(t_stack *stack);
+void	apply_ra(t_stack *stack);
+void	apply_rb(t_stack *stack);
+void	apply_rr(t_stack *stack);
+void	apply_rra(t_stack *stack);
+void	apply_rrb(t_stack *stack);
+void	apply_rrr(t_stack *stack);
+
 // SIMPLIFY STACK (to acept negatives numbers)
 
 void	init_aux_array(t_stack *stack);
@@ -121,9 +133,6 @@ t_moves	*calc_moves_from_a_to_b(t_stack *stack, int pos);
 int		find_common(t_moves *moves);
 void	place_smallest_first(t_stack *stack);
 
-
-
-
 int		find_place_in_a(int *stack, int len, int elem, char **rot_type);
 int		find_place_in_b(int *stack, int len, int elem, char **rot_type);
 int		find_a_rot_type(int len, int pos, char **a_rot_type);
@@ -138,6 +147,8 @@ int		find_max_index(int *stack, int len);
 int		find_min_elem(int *stack, int stack_len);
 int		find_max_elem(int *stack, int stack_len);
 void	place_smallest_first_a(t_stack *stack);
-
+t_stack	*parse_args(int argc, char **argv, t_stack *stack);
+void	init_stack_struct(t_stack *stack, int argc);
+char	**ft_strsplit(char const *s, char c);
 
 #endif

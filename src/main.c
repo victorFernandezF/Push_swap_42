@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:48:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/06 11:20:52 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/06 19:17:31 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,23 +27,28 @@ int	get_stack_a_len(char **nbrs)
 int	main(int argc, char **argv)
 {
 	t_stack	*stack;
-	char	**nbrs;
-	int		print;
 
-//	print = TRUE;
-	print = FALSE;
-	if (argc == 1)
-		ft_error();
+	if (argc-- == 1)
+		exit(0);
+	else
+		argv++;
 	stack = (t_stack *)malloc(sizeof(t_stack));
-	init_stack(stack);
-	nbrs = args_handler(argc - 1, argv);
-	stack->a_len = get_stack_a_len(nbrs);
-	stack->a = fill_array(stack->a_len, nbrs);
-	free_nbrs(nbrs);
-	check_everything(stack->a_len, argv, stack->a);
+	if (argc == 1)
+	{
+		argv = ft_strsplit(argv[0], ' ');
+		argc = 0;
+		while (argv && argv[argc])
+			argc++;
+		if (argc == 0)
+		{
+			ft_putstr_fd("Error\n", 2);
+			exit(1);
+		}
+	}
+	init_stack_struct(stack, argc);
+	stack = parse_args(argc, argv, stack);
 	start_sorting(stack);
-	if (print != 0)
-		test_print_stacks(stack);
+	test_print_stacks(stack);
 	free_stacks(stack);
 	//atexit(show_leaks);
 	return (0);
