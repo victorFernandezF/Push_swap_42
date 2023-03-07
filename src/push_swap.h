@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:32:37 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/06 19:15:54 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/07 11:06:46 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,5 +150,7 @@ void	place_smallest_first_a(t_stack *stack);
 t_stack	*parse_args(int argc, char **argv, t_stack *stack);
 void	init_stack_struct(t_stack *stack, int argc);
 char	**ft_strsplit(char const *s, char c);
+void	minisort(t_stack *stack);
+
 
 #endif

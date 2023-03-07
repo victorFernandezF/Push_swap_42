@@ -18,12 +18,33 @@
 */
 void	start_sorting(t_stack *stack)
 {
-	if (stack->a_len == 2)
-		sort_two_elements(stack);
-	if (stack->a_len == 3)
-		sort_three_elements(stack);
+	if (stack->a_len <= 3)
+		minisort(stack);
 	else
 		global_sort(stack);
+}
+
+void	minisort(t_stack *stack)
+{
+	int	max;
+
+	if (stack->a_len == 1)
+		return ;
+	if (stack->a_len == 2)
+	{
+		if (stack->a[0] > stack->a[1])
+			sa(stack);
+	}
+	else if (stack->a_len == 3)
+	{
+		max = find_max_elem(stack->a, stack->a_len);
+		if (max == 0)
+			ra(stack);
+		if (max == 1)
+			rra(stack);
+		if (stack->a[0] > stack->a[1])
+			sa(stack);
+	}
 }
 
 // Sorts two elements.

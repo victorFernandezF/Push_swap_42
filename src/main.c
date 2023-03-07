@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:48:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/06 19:17:31 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/07 12:26:02 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int	main(int argc, char **argv)
 		}
 	}
 	init_stack_struct(stack, argc);
+	printf("\n TEST SIZE %i \n", stack->a_len);
 	stack = parse_args(argc, argv, stack);
 	start_sorting(stack);
 	test_print_stacks(stack);

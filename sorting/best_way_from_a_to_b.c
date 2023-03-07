@@ -6,17 +6,16 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 13:12:29 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/06 13:19:00 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/07 12:24:42 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../src/push_swap.h"
 
-int		find_place_in_b(int *stack, int len, int elem, char **rot_type)
+int	find_place_in_b(int *stack, int len, int elem, char **rot_type)
 {
-	register int i;
-	register int place;
+	int	i;
+	int	place;
 
 	i = 0;
 	place = 0;
@@ -24,26 +23,28 @@ int		find_place_in_b(int *stack, int len, int elem, char **rot_type)
 		place = 0;
 	else if (len == 2 && elem < stack[0] && elem > stack[len - 1])
 		place = 1;
-	else if (elem > stack[find_max_elem(stack, len)] ||
-	elem < stack[find_min_elem(stack, len)])
+	else if (elem > stack[find_max_elem(stack, len)]
+		|| elem < stack[find_min_elem(stack, len)])
 		place = find_max_elem(stack, len);
 	else
+	{
 		while (i < len)
 		{
-			if (elem < stack[i] && ((i + 1 < len && elem > stack[i + 1]) ||
-			(i + 1 == len && elem > stack[0])))
+			if (elem < stack[i] && ((i + 1 < len && elem > stack[i + 1])
+					|| (i + 1 == len && elem > stack[0])))
 			{
 				place = i + 1;
 				break ;
 			}
 			i++;
 		}
+	}
 	return (find_b_rot_type(len, place, rot_type));
 }
 
-int		find_common(t_moves *moves)
+int	find_common(t_moves *moves)
 {
-	register int		common;
+	int		common;
 
 	common = 0;
 	if ((ft_strequ(moves->a_rot_type, "rra") && (ft_strequ(moves->b_rot_type , "rrb"))) ||
@@ -58,12 +59,13 @@ int		find_common(t_moves *moves)
 			moves->a_moves -= common;
 		}
 	}
+	printf("COMMON TEST %s \n", moves->a_rot_type);
 	return (common);
 }
 
 t_moves	*calc_moves_from_a_to_b(t_stack *stack, int pos)
 {
-	t_moves	*moves;
+	t_moves *moves;
 
 	moves = (t_moves *)malloc(sizeof(t_moves));
 	moves->a_rot_type = ft_strnew(3);
@@ -72,17 +74,17 @@ t_moves	*calc_moves_from_a_to_b(t_stack *stack, int pos)
 	moves->elem = stack->a[pos];
 	moves->a_moves = find_a_rot_type(stack->a_len, pos, &(moves->a_rot_type));
 	moves->b_moves = find_place_in_b(stack->b, stack->b_len,
-			stack->a[pos], &(moves->b_rot_type));
+	stack->a[pos], &(moves->b_rot_type));
 	moves->common_moves = find_common(moves);
 	moves->total = moves->a_moves + moves->b_moves + moves->common_moves + 1;
 	return (moves);
 }
 
-t_moves			*best_way_from_a_to_b(t_stack *stack)
+t_moves	*best_way_from_a_to_b(t_stack *stack)
 {
-	register int	i;
-	t_moves			*best_move;
-	t_moves			*moves;
+	int		i;
+	t_moves	*best_move;
+	t_moves	*moves;
 
 	i = 0;
 	while (i < stack->a_len)
@@ -99,5 +101,6 @@ t_moves			*best_way_from_a_to_b(t_stack *stack)
 			free_moves(moves);
 		i++;
 	}
+	//printf("\n TEST - %s\n", moves->total);
 	return (best_move);
 }
