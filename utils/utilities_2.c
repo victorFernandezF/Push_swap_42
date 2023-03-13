@@ -5,18 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/03 11:21:40 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/06 10:55:51 by victofer         ###   ########.fr       */
+/*   Created: 2023/03/08 18:08:30 by victofer          #+#    #+#             */
+/*   Updated: 2023/03/10 11:26:12 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../src/push_swap.h"
+#include "../src/push_swap.h"
 
-void	place_smallest_first(t_stack *stack)
+/*
+*	Checks if the stack is already sorted.
+*	@param *stack array of numbers
+*	@param len lenght of array.
+*/
+int	is_sorted(int *stack, int len)
+{
+	int	i;
+
+	i = 0;
+	while (i < len - 1)
+	{
+		if (stack[i] < stack[i + 1])
+			i++;
+		else
+			return (0);
+	}
+	return (1);
+}
+
+/*
+*	Find the min element os stack b and moves to a.
+*	@param *stack
+*/
+void	place_smallest_first_a(t_stack *stack)
 {
 	int	min_index;
 
-	min_index = get_min_pos(*stack);
+	min_index = find_min_position(stack->a, stack->a_len);
 	if (min_index <= stack->a_len / 2)
 		while (min_index--)
 			ra(stack);
@@ -27,92 +51,5 @@ void	place_smallest_first(t_stack *stack)
 			rra(stack);
 			min_index++;
 		}
-	}		
-}
-
-int	find_place_in_b(int *stack, int len, int elem, char **rot_type)
-{
-	int	i;
-	int	place;
-
-	i = 0;
-	place = 0;
-	if (len == 2 && elem > stack[0] && elem < stack[len - 1])
-		place = 0;
-	else if (len == 2 && elem < stack[0] && elem > stack[len - 1])
-		place = 1;
-	else if (elem > stack[max(stack, len)]
-		|| elem < stack[min(stack, len)])
-		place = max(stack, len);
-	else
-	{
-		while (i < len)
-		{
-			if (elem < stack[i] && ((i + 1 < len && elem > stack[i + 1])
-					|| (i + 1 == len && elem > stack[0])))
-			{
-				place = i + 1;
-				break ;
-			}
-			i++;
-		}
 	}
-	return (find_b_rot_type(len, place, rot_type));
 }
-
-int	find_place_in_a(int *stack, int len, int elem, char **rot_type)
-{
-	int	i;
-	int	place;
-
-	i = 0;
-	place = 0;
-	if (len == 2 && elem > stack[0] && elem < stack[1])
-		place = 1;
-	else if (len == 2 && elem < stack[0] && elem > stack[1])
-		place = 0;
-	else if (elem > stack[max(stack, len)]
-		|| elem < stack[min(stack, len)])
-		place = min(stack, len);
-	else
-	{
-		while (i < len)
-		{
-			if (elem > stack[i] && ((i + 1 < len && elem < stack[i + 1])
-					|| (i + 1 == len && elem < stack[0])))
-			{
-				place = i + 1;
-				break ;
-			}
-			i++;
-		}
-	}
-	return (find_a_rot_type(len, place, rot_type));
-}
-
-int	find_a_rot_type(int len, int pos, char **a_rot_type)
-{	
-	if (pos > len / 2)
-	{
-		*a_rot_type = ft_strcpy(*a_rot_type, "rra");
-		if (len > 2)
-			pos = len - pos;
-	}
-	else
-		*a_rot_type = ft_strcpy(*a_rot_type, "ra");
-	return (pos);
-}
-
-int	find_b_rot_type(int len, int pos, char **b_rot_type)
-{	
-	if (pos > len / 2)
-	{
-		*b_rot_type = ft_strcpy(*b_rot_type, "rrb");
-		if (len > 2)
-			pos = len - pos;
-	}
-	else
-		*b_rot_type = ft_strcpy(*b_rot_type, "rb");
-	return (pos);
-}
-

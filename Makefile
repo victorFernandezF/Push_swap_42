@@ -5,77 +5,69 @@
 #                                                     +:+ +:+         +:+      #
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/15 10:38:55 by victofer          #+#    #+#              #
-#    Updated: 2023/03/06 19:18:17 by victofer         ###   ########.fr        #
+#    Created: 2017/03/02 12:28:41 by iiliuk            #+#    #+#              #
+#    Updated: 2023/03/13 18:52:00 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC			:= gcc
-CFLAGS		:= -Wall -Wextra -Werror
-NAME		:= push_swap.out
+NAME	= 	push_swap
+CFLAGS 	= 	-Wall -Wextra -Werror -g
 
-LIBFT_PATH	:= ./libft/ 
-LEAKS 		:= ./leaks_checker/
-LIBFT_LIB	:= $(LIBFT_PATH)libft.a
+SRC 	= 	src/main.c \
+			src/init_stack.c \
+			instructions/rr_instr.c \
+			instructions/rrr_instr.c \
+			instructions/s_and_p_instr.c \
+			sort_files/start_sorting.c \
+			sort_files/minisort.c \
+			sort_files/big_sort.c \
+			sort_files/find_max_min.c \
+			sort_files/type_rotation.c \
+			sort_files/calculate_cheaper_move.c \
+			args_management/parse_args.c \
+			args_management/split_args.c \
+			utils/utilities.c \
+			utils/utilities_2.c \
+			utils/ft_special_atoi.c \
+			free_and_errors/free_structs.c \
+			free_and_errors/ft_errors.c \
+			
+OBJS		= $(SRC:.c=.o)
 
-SRC			:=  src/main.c \
-				src/init_stack_data.c \
-				input_handler/args_handler.c \
-				checks_files/ckecks.c \
-				error_management/errors.c \
-				array_management/array_moves_1.c \
-				array_management/array_moves_2.c \
-				instructions/instructions_1.c \
-				instructions/instructions_2.c \
-				instructions/instructions_3.c \
-				instructions/apply_instr.c \
-				instructions/apply_rr.c \
-				instructions/apply_rrr.c \
-				src/parse_args.c \
-				sorting/sorting_1.c \
-				sorting/sorting_2.c \
-				sorting/sort_100.c \
-				sorting/sort_500.c \
-				sorting/global_sort.c \
-				sorting/best_way_from_a_to_b.c \
-				sorting/rotation_type.c \
-				sorting/sort_helper.c \
-				sorting/sort_stack_b.c \
-				sorting/sorting_aux_1.c \
-				testing_files_to_delete/leaks_and_print_stacks.c \
-				sorting/chunks_1.c \
-				utils/utilities_3.c \
-				utils/ft_strsplit.c \
-				instructions/instructions_aux.c \
-				sorting/simplifier.c
-
-OBJECTS		:= $(SRC:.c=.o)
-
-#COLORS
-G = \033[0;32m
+# T E X T   S T U F F
+G = \033[0;92m
 R = \033[0;31m
-B = \033[0;34m
-Y = \033[0;93m
+B = \033[0;96m	
+Y = \033[0;33m
 M = \033[0;95m
+BOLD = \033[0;1m
+
 E = \033[0m
-#E COLORSmakecd 
+
+LIBFT_PATH 	=  libft/
+LIBFT		= -L./libft -lft
+LIBFT		= libft/libft.a
 
 all: nice_text makelibs $(NAME)
 
-test:  $(NAME)
-
 nice_text:
-	@echo "$(Y)"
-	@echo "PPPPPP  UU   UU  SSSSS  HH   HH          SSSSS  WW     WW   AAA   PPPPPP "
-	@echo "PP   PP UU   UU SS      HH   HH         SS      WW     WW  AAAAA  PP   PP "
-	@echo "PPPPPP  UU   UU  SSSSS  HHHHHHH          SSSSS  WW  W  WW AA   AA PPPPPP  "
-	@echo "PP      UU   UU      SS HH   HH              SS WW WWW WW AAAAAAA PP      "
-	@echo "PP       UUUUU   SSSSS  HH   HH _______  SSSSS   WW   WW  AA   AA PP "
+	@echo "$(B)"
+	@echo "PPPPPP  UU   UU  SSSSS  HH   HH           SSSSS  WW     WW   AAA   PPPPPP "
+	@echo "PP   PP UU   UU SS      HH   HH          SS      WW     WW  AAAAA  PP   PP "
+	@echo "PPPPPP  UU   UU  SSSSS  HHHHHHH           SSSSS  WW  W  WW AA   AA PPPPPP "
+	@echo "PP      UU   UU      SS HH   HH               SS WW WWW WW AAAAAAA PP      "
+	@echo "PP       UUUUU   SSSSS  HH   HH _______   SSSSS   WW   WW  AA   AA PP "
 	
 	@echo "$(E)"
 
-$(OBJ): $(SRC)
-	$(CC) $(CFLAGS) -C $(SRC)
+norminette:
+	@echo ""
+	@echo "$(Y) ---- N O R M I N E T T E ----$(E)"
+	@sleep 1
+	@echo "$(BOLD)"
+	@norminette
+	@echo "$(Y)------- $(G)EVERITHING OK$(Y) -------$(E)"
+	
 
 makelibs:
 	@echo ""
@@ -85,37 +77,29 @@ makelibs:
 	@echo "$(Y)0-----------------------------0 $(E)"
 	@echo "$(E)"
 
-leaks:
-	@make -C $(LEAKS) all
-	@$(CC) $(CFLAGS) $(OBJECTS) $(MLX_LIB) libft/libft.a leaks_checker/memory_leaks.a -o push_swap 
-	@echo "   $(Y)0-----------------------0"
-	@echo "   $(Y)|$(G)  push_swap Created   $(Y) |"
-	@echo "   $(Y)0-----------------------0"
-	@echo "$(E)"
+$(OBJSFD)/%.o: %.c | $(OBJSFD)
+	@$(CC) $(CFLAGS) $(HDR) $(LIBFT_HDR) -c $< -o $@
 
-$(NAME): $(OBJECTS)
-	@$(CC) $(CFLAGS) $(OBJECTS) $(MLX_LIB) libft/libft.a -o push_swap 
+$(NAME): $(OBJS) $(LIBFT)
+	@gcc $(CFLAGS) $(OBJS) $(LIBFT) -o push_swap 
 	@echo "   $(Y)0-----------------------0"
 	@echo "   $(Y)|$(G)  push_swap Created   $(Y) |"
 	@echo "   $(Y)0-----------------------0"
 	@echo "$(E)"
 
 clean:
-	@make -C $(LIBFT_PATH) clean
-	@rm -rf $(OBJECTS)
+	@/bin/rm -f $(OBJS)
+	@make -C ./libft clean
+
+fclean: clean
 	@echo ""
 	@echo "$(Y)0------------------------0"
 	@echo "$(Y)|$(M)  Everything cleaned   $(Y) |"
 	@echo "$(Y)0------------------------0"
 	@echo "$(E)"
-
-fclean: clean
-	@make -C $(LIBFT_PATH) fclean
-	@rm -rf $(NAME)
-	@rm -rf push_swap
-	@rm -rf a.out
+	@/bin/rm -f $(NAME)
+	@make -C ./libft fclean
 
 re: fclean all
-
+.PHONY: all clean fclean re
 .SILENT: $(OBJS)
-.PHONY: clean fclean all re

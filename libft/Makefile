@@ -6,7 +6,7 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/26 09:36:58 by victofer          #+#    #+#              #
-#    Updated: 2023/03/06 18:43:14 by victofer         ###   ########.fr        #
+#    Updated: 2023/03/09 09:59:46 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_putnbr_fd.c ft_split.c max.c min.c ft_pow.c ft_strcmp.c ft_split2.c \
 	ft_printf.c ft_print_c_str_int.c ft_print_unsigned.c ft_print_hexa.c ft_print_ptr.c \
 	ft_put_hexa.c ft_put_bin.c ft_put_oct.c ft_str_rev.c ft_change_bases.c \
+	ft_strcpy.c 
 	
 OBJ= $(SRC:.c=.o)
 BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \

@@ -5,52 +5,45 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/16 11:48:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/07 12:26:02 by victofer         ###   ########.fr       */
+/*   Created: 2023/03/08 10:32:43 by victofer          #+#    #+#             */
+/*   Updated: 2023/03/13 19:14:57 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "push_swap.h"
 
-// Get the length of the numbers array.
-int	get_stack_a_len(char **nbrs)
+void	leaks(void)
 {
-	int	cant;
-
-	cant = 0;
-	while (nbrs[cant])
-		cant++;
-	return (cant);
+	system("leaks -q push_swap");
 }
 
-// Main function.
 int	main(int argc, char **argv)
 {
 	t_stack	*stack;
+	int		aux;
 
+	aux = 0;
 	if (argc-- == 1)
 		exit(0);
-	else
-		argv++;
+	argv++;
 	stack = (t_stack *)malloc(sizeof(t_stack));
 	if (argc == 1)
 	{
-		argv = ft_strsplit(argv[0], ' ');
+		aux = 1;
+		argv = split_args(argv[0], ' ');
 		argc = 0;
 		while (argv && argv[argc])
 			argc++;
 		if (argc == 0)
-		{
-			ft_putstr_fd("Error\n", 2);
-			exit(1);
-		}
+			print_error();
 	}
 	init_stack_struct(stack, argc);
-	printf("\n TEST SIZE %i \n", stack->a_len);
 	stack = parse_args(argc, argv, stack);
+	if (check_duplicated(stack->a, stack->a_len))
+		free_stack_and_print_error(stack);
+	if (aux == 1)
+		free_argv(argv);
 	start_sorting(stack);
-	test_print_stacks(stack);
-	free_stacks(stack);
-	//atexit(show_leaks);
+	free_stack(stack);
 	return (0);
 }

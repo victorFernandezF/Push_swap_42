@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_special_atoi.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 19:48:27 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/09 12:39:30 by victofer         ###   ########.fr       */
+/*   Created: 2023/03/10 10:29:05 by victofer          #+#    #+#             */
+/*   Updated: 2023/03/13 18:49:59 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "../src/push_swap.h"
 
 static int	ft_is_sign(char n)
 {
@@ -26,7 +26,15 @@ static int	ft_is_nbr(char n)
 	return (0);
 }
 
-long long	ft_atoi(const char *str)
+/*
+*	This functions is like the original atoi but in this case if
+	the given number is "-0" or "+0" it returns a number bigger
+	than the max_int. so it will cause a controled error. This is becouse
+	zero can not be negative or positive so if an argument is one of this
+	will be considered an error.
+*	@param str String to convert to int. 
+*/
+long long	ft_special_atoi(const char *str)
 {
 	long long	result;
 	int			sign;

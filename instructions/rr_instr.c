@@ -1,64 +1,74 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   apply_rr.c                                         :+:      :+:    :+:   */
+/*   rr_instr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/21 14:17:05 by iiliuk            #+#    #+#             */
-/*   Updated: 2023/03/06 13:14:20 by victofer         ###   ########.fr       */
+/*   Created: 2023/03/08 10:54:12 by victofer          #+#    #+#             */
+/*   Updated: 2023/03/09 18:15:19 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/push_swap.h"
 
-void 	apply_ra(t_stack *stack)
+/*
+	The first element of stack a becomes the last one.
+*/
+void	ra(t_stack *stack)
 {
-	register int i;
-	register int tmp;
+	int	i;
+	int	tmp;
 
 	if (stack->a_len == 0)
 		return ;
 	i = 1;
 	tmp = stack->a[0];
-	while (i < stack->a_len) 
+	while (i < stack->a_len)
 	{
 		stack->a[i - 1] = stack->a[i];
 		i++;
 	}
 	stack->a[i - 1] = tmp;
-	stack->print_instr ? ft_printf("ra\n") : 0;
-	stack->moves++;
+	if (stack->print_instr)
+		ft_printf("ra\n");
+	stack->total_moves++;
 }
 
-void 	apply_rb(t_stack *stack)
+/*
+	The first element of stack b becomes the last one.
+*/
+void	rb(t_stack *stack)
 {
-	register int i;
-	register int tmp;
+	int	i;
+	int	tmp;
 
 	if (stack->b_len == 0)
 		return ;
 	i = 1;
 	tmp = stack->b[0];
-	while (i < stack->b_len) 
+	while (i < stack->b_len)
 	{
 		stack->b[i - 1] = stack->b[i];
 		i++;
 	}
 	stack->b[i - 1] = tmp;
-	stack->print_instr ? ft_printf("rb\n") : 0;
-	stack->moves++;
+	if (stack->print_instr)
+		ft_printf("rb\n");
+	stack->total_moves++;
 }
 
-void 	apply_rr(t_stack *stack)
+// Make ra and rb at the same time.
+void	rr(t_stack *stack)
 {
-	register int tmp_instr;
+	int	tmp_instr;
 
 	tmp_instr = stack->print_instr;
 	stack->print_instr = 0;
-	apply_ra(stack);
-	apply_rb(stack);
+	ra(stack);
+	rb(stack);
 	stack->print_instr = tmp_instr;
-	stack->print_instr ? ft_printf("rr\n") : 0;
-	stack->moves++;
+	if (stack->print_instr)
+		ft_printf("rr\n");
+	stack->total_moves++;
 }

@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_stack_data.c                                  :+:      :+:    :+:   */
+/*   ft_errors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 12:11:28 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/06 19:06:19 by victofer         ###   ########.fr       */
+/*   Created: 2023/03/08 18:37:28 by victofer          #+#    #+#             */
+/*   Updated: 2023/03/13 19:13:27 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include"../src/push_swap.h"
 
-// Initializes datas from stack. Used in main
-void	init_stack(t_stack *stack)
+/*
+*	Prints the word "Error" followed by a new line and
+	Exit the program
+*/
+void	print_error(void)
 {
-	stack->b = (int *)malloc(1 * sizeof(int));
-	stack->temp = (int *)malloc(1 * sizeof(int));
-	stack->aux = (int *)malloc(1 * sizeof(int));
-	stack->a_len = 0;
-	stack->chunk_len = 20;
-	stack->pb_count = 0;
-	stack->b_len = 0;
-	stack->moves = 0;
-	stack->print_instr = 1;
+	ft_putstr_fd("Error\n", 2);
+	exit(-1);
+}
+
+void	free_stack_and_print_error(t_stack *stack)
+{
+	ft_putstr_fd("Error\n", 2);
+	free_stack(stack);
+	exit(-1);
 }

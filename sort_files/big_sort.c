@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   global_sort.c                                      :+:      :+:    :+:   */
+/*   big_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/06 13:12:43 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/07 11:49:02 by victofer         ###   ########.fr       */
+/*   Created: 2023/03/08 10:38:43 by victofer          #+#    #+#             */
+/*   Updated: 2023/03/10 10:48:19 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/push_swap.h"
 
-int	find_place_in_a(int *stack, int len, int elem, char **rot_type)
+int	find_place_in_a(int *stack, int len, int elem, char **rotation_type)
 {
 	int	i;
 	int	place;
 
-	i = 0;
+	i = -1;
 	place = 0;
 	if (len == 2 && elem > stack[0] && elem < stack[1])
 		place = 1;
@@ -28,7 +28,7 @@ int	find_place_in_a(int *stack, int len, int elem, char **rot_type)
 		place = find_min_elem(stack, len);
 	else
 	{
-		while (i < len)
+		while (++i < len)
 		{
 			if (elem > stack[i] && ((i + 1 < len && elem < stack[i + 1])
 					|| (i + 1 == len && elem < stack[0])))
@@ -36,38 +36,37 @@ int	find_place_in_a(int *stack, int len, int elem, char **rot_type)
 				place = i + 1;
 				break ;
 			}
-			i++;
 		}
 	}
-	return (find_a_rot_type(len, place, rot_type));
+	return (find_rotation_a(len, place, rotation_type));
 }
 
-void	insert_back_in_a(t_stack *stack)
+static void	insert_back_in_a(t_stack *stack)
 {
 	int		num_of_rots;
-	char	*rot_type;
+	char	*rotation_type;
 
 	num_of_rots = 0;
-	rot_type = ft_strnew(3);
+	rotation_type = new_str(3);
 	while (stack->b_len)
 	{
 		num_of_rots = find_place_in_a(stack->a,
-				stack->a_len, stack->b[0], &rot_type);
+				stack->a_len, stack->b[0], &rotation_type);
 		while (num_of_rots > 0)
 		{
-			if (ft_strequ(rot_type, "ra"))
-				apply_ra(stack);
+			if (string_compare(rotation_type, "ra"))
+				ra(stack);
 			else
-				apply_rra(stack);
+				rra(stack);
 			num_of_rots--;
 		}
-		apply_pa(stack);
+		pa(stack);
 	}
 	place_smallest_first_a(stack);
-	free(rot_type);
+	free(rotation_type);
 }
 
-void	insert_leftover_to_b(t_stack *stack)
+static void	insert_leftover_to_b(t_stack *stack)
 {
 	int	idx;
 
@@ -76,58 +75,65 @@ void	insert_leftover_to_b(t_stack *stack)
 	{
 		idx = find_min_elem(stack->a, stack->a_len);
 		if (idx == 0)
-			apply_pb(stack);
+			pb(stack);
 		else if (idx <= stack->a_len / 2)
-			apply_ra(stack);
+			ra(stack);
 		else if (idx > stack->a_len / 2)
-			apply_rra(stack);
+			rra(stack);
 	}
 }
 
-void	process_moves(t_moves *best_move, t_stack *stack)
+/*
+*	Makes the correct rotation intruction depending on the
+	move calculated before
+*	@param best_move - struct whith the moves datas.
+*	@param stack
+*/
+static void	process_moves(t_moves *best_move, t_stack *stack)
 {
 	while (best_move->a_moves)
 	{
-		if (ft_strequ(best_move->a_rot_type, "ra"))
-			apply_ra(stack);
+		if (string_compare(best_move->a_rotation_type, "ra"))
+			ra(stack);
 		else
-			apply_rra(stack);
+			rra(stack);
 		best_move->a_moves--;
 	}
 	while (best_move->b_moves)
 	{
-		if (ft_strequ(best_move->b_rot_type, "rb"))
-			apply_rb(stack);
+		if (string_compare(best_move->b_rotation_type, "rb"))
+			rb(stack);
 		else
-			apply_rrb(stack);
+			rrb(stack);
 		best_move->b_moves--;
 	}
 }
 
-void	global_sort(t_stack *stack)
+/*
+*	Sorts stack a as long as its size is more than 3 elements
+*	@param stack
+*/
+void	big_sort(t_stack *stack)
 {
 	t_moves	*best_move;
 	int		optimizer;
 
-	if (stack->a_len > 200)
-		optimizer = 50;
-	else
-		optimizer = 2;
+	optimizer = get_optimus_stack(stack);
 	while (stack->b_len != 2)
-		apply_pb(stack);
+		pb(stack);
 	while (stack->a_len > optimizer)
 	{
-		best_move = best_way_from_a_to_b(stack);
+		best_move = cheapest_move_stack_a_to_b(stack);
 		while (best_move->common_moves)
 		{
-			if (ft_strequ(best_move->common_rot, "rr"))
-				apply_rr(stack);
+			if (string_compare(best_move->common_rotation, "rr"))
+				rr(stack);
 			else
-				apply_rrr(stack);
+				rrr(stack);
 			best_move->common_moves--;
 		}
 		process_moves(best_move, stack);
-		apply_pb(stack);
+		pb(stack);
 		free_moves(best_move);
 	}
 	insert_leftover_to_b(stack);
