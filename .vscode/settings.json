@@ -1,6 +1,8 @@
 {
 	"files.associations": {
 		"memory": "c",
-		"utility": "c"
+		"utility": "c",
+		"push_swap.h": "c",
+		"structs.h": "c"
 	}
 }

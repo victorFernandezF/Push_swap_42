@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:41:13 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/07 19:26:48 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/07 11:12:19 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # define YELLOW  "\x1B[33m"
 # define BG_YELLOW  "\x1b[103m"
 # define BLUE  "\x1B[34m"
-# define WHITE  "\x1B[37m"
+# define WHITE  "\033[0m"
 # define BG_WHITE  "\x1b[47m"
 # define MAG  "\x1B[35m"
 # define REDY  "\x1b[91m"
@@ -61,13 +61,27 @@ typedef struct s_stack
 {
 	int		*a;
 	int		*b;
-	char	*tmp;
+	int		*aux;
+	int		*temp;
 	int		a_len;
 	int		b_len;
+	int		aux_len;
 	int		chunk_len;
 	int		moves;
+	int		print_instr;
 	int		pb_count;
-	t_free	free;		
+	int		free;		
 }			t_stack;
 
+typedef struct s_moves
+{
+	int			elem;
+	int			a_moves;
+	char		*a_rot_type;
+	char		*b_rot_type;
+	char		*common_rot;
+	int			b_moves;
+	int			common_moves;
+	int			total;
+}				t_moves;
 #endif

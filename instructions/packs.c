@@ -1,59 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instructions_3.c                                   :+:      :+:    :+:   */
+/*   packs.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 12:12:54 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/06 12:11:14 by victofer         ###   ########.fr       */
+/*   Created: 2023/03/06 12:11:37 by victofer          #+#    #+#             */
+/*   Updated: 2023/03/06 12:13:29 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/push_swap.h"
-
-/*
-** Move the last element from 'a' and put it
-** at firts position of a (2 1 4 ->  4 1 2)
-*/
-void	rra(t_stack *stack)
-{
-	int	aux;
-
-	if (!stack->a)
-		return ;
-	aux = stack->a[stack->a_len - 1];
-	del_last_and_move_rest_a(stack);
-	add_one_to_first_and_move_rest_a(stack, aux);
-	stack->moves += 1;
-	ft_printf("rra\n");
-}
-
-/*
-** Move the last element from 'b' and put it
-** at firts position of b (2 1 4 ->  4 1 2)
-*/
-void	rrb(t_stack *stack)
-{
-	int	aux;
-
-	if (!stack->b)
-		return ;
-	aux = stack->b[stack->b_len - 1];
-	del_last_and_move_rest_b(stack);
-	add_one_to_first_and_move_rest_b(stack, aux);
-	stack->moves += 1;
-	ft_printf("rrb\n");
-}
-
-// rra + rrb
-void	rrr(t_stack *stack)
-{
-	rra(stack);
-	rrb(stack);
-	stack->moves += 1;
-	ft_printf("rrr\n");
-}
 
 // Splits the string with the instructions and execute them.
 void	pack_of_instructions(char *pack, t_stack *stack)

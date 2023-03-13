@@ -6,14 +6,14 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 11:41:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/06 13:24:59 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/06 11:07:45 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../src/push_swap.h"
 
 // Prints 'Error' and call free_stack function
-void	ft_error_free(t_stack stack)
+void	ft_error_free(t_stack *stack)
 {
 	ft_putstr_fd("Error\n", 2);
 	free_stacks(stack);
@@ -29,7 +29,7 @@ void	ft_error_free_array(int *nb)
 }
 
 /*
-* Frees every elements from array of arrays and free the array itself 
+** Frees every elements from array of arrays and free the array itself 
 */
 void	free_nbrs(char **nbrs)
 {
@@ -42,12 +42,25 @@ void	free_nbrs(char **nbrs)
 }
 
 // If stack a or stack b are not empty, frees them
-void	free_stacks(t_stack stack)
+void	free_stacks(t_stack *stack)
 {
-	if (stack.a)
-		free(stack.a);
-	if (stack.b)
-		free(stack.b);
+	free(stack->a);
+	free(stack->b);
+/* 	if (stack->aux)
+		free(stack->aux);
+	if (stack->temp)
+		free(stack->temp); */
+	free(stack);
+	stack = NULL;
+}
+
+void	free_moves(t_moves *moves)
+{
+	free(moves->a_rot_type);
+	free(moves->b_rot_type);
+	free(moves->common_rot);
+	free(moves);
+	moves = NULL;
 }
 
 // Print 'Error' and exit.

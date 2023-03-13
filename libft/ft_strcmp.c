@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_stack_data.c                                  :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 12:11:28 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/06 19:06:19 by victofer         ###   ########.fr       */
+/*   Created: 2023/03/03 12:04:35 by victofer          #+#    #+#             */
+/*   Updated: 2023/03/03 12:04:54 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include"libft.h"
 
-// Initializes datas from stack. Used in main
-void	init_stack(t_stack *stack)
+int	ft_strcmp(char const *s1, char const *s2)
 {
-	stack->b = (int *)malloc(1 * sizeof(int));
-	stack->temp = (int *)malloc(1 * sizeof(int));
-	stack->aux = (int *)malloc(1 * sizeof(int));
-	stack->a_len = 0;
-	stack->chunk_len = 20;
-	stack->pb_count = 0;
-	stack->b_len = 0;
-	stack->moves = 0;
-	stack->print_instr = 1;
+	int				i;
+	unsigned char	*str1;
+	unsigned char	*str2;
+
+	i = 0;
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	while (s1[i] && str1[i] == str2[i])
+		i++;
+	return (str1[i] - str2[i]);
 }

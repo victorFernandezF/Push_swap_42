@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:48:14 by victofer          #+#    #+#             */
-/*   Updated: 2023/02/07 19:18:29 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/07 12:26:02 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,29 @@ int	get_stack_a_len(char **nbrs)
 // Main function.
 int	main(int argc, char **argv)
 {
-	t_stack	stack;
-	char	**nbrs;
+	t_stack	*stack;
 
+	if (argc-- == 1)
+		exit(0);
+	else
+		argv++;
+	stack = (t_stack *)malloc(sizeof(t_stack));
 	if (argc == 1)
-		ft_error();
-	init_stack(&stack);
-	nbrs = args_handler(argc - 1, argv);
-	stack.a_len = get_stack_a_len(nbrs);
-	stack.a = fill_array(stack.a_len, nbrs);
-	free_nbrs(nbrs);
-	check_everything(stack.a_len, argv, stack.a);
-	stack = start_sorting(stack);
+	{
+		argv = ft_strsplit(argv[0], ' ');
+		argc = 0;
+		while (argv && argv[argc])
+			argc++;
+		if (argc == 0)
+		{
+			ft_putstr_fd("Error\n", 2);
+			exit(1);
+		}
+	}
+	init_stack_struct(stack, argc);
+	printf("\n TEST SIZE %i \n", stack->a_len);
+	stack = parse_args(argc, argv, stack);
+	start_sorting(stack);
 	test_print_stacks(stack);
 	free_stacks(stack);
 	//atexit(show_leaks);

@@ -34,6 +34,10 @@
 git clone https://github.com/victorFernandezF/Push_swap_42.git
 ~~~~~
 
+~~~~~
+git  --branch radix clone https://github.com/victorFernandezF/Push_swap_42.git
+~~~~~
+
 <hr/>
 
 # :1234:  PUSH_SWAP [:gb:]
