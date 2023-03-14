@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 10:33:56 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/13 19:01:42 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/14 17:58:57 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	over_the_limit(long long n)
 	return (n > max || n < min);
 }
 
-int	check_duplicated(int *numbers, int cant)
+int	check_duplicated(int *numbers, int cant, t_stack *stack)
 {
 	int	i;
 	int	j;
@@ -38,7 +38,7 @@ int	check_duplicated(int *numbers, int cant)
 		while (j < cant)
 		{
 			if (numbers[i] == numbers[j])
-				return (1);
+				free_stack_and_print_error(stack);
 			j++;
 		}
 	}

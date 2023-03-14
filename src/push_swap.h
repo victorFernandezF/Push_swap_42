@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 10:28:43 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/13 19:13:57 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/14 17:58:16 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void		place_smallest_first_a(t_stack *stack);
 
 int			is_sorted(int *stack, int len);
 int			over_the_limit(long long n);
-int			check_duplicated(int *numbers, int cant);
+int			check_duplicated(int *numbers, int cant, t_stack *stack);
 
 //    F R E E 
 

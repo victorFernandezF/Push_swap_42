@@ -6,16 +6,11 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 10:32:43 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/13 19:14:57 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/14 18:05:21 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	leaks(void)
-{
-	system("leaks -q push_swap");
-}
 
 int	main(int argc, char **argv)
 {
@@ -39,8 +34,7 @@ int	main(int argc, char **argv)
 	}
 	init_stack_struct(stack, argc);
 	stack = parse_args(argc, argv, stack);
-	if (check_duplicated(stack->a, stack->a_len))
-		free_stack_and_print_error(stack);
+	check_duplicated(stack->a, stack->a_len, stack);
 	free_argv(argv, aux);
 	start_sorting(stack);
 	free_stack(stack);
