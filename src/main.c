@@ -41,8 +41,7 @@ int	main(int argc, char **argv)
 	stack = parse_args(argc, argv, stack);
 	if (check_duplicated(stack->a, stack->a_len))
 		free_stack_and_print_error(stack);
-	if (aux == 1)
-		free_argv(argv);
+	free_argv(argv, aux);
 	start_sorting(stack);
 	free_stack(stack);
 	return (0);

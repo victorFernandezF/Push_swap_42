@@ -25,15 +25,18 @@ void	free_stack(t_stack *stack)
 	stack = NULL;
 }
 
-void	free_argv(char **argv)
+void	free_argv(char **argv, int aux)
 {
 	int	i;
 
 	i = -1;
-	while (argv[++i])
-		free(argv[i]);
-	free(argv);
-	argv = NULL;
+	if (aux == 1)
+	{
+		while (argv[++i])
+			free(argv[i]);
+		free(argv);
+		argv = NULL;
+	}
 }
 
 /*

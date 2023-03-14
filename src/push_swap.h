@@ -57,7 +57,7 @@ int			check_duplicated(int *numbers, int cant);
 
 void		free_stack(t_stack *stack);
 void		free_moves(t_moves *moves);
-void		free_argv(char **argv);
+void		free_argv(char **argv, int aux);
 
 //    S T A C K   M A N A G E M E N T
 
