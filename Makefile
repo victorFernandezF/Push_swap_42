@@ -6,7 +6,7 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/02 12:28:41 by iiliuk            #+#    #+#              #
-#    Updated: 2023/03/13 18:52:00 by victofer         ###   ########.fr        #
+#    Updated: 2023/03/15 12:27:07 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,12 +52,11 @@ all: nice_text makelibs $(NAME)
 
 nice_text:
 	@echo "$(B)"
-	@echo "PPPPPP  UU   UU  SSSSS  HH   HH           SSSSS  WW     WW   AAA   PPPPPP "
-	@echo "PP   PP UU   UU SS      HH   HH          SS      WW     WW  AAAAA  PP   PP "
-	@echo "PPPPPP  UU   UU  SSSSS  HHHHHHH           SSSSS  WW  W  WW AA   AA PPPPPP "
-	@echo "PP      UU   UU      SS HH   HH               SS WW WWW WW AAAAAAA PP      "
-	@echo "PP       UUUUU   SSSSS  HH   HH _______   SSSSS   WW   WW  AA   AA PP "
-	
+	@echo "PPPPPP  UU   UU  SSSSS  HH   HH         SSSSS  WW     WW   AAA   PPPPPP "
+	@echo "PP   PP UU   UU SS      HH   HH        SS      WW     WW  AAAAA  PP   PP "
+	@echo "PPPPPP  UU   UU  SSSSS  HHHHHHH         SSSSS  WW  W  WW AA   AA PPPPPP "
+	@echo "PP      UU   UU      SS HH   HH             SS WW WWW WW AAAAAAA PP      "
+	@echo "PP       UUUUU   SSSSS  HH   HH _______ SSSSS   WW   WW  AA   AA PP "
 	@echo "$(E)"
 
 norminette:
@@ -68,7 +67,6 @@ norminette:
 	@norminette
 	@echo "$(Y)------- $(G)EVERITHING OK$(Y) -------$(E)"
 	
-
 makelibs:
 	@echo ""
 	@echo "$(Y)0------ COMPILING LIBS -------0$(E)"
@@ -76,9 +74,6 @@ makelibs:
 	@echo "$(Y)|       $(G)Libft compiled        $(Y)|"
 	@echo "$(Y)0-----------------------------0 $(E)"
 	@echo "$(E)"
-
-$(OBJSFD)/%.o: %.c | $(OBJSFD)
-	@$(CC) $(CFLAGS) $(HDR) $(LIBFT_HDR) -c $< -o $@
 
 $(NAME): $(OBJS) $(LIBFT)
 	@gcc $(CFLAGS) $(OBJS) $(LIBFT) -o push_swap 
