@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 10:33:56 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/14 17:58:57 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/15 10:57:57 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,9 @@ static int	check_args(char **argv, char *arg, int start)
 	while (*arg && arg[i] != '\0')
 	{
 		if (!ft_isdigit(arg[i]) && arg[i] != '-' && arg[i] != '+')
+			return (0);
+		if ((arg[i] == '-' && arg[i + 1] == '-')
+			|| (arg[i] == '+' && arg[i + 1] == '+'))
 			return (0);
 		i++;
 	}
