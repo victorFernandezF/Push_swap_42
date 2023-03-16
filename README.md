@@ -1,4 +1,8 @@
-# :1234: :ok:  PUSH_SWAP [:es:]
+# :1234: :ok:  PUSH_SWAP
+<hr>
+
+# INFO [:es:]
+
 #### Resumen 
 > Este proyecto involucra ordenar datos en un stack, con un conjunto limitado de instrucciones en el número más pequeño de movimientos. Para hacerlo posible, tendrás que manipular varios algoritmos de ordenación y elegir la solución más apropiada para un ordenamiento óptimo.
 
@@ -13,11 +17,11 @@
 
 ### ESTADO
 
-| Estado del proyecto | Pendiente de evaluación      |
+| Estado del proyecto |  Terminado                   |
 |---------------------|------------------------------|
-| Nota del proyecto   |  En espera                   |
+| Nota del proyecto   |  ![result](https://img.shields.io/badge/RESULTADO-100%25-green)                         |
 
- <!-- ![result](https://img.shields.io/badge/RESULTADO-125%25-green) -->
+ <!--  -->
 
 <!-- ![Result](https://img.shields.io/badge/RESULT-IN_PROGRESS-inactive) -->
 
@@ -28,7 +32,7 @@ git clone https://github.com/victorFernandezF/Push_swap_42.git
 
 <hr/>
 
-# :1234: :ok:  PUSH_SWAP [:gb:]
+# INFO [:gb:]
 
 #### Summary
 > This project involves sorting data on a stack, with a limited set of instructions, and the smallest number of moves. To make this happen, you will have to manipulate various sorting algorithms and choose the most appropriate solution(s) for optimized data sorting.
@@ -45,10 +49,9 @@ git clone https://github.com/victorFernandezF/Push_swap_42.git
 
 ### ESTATUS
 
-| project Status      | Waiting for evaluation       |
+| Project Status      |  Finished                    |
 |---------------------|------------------------------|
-| Project Mark        |  Waiting                     |
-
+| Project Mark        |  ![result](https://img.shields.io/badge/RESULTADO-100%25-green)   
 
 #### CLONE REPO
 ~~~~~

@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 10:38:43 by victofer          #+#    #+#             */
-/*   Updated: 2023/03/10 10:48:19 by victofer         ###   ########.fr       */
+/*   Updated: 2023/03/16 17:55:01 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static void	insert_back_in_a(t_stack *stack)
 	free(rotation_type);
 }
 
-static void	insert_leftover_to_b(t_stack *stack)
+static void	insert_rest_to_b(t_stack *stack)
 {
 	int	idx;
 
@@ -136,6 +136,6 @@ void	big_sort(t_stack *stack)
 		pb(stack);
 		free_moves(best_move);
 	}
-	insert_leftover_to_b(stack);
+	insert_rest_to_b(stack);
 	insert_back_in_a(stack);
 }
